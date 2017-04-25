@@ -1,22 +1,12 @@
 # JavaScript ESLint rules
 
-Mostly based on the Airbnb styles but got changed along the way with what we like.
+Mostly based on the Airbnb styles.
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
-
 ```
-$ npm i eslint --save-dev
+$ npm i eslint cm-eslint-rules --save-dev
 ```
-
-Next, install `cm-eslint-rules`:
-
-```
-$ npm install cm-eslint-rules --save-dev
-```
-
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `cm-eslint-rules` globally.
 
 ## Usage
 
@@ -30,4 +20,9 @@ Add `cm-eslint-rules` to the extends section of your `.eslintrc` configuration f
 }
 ```
 
-Uses [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn), [eslint-plugin-no-inferred-method-name](https://github.com/johnstonbl01/eslint-no-inferred-method-name) and [eslint-plugin-json](https://github.com/azeemba/eslint-plugin-json)
+## Contains
+
+- [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
+- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+- [eslint-plugin-no-inferred-method-name](https://github.com/johnstonbl01/eslint-no-inferred-method-name)
+- [eslint-plugin-json](https://github.com/azeemba/eslint-plugin-json)
