@@ -1,0 +1,51 @@
+{
+  "name": "cm-eslint-rules",
+  "version": "0.0.1",
+  "description": "JavaScript ESLint rules",
+  "main": "rules/index.js",
+  "scripts": {
+    "reinstall": "rm -rf node_modules && npm i",
+    "upgrade": "npm-check -u"
+  },
+  "homepage": "https://github.com/codemachiner/eslint-rules",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codemachiner/eslint-rules"
+  },
+  "bugs": {
+    "url": "https://github.com/codemachiner/eslint-rules/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-rules",
+    "config",
+    "javascript",
+    "codemachiner"
+  ],
+  "author": {
+    "name": "Andrei Dumitrescu",
+    "email": "andrei@codemachiner.com",
+    "url": "https://twitter.com/andreidcm"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-no-inferred-method-name": "^1.0.2",
+    "eslint-plugin-unicorn": "^2.1.1",
+    "npm-check": "^5.4.0"
+  },
+  "peerDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-no-inferred-method-name": "^1.0.2",
+    "eslint-plugin-unicorn": "^2.1.1"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "license": "MIT"
+}
