@@ -1,5 +1,5 @@
 {
-  "name": "@codemachiner/eslint-rules",
+  "name": "@codemachiner/eslint-config",
   "version": "1.0.1",
   "description": "JavaScript ESLint rules",
   "main": "rules/index.js",
@@ -7,13 +7,13 @@
     "reinstall": "rm -rf node_modules && npm i",
     "upgrade": "npm-check -u"
   },
-  "homepage": "https://github.com/codemachiner/eslint-rules",
+  "homepage": "https://github.com/codemachiner/eslint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codemachiner/eslint-rules.git"
+    "url": "git+https://github.com/codemachiner/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/codemachiner/eslint-rules/issues"
+    "url": "https://github.com/codemachiner/eslint-config/issues"
   },
   "keywords": [
     "eslint",

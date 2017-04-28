@@ -5,17 +5,17 @@ Mostly based on the Airbnb styles.
 ## Installation
 
 ```
-$ npm i eslint cm-eslint-rules --save-dev
+$ npm i eslint @codemachiner/eslint-config --save-dev
 ```
 
 ## Usage
 
-Add `cm-eslint-rules` to the extends section of your `.eslintrc` configuration file:
+Add `@codemachiner/eslint-config` to the extends section of your `.eslintrc` configuration file:
 
 ```json
 {
     "extends": [
-        "cm-eslint-rules"
+        "@codemachiner/eslint-config"
     ]
 }
 ```
