@@ -1,6 +1,6 @@
 {
-  "name": "cm-eslint-rules",
-  "version": "0.0.1",
+  "name": "@codemachiner/eslint-rules",
+  "version": "1.0.0",
   "description": "JavaScript ESLint rules",
   "main": "rules/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/codemachiner/eslint-rules",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codemachiner/eslint-rules"
+    "url": "git+https://github.com/codemachiner/eslint-rules.git"
   },
   "bugs": {
     "url": "https://github.com/codemachiner/eslint-rules/issues"
@@ -23,11 +23,7 @@
     "javascript",
     "codemachiner"
   ],
-  "author": {
-    "name": "Andrei Dumitrescu",
-    "email": "andrei@codemachiner.com",
-    "url": "https://twitter.com/andreidcm"
-  },
+  "author": "Andrei Dumitrescu <andrei@codemachiner.com> (https://twitter.com/andreidcm)",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^3.19.0",
