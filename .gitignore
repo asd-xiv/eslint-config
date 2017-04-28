@@ -38,3 +38,7 @@ jspm_packages
 
 # Sublime tern
 .tern-port
+
+# Sublime project & workspace
+*.sublime-project
+*.sublime-workspace
