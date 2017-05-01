@@ -12,7 +12,7 @@ module.exports = {
         // require space before/after arrow function's arrow
         "arrow-spacing": [ "error", {
             "before": true,
-            "after": true
+            "after": true,
         } ],
 
         // verify super() callings in constructors
@@ -57,5 +57,5 @@ module.exports = {
 
         // suggest using template literals instead of strings concatenation
         "prefer-template": "error",
-    }
+    },
 }

@@ -17,14 +17,7 @@ module.exports = {
         },
     },
     rules: {
-        // enforces the consistent use of either backticks, double, or single
-        // quotes
-        quotes: [ "error", "double" ],
-
         // require that all functions are run in strict mode
         strict: [ "error", "never" ],
-
-        // disallows semicolons as the end of statements
-        semi: [ "error", "never" ],
     },
 }

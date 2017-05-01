@@ -8,5 +8,6 @@ module.exports = {
         "./errors",
         "./variables",
         "./best.practices",
+        "./style",
     ].map( require.resolve ),
 }
