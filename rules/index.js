@@ -9,5 +9,6 @@ module.exports = {
         "./variables",
         "./best.practices",
         "./style",
+        "./flow",
     ].map( require.resolve ),
 }
