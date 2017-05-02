@@ -47,9 +47,6 @@ module.exports = {
         // disallow else after a return in an if
         "no-else-return": "error",
 
-        // disallow use of labels for anything other then loops and switches
-        "no-label": 0,
-
         // disallow use of empty destructuring patterns
         "no-empty-pattern": 0,
 
@@ -84,6 +81,9 @@ module.exports = {
         // disallow usage of __iterator__ property
         "no-iterator": "error",
 
+        // disallow use of labels for anything other then loops and switches
+        "no-label": 0,
+
         // disallow use of labeled statements
         "no-labels": "error",
 
@@ -96,7 +96,9 @@ module.exports = {
         // disallow the use of magic numbers
         "no-magic-numbers": 0,
 
-        // disallow use of multiple spaces
+        // This rule aims to disallow multiple whitespace around logical
+        // expressions, conditional expressions, declarations, array elements,
+        // object properties, sequences and function parameters.
         "no-multi-spaces": "error",
 
         // disallow use of multiline strings
@@ -105,21 +107,22 @@ module.exports = {
         // disallow reassignments of native objects
         "no-native-reassign": "error",
 
+        // disallow use of new operator when not part of the assignment or
+        // comparison
+        "no-new": "error",
+
         // disallow use of new operator for Function object
         "no-new-func": "error",
 
         // disallows creating new instances of String,Number, and Boolean
         "no-new-wrappers": "error",
 
-        // disallow use of new operator when not part of the assignment or comparison
-        "no-new": "error",
+        // disallow use of (old style) octal literals
+        "no-octal": "error",
 
         // disallow use of octal escape sequences in string literals, such as
         // var foo = "Copyright \251";
         "no-octal-escape": "error",
-
-        // disallow use of (old style) octal literals
-        "no-octal": "error",
 
         // codemach: disallow reassignment of function parameters
         "no-param-reassign": [ "error", {
@@ -164,8 +167,8 @@ module.exports = {
 
         // disallow usage of configurable warning terms in comments: e.g. todo
         "no-warning-comments": [ 0, {
-            "terms": [ "todo", "fixme", "xxx" ],
             "location": "start",
+            "terms": [ "todo", "fixme", "xxx" ],
         } ],
 
         // disallow use of the with statement

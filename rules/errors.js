@@ -27,11 +27,11 @@ module.exports = {
         // disallow a duplicate case label.
         "no-duplicate-case": "error",
 
-        // disallow the use of empty character classes in regular expressions
-        "no-empty-character-class": "error",
-
         // disallow empty statements
         "no-empty": "error",
+
+        // disallow the use of empty character classes in regular expressions
+        "no-empty-character-class": "error",
 
         // disallow assigning to the exception in a catch block
         "no-ex-assign": "error",
