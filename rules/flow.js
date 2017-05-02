@@ -83,6 +83,11 @@ module.exports = {
         // Requires that all variable declarators have type annotations.
         "flowtype/require-variable-type": [ "error", {
             excludeVariableMatch: "^_",
+            excludeVariableTypes: {
+                const: true,
+                let  : false,
+                var  : false,
+            },
         } ],
 
         /*
