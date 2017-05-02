@@ -18,7 +18,7 @@ module.exports = {
 
         // Enforces consistent spacing within generic type annotation
         // parameters.
-        "flowtype/generic-spacing": [ "error", "always" ],
+        "flowtype/generic-spacing": [ "error", "never" ],
 
         // Checks for duplicate properties in Object annotations.
         // Same as eslint "no-dupe-keys".
