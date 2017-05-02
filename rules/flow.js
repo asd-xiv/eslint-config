@@ -36,9 +36,9 @@ module.exports = {
         // types can cause flow to silently skip over portions of your code,
         // which would have otherwise caused type errors.
         "flowtype/no-weak-types": [ "error", {
-            "Function": true,
-            "Object": true,
-            "any": false,
+            "Function": false,
+            "Object": false,
+            "any": true,
         } ],
 
         // Enforces consistent separators between properties in Flow object
