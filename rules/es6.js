@@ -1,61 +1,55 @@
 module.exports = {
     rules: {
-        // require braces in arrow function body
+        // Require braces in arrow function body
         "arrow-body-style": [ "error", "as-needed" ],
 
-        // require parens in arrow function arguments
+        // Require parens in arrow function arguments
         "arrow-parens": [ "error", "as-needed" ],
 
-        // require space before/after arrow function's arrow
-        "arrow-spacing": [ "error", {
-            "after": true,
-            "before": true,
-        } ],
-
-        // verify super() callings in constructors
+        // Verify super() callings in constructors
         "constructor-super": 0,
 
-        // enforce the spacing around the * in generator functions
+        // Enforce the spacing around the * in generator functions
         "generator-star-spacing": 0,
 
-        // disallow arrow functions where a condition is expected
+        // Disallow arrow functions where a condition is expected
         "no-arrow-condition": 0,
 
-        // disallow modifying variables of class declarations
+        // Disallow modifying variables of class declarations
         "no-class-assign": 0,
 
-        // disallow modifying variables that are declared using const
+        // Disallow modifying variables that are declared using const
         "no-const-assign": "error",
 
-        // disallow duplicate name in class members
+        // Disallow duplicate name in class members
         "no-dupe-class-members": 0,
 
-        // disallow to use this/super before super() calling in constructors.
+        // Disallow to use this/super before super() calling in constructors.
         "no-this-before-super": 0,
 
-        // require let or const instead of var
+        // Require let or const instead of var
         "no-var": "error",
 
-        // require method and property shorthand syntax for object literals
+        // Require method and property shorthand syntax for object literals
         "object-shorthand": [ "warn", "always" ],
 
-        // suggest using arrow functions as callbacks
+        // Suggest using arrow functions as callbacks
         "prefer-arrow-callback": "warn",
 
-        // suggest using of const declaration for variables that are never
-        // modified after declared
+        // Suggest using of const declaration for variables that are never
+        // Modified after declared
         "prefer-const": "error",
 
-        // suggest using Reflect methods where applicable
+        // Suggest using Reflect methods where applicable
         "prefer-reflect": 0,
 
-        // suggest using the spread operator instead of .apply()
+        // Suggest using the spread operator instead of .apply()
         "prefer-spread": 0,
 
-        // suggest using template literals instead of strings concatenation
+        // Suggest using template literals instead of strings concatenation
         "prefer-template": "error",
 
-        // disallow generator functions that do not have yield
+        // Disallow generator functions that do not have yield
         "require-yield": 0,
     },
 }

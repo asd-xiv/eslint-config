@@ -1,46 +1,60 @@
 module.exports = {
-    "plugins": [
+    plugins: [
         "import",
     ],
-    "rules": {
-        // If a default import is requested, this rule will report if there is
-        // no default export in the imported module.
+    rules: {
+        /*
+         * If a default import is requested, this rule will report if there is
+         * no default export in the imported module.
+         */
         "import/default": "error",
 
-        // Reports funny business with exports, like repeated exports of names
-        // or defaults.
+        /*
+         * Reports funny business with exports, like repeated exports of names
+         * or defaults.
+         */
         "import/export": "error",
 
-        // Verifies that all named imports are part of the set of named
-        // exports in the referenced module.
+        /*
+         * Verifies that all named imports are part of the set of named
+         * exports in the referenced module.
+         */
         "import/named": "error",
 
-        // Enforces names exist at the time they are dereferenced, when
-        // imported as a full namespace (i.e. import * as foo from './foo';
-        // foo.bar(); will report if bar is not exported by ./foo.).
+        /*
+         * Enforces names exist at the time they are dereferenced, when
+         * imported as a full namespace (i.e. import * as foo from './foo';
+         * foo.bar(); will report if bar is not exported by ./foo.).
+         */
         "import/namespace": [ "error", {
-            "allowComputed": true,
+            allowComputed: true,
         } ],
 
         // Reports if a resolved path is imported more than once.
         "import/no-duplicates": "error",
 
-        // Reports use of an exported name as the locally imported name of a
-        // default export.
+        /*
+         * Reports use of an exported name as the locally imported name of a
+         * default export.
+         */
         "import/no-named-as-default": "error",
 
         // Reports use of an exported name as a property on the default export.
         "import/no-named-as-default-member": "error",
 
-        // Ensures an imported module can be resolved to a module on the local
-        // filesystem, as defined by standard Node require.resolve behavior.
+        /*
+         * Ensures an imported module can be resolved to a module on the local
+         * filesystem, as defined by standard Node require.resolve behavior.
+         */
         "import/no-unresolved": [ "error", {
-            "commonjs": true,
+            commonjs: true,
         } ],
 
-        // Warn if a module could be mistakenly parsed as a script by a
-        // consumer leveraging Unambiguous JavaScript Grammar to determine
-        // correct parsing goal.
+        /*
+         * Warn if a module could be mistakenly parsed as a script by a
+         * consumer leveraging Unambiguous JavaScript Grammar to determine
+         * correct parsing goal.
+         */
         "import/unambiguous": "warn",
     },
 }
