@@ -1,5 +1,9 @@
 # JavaScript ESLint rules
 
+[![](https://david-dm.org/codemachiner/eslint-config.svg)](https://david-dm.org/codemachiner/eslint-config)
+[![](https://david-dm.org/codemachiner/eslint-config/dev-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=dev)
+[![](https://david-dm.org/codemachiner/eslint-config/peer-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=peer)
+
 Mostly based on the Airbnb styles.
 
 ## Installation
