@@ -275,7 +275,7 @@ module.exports = {
          * separately per function ( for var) or block (for let and const)
          * scope.
          */
-        "one-var": [ "error", "always" ],
+        "one-var": [ "error", "never" ],
 
         /*
          * This rule enforces a consistent newlines around variable
