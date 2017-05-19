@@ -10,7 +10,7 @@ module.exports = {
          * Marks Flow type identifiers as defined.
          * Used to suppress no-undef reporting of type identifiers.
          */
-        "flowtype/define-flow-type": "warn",
+        "flowtype/define-flow-type": 1,
 
         /*
          * Enforces consistent use of trailing commas in Object and Tuple
@@ -131,11 +131,15 @@ module.exports = {
          */
         "flowtype/union-intersection-spacing": [ "error", "always" ],
 
-        // Marks Flow type alias declarations as used.
-        "flowtype/use-flow-type": "warn",
+        /*
+        * Marks Flow type alias declarations as used.
+        * Used to suppress no-unused-vars errors that are triggered by type
+        * aliases.
+        */
+        "flowtype/use-flow-type": 1,
 
         //
-        "flowtype/valid-syntax": "warn",
+        "flowtype/valid-syntax": 1,
     },
     settings: {
         flowtype: {

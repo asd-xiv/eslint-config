@@ -55,6 +55,6 @@ module.exports = {
          * consumer leveraging Unambiguous JavaScript Grammar to determine
          * correct parsing goal.
          */
-        "import/unambiguous": "warn",
+        "import/unambiguous": "off",
     },
 }
