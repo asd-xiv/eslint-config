@@ -360,7 +360,7 @@ module.exports = {
          * styles.
          */
         "spaced-comment": [ "error", "always", {
-            exceptions: [ "-", "+", "*" ],
+            exceptions: [ ":", "-", "+", "*" ],
         } ],
     },
 }

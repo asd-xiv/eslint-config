@@ -61,9 +61,7 @@ module.exports = {
         "flowtype/object-type-delimiter": [ "error", "semicolon" ],
 
         // Requires that all function parameters have type annotations.
-        "flowtype/require-parameter-type": [ "error", {
-            excludeArrowFunctions: false,
-        } ],
+        "flowtype/require-parameter-type": "off",
 
         // Requires that functions have return type annotation.
         "flowtype/require-return-type": [ "error", "always", {
