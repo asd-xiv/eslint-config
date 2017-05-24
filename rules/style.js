@@ -359,8 +359,6 @@ module.exports = {
          * /*. It also provides several exceptions for various documentation
          * styles.
          */
-        "spaced-comment": [ "error", "always", {
-            exceptions: [ ":", "-", "+", "*" ],
-        } ],
+        "spaced-comment": [ "warn", "always" ],
     },
 }

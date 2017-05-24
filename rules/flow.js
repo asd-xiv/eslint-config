@@ -64,10 +64,7 @@ module.exports = {
         "flowtype/require-parameter-type": "off",
 
         // Requires that functions have return type annotation.
-        "flowtype/require-return-type": [ "error", "always", {
-            annotateUndefined    : "never",
-            excludeArrowFunctions: false,
-        } ],
+        "flowtype/require-return-type": "off",
 
         /*
          * This rule can optionally report missing or missed placed
@@ -79,14 +76,7 @@ module.exports = {
         } ],
 
         // Requires that all variable declarators have type annotations.
-        "flowtype/require-variable-type": [ "error", {
-            excludeVariableMatch: "^_",
-            excludeVariableTypes: {
-                const: true,
-                let  : false,
-                var  : false,
-            },
-        } ],
+        "flowtype/require-variable-type": "off",
 
         /*
          * Enforces consistent use of semicolons after type aliases.
