@@ -1,6 +1,6 @@
 {
   "name": "@codemachiner/eslint-config",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "JavaScript ESLint rules",
   "main": "rules/index.js",
   "scripts": {
