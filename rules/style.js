@@ -146,7 +146,7 @@ module.exports = {
          * maintainability. The length of a line is defined as the number of
          * Unicode characters in the line.
          */
-        "max-len": [ "error", 80 ],
+        "max-len": [ "warn", 80 ],
 
         /*
          * This rule requires constructor names to begin with a capital

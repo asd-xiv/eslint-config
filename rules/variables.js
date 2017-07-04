@@ -1,5 +1,8 @@
 module.exports = {
     rules: {
+        // Require that all functions are run in strict mode
+        strict: [ "error", "never" ],
+
         // Enforce or disallow variable initializations at definition
         "init-declarations": 0,
 
