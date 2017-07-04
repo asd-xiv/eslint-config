@@ -1,3 +1,5 @@
 {
-    "extends": "./rules/frontend.js"
+    "extends": [
+        "./rules/frontend.js",
+    ]
 }
