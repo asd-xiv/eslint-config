@@ -19,21 +19,21 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    'eslint': '^3.19.0',
-    'eslint-plugin-import': '^2.2.0',
-    'eslint-plugin-json': '^1.2.0',
-    'eslint-plugin-no-inferred-method-name': '^1.0.2',
-    'eslint-plugin-flowtype': '^2.32.1',
-    'eslint-plugin-unicorn': '^2.1.1'
+    "eslint": "^4.1.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-no-inferred-method-name": "^1.0.2",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-unicorn": "^2.1.2"
 }
 ...
 ```
-Add `@codemachiner/eslint-config` to the extends section of your `.eslintrc` configuration file:
+Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends section of your `.eslintrc` configuration file:
 
 ```json
 {
     "extends": [
-        "@codemachiner/eslint-config"
+        "@codemachiner/eslint-config/rules/frontend",
     ]
 }
 ```
