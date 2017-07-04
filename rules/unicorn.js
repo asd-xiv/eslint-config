@@ -1,8 +1,6 @@
 module.exports = {
-    plugins: [
-        "unicorn",
-    ],
-    rules: {
+    plugins: [ "unicorn" ],
+    rules  : {
         /*
          * Enforces all linted files to have their names in a certain case
          * style. Default is kebabCase.
@@ -12,8 +10,10 @@ module.exports = {
          *  fooBar.test.js
          *  fooBar.testUtils.js
          */
-        "unicorn/filename-case": [ "warn", {
-            case: "camelCase",
-        } ],
+        "unicorn/filename-case": [
+            "warn", {
+                case: "camelCase",
+            },
+        ],
     },
 }

@@ -1,8 +1,5 @@
 module.exports = {
     rules: {
-        // Require that all functions are run in strict mode
-        strict: [ "error", "never" ],
-
         // Enforce or disallow variable initializations at definition
         "init-declarations": 0,
 
@@ -40,12 +37,17 @@ module.exports = {
         "no-undefined": 0,
 
         // Disallow declaration of variables that are not used in the code
-        "no-unused-vars": [ "error", {
-            args: "after-used",
-            vars: "local",
-        } ],
+        "no-unused-vars": [
+            "error", {
+                args: "after-used",
+                vars: "local",
+            },
+        ],
 
         // Disallow use of variables before they are defined
         "no-use-before-define": "error",
+
+        // Require that all functions are run in strict mode
+        "strict": [ "error", "never" ],
     },
 }

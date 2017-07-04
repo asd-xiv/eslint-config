@@ -22,9 +22,11 @@ module.exports = {
         "dot-location": 0,
 
         // Encourages use of dot notation whenever possible
-        "dot-notation": [ "error", {
-            allowKeywords: true,
-        } ],
+        "dot-notation": [
+            "error", {
+                allowKeywords: true,
+            },
+        ],
 
         // Require the use of === and !==
         "eqeqeq": "error",
@@ -128,9 +130,11 @@ module.exports = {
         "no-octal-escape": "error",
 
         // Disallow reassignment of function parameters
-        "no-param-reassign": [ "error", {
-            props: false,
-        } ],
+        "no-param-reassign": [
+            "error", {
+                props: false,
+            },
+        ],
 
         // Disallow use of process.env
         "no-process-env": 0,
@@ -169,10 +173,12 @@ module.exports = {
         "no-void": 0,
 
         // Disallow usage of configurable warning terms in comments: e.g. todo
-        "no-warning-comments": [ 0, {
-            location: "start",
-            terms   : [ "todo", "fixme", "xxx" ],
-        } ],
+        "no-warning-comments": [
+            0, {
+                location: "start",
+                terms   : [ "todo", "fixme", "xxx" ],
+            },
+        ],
 
         // Disallow use of the with statement
         "no-with": "error",

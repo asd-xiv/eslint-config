@@ -1,8 +1,6 @@
 module.exports = {
-    plugins: [
-        "import",
-    ],
-    rules: {
+    plugins: [ "import" ],
+    rules  : {
         /*
          * If a default import is requested, this rule will report if there is
          * no default export in the imported module.
@@ -26,9 +24,11 @@ module.exports = {
          * imported as a full namespace (i.e. import * as foo from './foo';
          * foo.bar(); will report if bar is not exported by ./foo.).
          */
-        "import/namespace": [ "error", {
-            allowComputed: true,
-        } ],
+        "import/namespace": [
+            "error", {
+                allowComputed: true,
+            },
+        ],
 
         // Reports if a resolved path is imported more than once.
         "import/no-duplicates": "error",
@@ -46,9 +46,11 @@ module.exports = {
          * Ensures an imported module can be resolved to a module on the local
          * filesystem, as defined by standard Node require.resolve behavior.
          */
-        "import/no-unresolved": [ "error", {
-            commonjs: true,
-        } ],
+        "import/no-unresolved": [
+            "error", {
+                commonjs: true,
+            },
+        ],
 
         /*
          * Warn if a module could be mistakenly parsed as a script by a
