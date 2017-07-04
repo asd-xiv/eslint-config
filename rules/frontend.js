@@ -1,23 +1,10 @@
 module.exports = {
     env: {
         browser: true,
-        es6: true,
-        node: false,
+        es6    : true,
+        node   : false,
     },
-    parserOptions: {
-        ecmaFeatures: {
-            experimentalObjectRestSpread: true,
-            impliedStrict: true,
-        },
-        ecmaVersion: 2017,
-        sourceType: "module",
-    },
-    plugins: [
-        "json",
-        "no-inferred-method-name",
-    ],
     extends: [
-        "./base",
         "./import",
         "./unicorn",
         "./es6",
@@ -25,6 +12,20 @@ module.exports = {
         "./variables",
         "./best.practices",
         "./style",
+        "./jsdoc",
+        "./comments",
         "./flow",
     ].map( require.resolve ),
+    parserOptions: {
+        ecmaFeatures: {
+            experimentalObjectRestSpread: true,
+            impliedStrict               : true,
+        },
+        ecmaVersion: 2017,
+        sourceType : "module",
+    },
+    plugins: [
+        "json",
+        "no-inferred-method-name",
+    ],
 }

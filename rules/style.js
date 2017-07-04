@@ -1,23 +1,30 @@
 module.exports = {
     rules: {
+
+        /*
+         * This rule enforces line breaks after opening and before closing
+         * array brackets.
+         */
+        "array-bracket-newline": [
+            "error", {
+                multiline: true,
+            },
+        ],
+
         // This rule enforces consistent spacing inside array brackets.
         "array-bracket-spacing": [ "error", "always" ],
 
-        // Require space before/after arrow function's arrow
-        "arrow-spacing": [ "error", {
-            after : true,
-            before: true,
-        } ],
 
-        /*
-         * Enforce a consistent style of comments across your codebase,
-         * specifically by either requiring or disallowing a capitalized
-         * letter as the first word character in a comment. This rule will not
-         * issue warnings when non-cased letters are used.
-         */
-        "capitalized-comments": [ "error", "always", {
-            ignoreInlineComments: true,
-        } ],
+        // This rule enforces line breaks between array elements.
+        "array-element-newline": [ "off" ],
+
+        // Require space before/after arrow function's arrow
+        "arrow-spacing": [
+            "error", {
+                after : true,
+                before: true,
+            },
+        ],
 
         // Enforces consistent spacing inside computed property brackets.
         "computed-property-spacing": [ "error", "always" ],
@@ -75,8 +82,10 @@ module.exports = {
          * data, don’t infer much about the code and the values it receives.
          * This rule allows you to configure a blacklist of bad identifier
          * names, that you don’t want to see in your code.
+         *
+         * Removing "data" because VueJS
          */
-        "id-blacklist": [ "error", "data", "err", "e", "cb", "callback" ],
+        "id-blacklist": [ "error", "err", "e", "cb", "callback" ],
 
         // Enforce consistent indentation.
         "indent": [ "error", 4 ],
@@ -86,16 +95,18 @@ module.exports = {
          * object literal properties. In the case of long lines, it is
          * acceptable to add a new line wherever whitespace is allowed.
          */
-        "key-spacing": [ "error", {
-            afterColon: true,
-            align     : {
-                afterColon : true,
+        "key-spacing": [
+            "error", {
+                afterColon: true,
+                align     : {
+                    afterColon : true,
+                    beforeColon: false,
+                    on         : "colon",
+                },
                 beforeColon: false,
-                on         : "colon",
+                mode       : "strict",
             },
-            beforeColon: false,
-            mode       : "strict",
-        } ],
+        ],
 
         /*
          * Enforces consistent spacing around keywords and keyword-like
@@ -109,37 +120,12 @@ module.exports = {
          * designed carefully not to conflict with other spacing rules: it
          * does not apply to spacing where other rules report problems.
          */
-        "keyword-spacing": [ "error", {
-            after : true,
-            before: true,
-        } ],
-
-        /*
-         * Enforces consistent position of line comments. Block comments are
-         * not affected by this rule. By default, this rule ignores comments
-         * starting with the following words: eslint, jshint, jslint,
-         * istanbul, global, exported, jscs, falls through.
-         */
-        "line-comment-position": [ "error", {
-            position: "above",
-        } ],
-
-        /*
-         * This rule requires empty lines before and/or after comments. It can
-         * be enabled separately for both block (/*) and line (//) comments.
-         * This rule does not apply to comments that appear on the same line
-         * as code and does not require empty lines at the beginning or end of
-         * a file.
-         */
-        "lines-around-comment": [ "error", {
-            afterBlockComment : false,
-            afterLineComment  : false,
-            allowArrayStart   : true,
-            allowBlockStart   : true,
-            allowObjectStart  : true,
-            beforeBlockComment: true,
-            beforeLineComment : true,
-        } ],
+        "keyword-spacing": [
+            "error", {
+                after : true,
+                before: true,
+            },
+        ],
 
         /*
          * Enforces a maximum line length to increase code readability and
@@ -182,9 +168,11 @@ module.exports = {
          * deep member access. Computed property accesses such as instance[
          * something] are excluded.
          */
-        "newline-per-chained-call": [ "error", {
-            ignoreChainWithDepth: 2,
-        } ],
+        "newline-per-chained-call": [
+            "error", {
+                ignoreChainWithDepth: 2,
+            },
+        ],
 
         /*
          * This rule disallows if statements as the only statement in else
@@ -198,16 +186,18 @@ module.exports = {
          * this and no-extra-parens rule together, you need to use the
          * nestedBinaryExpressions option of no-extra-parens rule.
          */
-        "no-mixed-operators": [ "error", {
-            allowSamePrecedence: true,
-            groups             : [
-                [ "+", "-", "*", "/", "%", "**" ],
-                [ "&", "|", "^", "~", "<<", ">>", ">>>" ],
-                [ "==", "!=", "===", "!==", ">", ">=", "<", "<=" ],
-                [ "&&", "||" ],
-                [ "in", "instanceof" ],
-            ],
-        } ],
+        "no-mixed-operators": [
+            "error", {
+                allowSamePrecedence: true,
+                groups             : [
+                    [ "+", "-", "*", "/", "%", "**" ],
+                    [ "&", "|", "^", "~", "<<", ">>", ">>>" ],
+                    [ "==", "!=", "===", "!==", ">", ">=", "<", "<=" ],
+                    [ "&&", "||" ],
+                    [ "in", "instanceof" ],
+                ],
+            },
+        ],
 
         /*
          * This rule disallows using multiple assignments within a single
@@ -216,11 +206,13 @@ module.exports = {
         "no-multi-assign": "error",
 
         // Enforces the consistent use of empty lines.
-        "no-multiple-empty-lines": [ "error", {
-            max   : 2,
-            maxBOF: 0,
-            maxEOF: 1,
-        } ],
+        "no-multiple-empty-lines": [
+            "error", {
+                max   : 2,
+                maxBOF: 0,
+                maxEOF: 1,
+            },
+        ],
 
         /*
          * This rule disallows negated conditions in either of the following:
@@ -233,17 +225,21 @@ module.exports = {
          * This rule disallows trailing whitespace (spaces, tabs, and other
          * Unicode whitespace characters) at the end of lines.
          */
-        "no-trailing-spaces": [ "error", {
-            skipBlankLines: false,
-        } ],
+        "no-trailing-spaces": [
+            "error", {
+                skipBlankLines: false,
+            },
+        ],
 
         /*
          * This rule disallow ternary operators when simpler alternatives
          * exist.
          */
-        "no-unneeded-ternary": [ "error", {
-            defaultAssignment: true,
-        } ],
+        "no-unneeded-ternary": [
+            "error", {
+                defaultAssignment: true,
+            },
+        ],
 
         /*
          * This rule disallows whitespace around the dot or before the opening
@@ -284,6 +280,19 @@ module.exports = {
          */
         "one-var-declaration-per-line": [ "error", "always" ],
 
+        /*
+         * This rule requires or disallows blank lines between the given 2
+         * kinds of statements. Properly blank lines help developers to
+         * understand the code.
+         */
+        "padding-line-between-statements": [
+            "error", {
+                blankLine: "always",
+                next     : "return",
+                prev     : "var",
+            },
+        ],
+
         // This rule requires quotes around object literal property names.
         "quote-props": [ "error", "consistent-as-needed" ],
 
@@ -298,10 +307,12 @@ module.exports = {
 
         // Checks all property definitions of object expressions and verifies
         // That all variables are sorted alphabetically.
-        "sort-keys": [ "error", "asc", {
-            caseSensitive: true,
-            natural      : true,
-        } ],
+        "sort-keys": [
+            "error", "asc", {
+                caseSensitive: true,
+                natural      : true,
+            },
+        ],
 
         /*
          * This rule checks all variable declaration blocks and verifies that
@@ -318,11 +329,13 @@ module.exports = {
          *      - This rule ignores spacing which is between a keyword and a
          *      block. The spacing is handled by the keyword-spacing rule.
          */
-        "space-before-blocks": [ "error", {
-            classes  : "always",
-            functions: "always",
-            keywords : "always",
-        } ],
+        "space-before-blocks": [
+            "error", {
+                classes  : "always",
+                functions: "always",
+                keywords : "always",
+            },
+        ],
 
         /*
          * This rule aims to enforce consistent spacing before function
@@ -349,16 +362,24 @@ module.exports = {
          * This rule enforces consistency regarding the spaces after words
          * unary operators and after/before nonwords unary operators.
          */
-        "space-unary-ops": [ "error", {
-            nonwords: false,
-            words   : true,
-        } ],
+        "space-unary-ops": [
+            "error", {
+                nonwords: false,
+                words   : true,
+            },
+        ],
 
         /*
-         * Enforce consistency of spacing after the start of a comment // or
-         * /*. It also provides several exceptions for various documentation
-         * styles.
+         * This rule controls spacing around colons of case and default clauses
+         * in switch statements. This rule does the check only if the
+         * consecutive tokens exist on the same line.
          */
-        "spaced-comment": [ "warn", "always" ],
+        "switch-colon-spacing": [
+            "error", {
+                after : true,
+                before: false,
+            },
+        ],
+
     },
 }

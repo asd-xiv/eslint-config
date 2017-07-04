@@ -3,6 +3,15 @@ module.exports = {
         // Disallow trailing commas in object literals
         "comma-dangle": [ "error", "always-multiline" ],
 
+        /*
+         * A for loop with a stop condition that can never be reached, such as
+         * one with a counter that moves in the wrong direction, will run
+         * infinitely. While there are occasions when an infinite loop is
+         * intended, the convention is to construct such loops as while loops.
+         * More typically, an infinite for loop is a bug.
+         */
+        "for-direction": "error",
+
         // Disallow assignment in conditional expressions
         "no-cond-assign": [ "error", "always" ],
 
@@ -82,9 +91,6 @@ module.exports = {
 
         // Disallow comparisons with the value NaN
         "use-isnan": "error",
-
-        // Ensure JSDoc comments are valid
-        "valid-jsdoc": 0,
 
         // Ensure that the results of typeof are compared against a valid
         // String

@@ -9,6 +9,17 @@ module.exports = {
         // Enforces error handling in callbacks (node environment)
         "handle-callback-err": 0,
 
+        /*
+         * In Node.js, the behavior of the Buffer constructor is different
+         * depending on the type of its argument. Passing an argument from
+         * user input to Buffer() without validating its type can lead to
+         * security vulnerabilities such as remote memory disclosure and
+         * denial of service. As a result, the Buffer constructor has been
+         * deprecated and should not be used. Use the producer methods
+         * Buffer.from, Buffer.alloc, and Buffer.allocUnsafe instead.
+         */
+        "no-buffer-constructor": "error",
+
         // Disallow mixing regular variable and require declarations
         "no-mixed-requires": [ 0, false ],
 
