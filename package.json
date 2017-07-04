@@ -32,6 +32,7 @@
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-unicorn": "^2.1.2",
+    "eslint-plugin-vue": "^3.5.0",
     "npm-check": "^5.4.4"
   },
   "peerDependencies": {

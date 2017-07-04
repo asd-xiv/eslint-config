@@ -1,5 +1,5 @@
 module.exports = {
-    plugins: [ "import" ],
+    extends: [ "plugin:vue/recommended" ],
     rules  : {
         "import/extensions": [ ".js", ".vue" ],
     },
