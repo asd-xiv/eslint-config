@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint ./rules/*",
     "install:modules": "rm -f package-lock.json && rm -rf node_modules && npm i",
-    "update": "npm-check"
+    "update": "npm-check",
+    "prepare": "npm run lint"
   },
   "homepage": "https://github.com/codemachiner/eslint-config",
   "repository": {
