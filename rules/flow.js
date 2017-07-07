@@ -92,12 +92,7 @@ module.exports = {
          * Enforces sorting of Object annotations.
          * Same as eslint "sort-keys"
          */
-        "flowtype/sort-keys": [
-            "warn", "asc", {
-                caseSensitive: true,
-                natural      : true,
-            },
-        ],
+        "flowtype/sort-keys": "off",
 
         /*
          * Enforces consistent spacing after the type annotation colon.
