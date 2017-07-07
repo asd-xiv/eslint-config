@@ -1,6 +1,6 @@
 {
   "name": "@codemachiner/eslint-config",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
   "scripts": {
