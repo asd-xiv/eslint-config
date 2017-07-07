@@ -308,7 +308,7 @@ module.exports = {
         // Checks all property definitions of object expressions and verifies
         // That all variables are sorted alphabetically.
         "sort-keys": [
-            "error", "asc", {
+            "warn", "asc", {
                 caseSensitive: true,
                 natural      : true,
             },
@@ -319,7 +319,7 @@ module.exports = {
          * all variables are sorted alphabetically. The default configuration
          * of the rule is case-sensitive.
          */
-        "sort-vars": "error",
+        "sort-vars": "warn",
 
         /*
          * Enforce consistency of spacing before blocks. It is only applied on

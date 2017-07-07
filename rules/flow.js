@@ -93,7 +93,7 @@ module.exports = {
          * Same as eslint "sort-keys"
          */
         "flowtype/sort-keys": [
-            "error", "asc", {
+            "warn", "asc", {
                 caseSensitive: true,
                 natural      : true,
             },
