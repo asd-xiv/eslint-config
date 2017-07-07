@@ -7,7 +7,29 @@ module.exports = {
         node   : true,
     },
     extends: [
-        "./frontend",
+        "./import",
+        "./unicorn",
+        "./es6",
+        "./errors",
+        "./variables",
+        "./best.practices",
+        "./style",
+        "./jsdoc",
+        "./comments",
+        "./flow",
+        "./promise",
         "./node",
     ].map( require.resolve ),
+    parserOptions: {
+        ecmaFeatures: {
+            experimentalObjectRestSpread: true,
+            impliedStrict               : true,
+        },
+        ecmaVersion: 2017,
+        sourceType : "module",
+    },
+    plugins: [
+        "json",
+        "no-inferred-method-name",
+    ],
 }

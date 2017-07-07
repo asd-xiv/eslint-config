@@ -29,6 +29,7 @@ module.exports = {
     },
     plugins: [
         "json",
+        "html",
         "no-inferred-method-name",
     ],
 }
