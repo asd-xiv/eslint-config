@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
     rules: {
         // Require braces in arrow function body

@@ -4,8 +4,9 @@
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
   "scripts": {
-    "install:modules": "rm -rf node_modules && npm i",
-    "upgrade": "npm-check -u"
+    "lint": "eslint ./rules/*",
+    "install:modules": "rm -f package-lock.json && rm -rf node_modules && npm i",
+    "update": "npm-check"
   },
   "homepage": "https://github.com/codemachiner/eslint-config",
   "repository": {
@@ -28,7 +29,7 @@
   "devDependencies": {
     "eslint": "^4.1.1",
     "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-unicorn": "^2.1.2",
@@ -37,7 +38,7 @@
   },
   "peerDependencies": {
     "eslint": "^4.1.1",
-    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-flowtype": "^2.34.1",

@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
     rules: {
         // Disallow trailing commas in object literals

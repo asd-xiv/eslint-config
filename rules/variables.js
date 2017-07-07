@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
     rules: {
         // Enforce or disallow variable initializations at definition

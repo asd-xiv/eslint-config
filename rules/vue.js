@@ -1,5 +1,6 @@
+/* eslint-env node */
+
 module.exports = {
-    parser : "vue-eslint-parser",
     plugins: [ "vue" ],
     rules  : {
         "vue/html-end-tags"           : "off",
@@ -30,8 +31,5 @@ module.exports = {
         "vue/require-v-for-key"       : "error",
         "vue/v-bind-style"            : "off",
         "vue/v-on-style"              : "off",
-    },
-    settings: {
-        "import/extensions": [ ".js", ".vue" ],
     },
 }

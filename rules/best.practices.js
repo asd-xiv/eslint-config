@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
     rules: {
         // Enforces getter/setter pairs in objects
