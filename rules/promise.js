@@ -53,9 +53,9 @@ module.exports = {
         "promise/avoid-new": "warn",
 
         // Prefer await to then() for reading Promise values
-        "prefer-await-to-then": "warn",
+        "promise/prefer-await-to-then": "warn",
 
         // Prefer async/await to the callback pattern
-        "prefer-await-to-callbacks": "warn",
+        "promise/prefer-await-to-callbacks": "warn",
     },
 }
