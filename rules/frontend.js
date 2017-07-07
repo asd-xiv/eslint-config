@@ -17,6 +17,7 @@ module.exports = {
         "./jsdoc",
         "./comments",
         "./flow",
+        "./promise",
     ].map( require.resolve ),
     parserOptions: {
         ecmaFeatures: {
