@@ -7,12 +7,7 @@ module.exports = {
          * letter as the first word character in a comment. This rule will not
          * issue warnings when non-cased letters are used.
          */
-        "capitalized-comments": [
-            "error", "always", {
-                ignoreConsecutiveComments: true,
-                ignoreInlineComments     : true,
-            },
-        ],
+        "capitalized-comments": "off",
 
         /*
          * Enforces consistent position of line comments. Block comments are
