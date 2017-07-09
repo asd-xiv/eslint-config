@@ -18,6 +18,7 @@ module.exports = {
         "./comments",
         "./flow",
         "./promise",
+        "./html",
     ].map( require.resolve ),
     parserOptions: {
         ecmaFeatures: {
@@ -29,7 +30,6 @@ module.exports = {
     },
     plugins: [
         "json",
-        "html",
         "no-inferred-method-name",
     ],
 }
