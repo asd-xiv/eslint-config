@@ -4,7 +4,7 @@
 [![](https://david-dm.org/codemachiner/eslint-config/dev-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=dev)
 [![](https://david-dm.org/codemachiner/eslint-config/peer-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=peer)
 
-Mostly based on the Airbnb styles.
+~Mostly based on the Airbnb styles.~
 
 ## Installation & Usage
 
@@ -41,27 +41,84 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
 }
 ```
 
-## Plugins used
+## ESLint plugins used
 
-* [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax. 
-Can be loaded separately from `@codemachiner/eslint-config/rules/import`
+### eslint-plugin-import 
 
-* [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json) - Lint JSON files
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-import)
 
-* [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
-Can be loaded separately from `@codemachiner/eslint-config/rules/promise`
+Support for ES2015+ (ES6+) import/export syntax.  
+Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js).
 
-* [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn) - Various awesome ESLint rules
-Can be loaded separately from `@codemachiner/eslint-config/rules/unicorn`
 
-* [eslint-plugin-flowtype](https://www.npmjs.com/package/eslint-plugin-flowtype) - Flow is a static type checker for your JavaScript code. It does a lot of work to make you more productive. Making you code faster, smarter, more confidently, and to a bigger scale.
-Can be loaded separately from `@codemachiner/eslint-config/rules/flow`
+### eslint-plugin-json
 
-* [eslint-plugin-no-inferred-method-name](https://www.npmjs.com/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-json.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-json)
 
-* [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files. Included in the `frontend` stack.
+Lint JSON files.
 
-## Bio
+### eslint-plugin-promise
 
-* [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-promise.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-promise)
+
+Enforce best practices for JavaScript promises.  
+Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js).
+
+### eslint-plugin-unicorn
+
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-unicorn.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-unicorn)
+
+Various awesome ESLint rules.  
+Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js).
+
+### eslint-plugin-flowtype
+
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-flowtype.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-flowtype)
+
+[Flow](https://flow.org/) is a static type checker made by Facebook. It does a lot of work to make you more productive. Making you code faster, smarter, more confidently, and to a bigger scale.
+
+Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js).
+
+### eslint-plugin-html
+
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-html.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-html)
+
+Allows linting and fixing inline scripts contained in HTML files. 
+
+Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js).
+
+### eslint-plugin-no-inferred-method-name
+
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-no-inferred-method-name.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
+
+In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+
+
+## Using with SublimeText
+
+### SublimeLinter
+
+[![SublimeLinter - Package Control](https://packagecontrol.herokuapp.com/downloads/SublimeLinter.svg?style=flat-square)](https://packagecontrol.io/packages/SublimeLinter)
+
+Sublime Text 3 plugin that provides a framework for linting code. Whatever language you code in, SublimeLinter can help you write cleaner, better, more bug-free code. SublimeLinter has been designed to provide maximum flexibility and usability for users and maximum simplicity for linter authors.
+
+### SublimeLinter-eslint
+
+[![SublimeLinter-contrib-eslint - Package Control](https://packagecontrol.herokuapp.com/downloads/SublimeLinter-contrib-eslint.svg?style=flat-square)](https://packagecontrol.io/packages/SublimeLinter-contrib-eslint)
+
+Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It will be used with files that have the "javascript" syntax.
+
+### ESLint-Formatter
+
+[![ESLint-Formatter - Package Control](https://packagecontrol.herokuapp.com/downloads/ESLint-Formatter.svg?style=flat-square)](https://packagecontrol.io/packages/ESLint-Formatter)
+
+Sublime Text 3 plugin to autoformat your javascript code according to the ESLint configuration files you already have.
+
+## Example
+
+## Reading material
+
+* [Elements of JavaScript Style](https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f) - while not related to ESLint, it set's you on the path of structuring and organizing yourself better.
+* [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) - Common mistakes using promises.
+* [Stack Overflow: What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies)
 * [Configuring ESLint](http://eslint.org/docs/user-guide/configuring)
