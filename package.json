@@ -4,7 +4,9 @@
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
   "scripts": {
-    "lint": "eslint ./rules/*",
+    "lint:js": "eslint ./rules/*",
+    "lint:md": "markdownlint *.md",
+    "lint": "npm run lint:js && npm run lint:md",
     "install:modules": "rm -f package-lock.json && rm -rf node_modules && npm i",
     "update": "npm-check",
     "prepare": "npm run lint",
@@ -38,6 +40,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-unicorn": "^2.1.2",
     "eslint-plugin-vue": "^3.5.0",
+    "markdownlint-cli": "^0.3.1",
     "npm-check": "^5.4.4"
   },
   "peerDependencies": {

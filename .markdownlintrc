@@ -1,0 +1,29 @@
+{
+    "default": true,
+
+    // MD009 - Trailing spaces
+    //
+    // Triggered on any lines that end with whitespace.
+    "no-trailing-spaces": {
+        // Allows an exception to this rule for a specific amount of trailing
+        // spaces used to insert an explicit line break/br element. For
+        // example, set br_spaces to 2 to allow exactly 2 spaces at the end of
+        // a line.
+        "br_spaces": 2,
+
+        // Using spaces to indent blank lines inside a list item is usually
+        // not necessary, but some parsers require it. Set the
+        // list_item_empty_lines parameter to true to allow this.
+        "list_item_empty_lines": true
+    },
+
+    // MD013 - Line length
+    //
+    // Triggered when there are lines that are longer than the configured line
+    // length (default: 80 characters). To fix this, split the line up into
+    // multiple lines.
+    "line-length": {
+        "line_length": 400,
+        "headers": 80
+    }
+}
