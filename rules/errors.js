@@ -97,5 +97,8 @@ module.exports = {
         // Ensure that the results of typeof are compared against a valid
         // String
         "valid-typeof": "error",
+
+        // Enforces that a return statement is present in property getters
+        "getter-return": "error",
     },
 }
