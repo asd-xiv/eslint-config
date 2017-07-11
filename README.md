@@ -4,7 +4,37 @@
 [![](https://david-dm.org/codemachiner/eslint-config/dev-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=dev)
 [![](https://david-dm.org/codemachiner/eslint-config/peer-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=peer)
 
-~Mostly based on the Airbnb styles.~
+> JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
+>
+> [`"semi": [ "error", "never" ]`](http://eslint.org/docs/rules/semi) :godmode: ... [the horror](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding) :goberserk:
+
+Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb), [eslint-config-google](https://github.com/google/eslint-config-google), [more](https://www.npmjs.com/search?q=+eslint-config-)
+
+---
+
+<!-- MarkdownTOC depth=2 autolink=true indent="    " -->
+
+- [Installation & Usage](#installation--usage)
+- [ESLint plugins used](#eslint-plugins-used)
+    - [eslint-plugin-import](#eslint-plugin-import)
+    - [eslint-plugin-json](#eslint-plugin-json)
+    - [eslint-plugin-promise](#eslint-plugin-promise)
+    - [eslint-plugin-unicorn](#eslint-plugin-unicorn)
+    - [eslint-plugin-flowtype](#eslint-plugin-flowtype)
+    - [eslint-plugin-html](#eslint-plugin-html)
+    - [eslint-plugin-no-inferred-method-name](#eslint-plugin-no-inferred-method-name)
+- [Using with SublimeText](#using-with-sublimetext)
+    - [SublimeLinter](#sublimelinter)
+    - [SublimeLinter-eslint](#sublimelinter-eslint)
+- [Formatting your code using ESLint rules](#formatting-your-code-using-eslint-rules)
+    - [ESLint-Formatter](#eslint-formatter)
+    - [Watch npm script](#watch-npm-script)
+- [Example](#example)
+- [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
+- [Changelog](#changelog)
+    - [Last release: 2.3.2 - 11 July 2017](#last-release-232---11-july-2017)
+
+<!-- /MarkdownTOC -->
 
 ## Installation & Usage
 
@@ -21,7 +51,7 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.1.1",
+    "eslint": "^4.2.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
@@ -134,24 +164,55 @@ Sublime Text 3 plugin that provides a framework for linting code. Whatever langu
 
 Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It will be used with files that have the "javascript" syntax.
 
-### Formatting your code using ESLint rules
+## Formatting your code using ESLint rules
 
-#### 1. ESLint-Formatter
+### ESLint-Formatter
 
 [![ESLint-Formatter - Package Control](https://packagecontrol.herokuapp.com/downloads/ESLint-Formatter.svg?style=flat-square)](https://packagecontrol.io/packages/ESLint-Formatter)
 
-Sublime Text 3 plugin to autoformat your javascript code according to the ESLint configuration files you already have.
+Sublime Text 3 plugin to auto-format your javascript code according to the ESLint configuration files you already have.
 
 While using the plugin with `eslint` you will notice a bit of delay when formatting. This is because of the node startup time on each lint.  
 You [can configure it](https://github.com/TheSavior/ESLint-Formatter#performance) to use [`eslint_d`](https://github.com/mantoni/eslint_d.js) which starts a server in the background and interfaces `eslint`, making the linting (and fixing) almost instant.
 
-#### 2. Watch npm script
+### Watch npm script
 
 ## Example
 
 ## Do some reading while you're at it
 
-* [Elements of JavaScript Style](https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f) - while not related to ESLint, it set's you on the path of structuring and organizing yourself better.
-* [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) - Common mistakes using promises.
-* [Stack Overflow: What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies)
-* [Configuring ESLint](http://eslint.org/docs/user-guide/configuring)
+- [Detect Problems in JavaScript Automatically with ESLint](https://davidwalsh.name/eslint)
+- [Elements of JavaScript Style](https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f) - while not related to ESLint, it set's you on the path of structuring and organizing yourself better.
+- [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) - Common mistakes using promises.
+- [Stack Overflow: What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies)
+- [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
+- [Configuring ESLint](http://eslint.org/docs/user-guide/configuring)
+
+## Changelog
+
+History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
+
+### Last release: 2.3.2 - 11 July 2017
+
+#### Added
+
+- ESLint 4.2: new rule [`getter-return`](http://eslint.org/docs/rules/getter-return) -  Enforces that a return statement is present in property getters.
+    - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js)
+    - Current value: `"getter-return": "error"`
+
+#### Changed
+
+- ESLint 4.2 allows [`no-sync`](http://eslint.org/docs/rules/no-sync) using sync methods on top level.
+    - Defined in [`node.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/node.js)
+    - Current value:
+
+    ```javascript
+    "no-sync": [
+        "error", {
+            allowAtRootLevel: true,
+        },
+    ],
+    ```
+- [`no-unexpected-multiline`](http://eslint.org/docs/rules/no-unexpected-multiline) to protect against edge cases of not using semicolons
+    - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
+    - Current value: `"no-unexpected-multiline": "error"`
