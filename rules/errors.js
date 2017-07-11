@@ -84,8 +84,9 @@ module.exports = {
         // Trailing comma following the last element.
         "no-sparse-arrays": "error",
 
-        // Avoid code that looks like two expressions but is actually one
-        "no-unexpected-multiline": 0,
+        // Disallows confusing multiline expressions where a newline
+        // looks like it is ending a statement, but is not.
+        "no-unexpected-multiline": "error",
 
         // Disallow unreachable statements after a return, throw, continue, or
         // Break statement
