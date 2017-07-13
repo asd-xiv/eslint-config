@@ -22,6 +22,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [eslint-plugin-unicorn](#eslint-plugin-unicorn)
     - [eslint-plugin-flowtype](#eslint-plugin-flowtype)
     - [eslint-plugin-html](#eslint-plugin-html)
+    - [eslint-plugin-react](#eslint-plugin-react)
     - [eslint-plugin-no-inferred-method-name](#eslint-plugin-no-inferred-method-name)
 - [Using with SublimeText](#using-with-sublimetext)
     - [SublimeLinter](#sublimelinter)
@@ -29,10 +30,10 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Formatting your code using ESLint rules](#formatting-your-code-using-eslint-rules)
     - [ESLint-Formatter](#eslint-formatter)
     - [Watch npm script](#watch-npm-script)
-- [Example](#example)
+- [Example of .eslintrc.js](#example-of-eslintrcjs)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
-    - [Last release: 2.3.2 - 11 July 2017](#last-release-232---11-july-2017)
+    - [Last release: 2.4.0 - 13 July 2017](#last-release-240---13-july-2017)
 
 <!-- /MarkdownTOC -->
 
@@ -57,7 +58,6 @@ It should be something like this:
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-html": "^3.0.0",
     "eslint-plugin-unicorn": "^2.1.2"
 }
 ...
@@ -90,6 +90,7 @@ The [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules
   ≡ import.js
   ≡ jsdoc.js
   ≡ promise.js
+  ≡ react.js    <-- not in `frontend`
   ≡ style.js
   ≡ unicorn.js
   ≡ variables.js
@@ -142,6 +143,26 @@ Allows linting and fixing inline scripts contained in HTML files.
 
 Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js).
 
+You will need to install it separately since it's not in the `peerDependencies` list.
+
+```bash
+npm install eslint-plugin-html --save-dev
+```
+
+### eslint-plugin-react
+
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-react.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-react)
+
+React specific linting rules for ESLint.
+
+Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js).
+
+You will need to install it separately since it's not in the `peerDependencies` list.
+
+```bash
+npm install eslint-plugin-react --save-dev
+```
+
 ### eslint-plugin-no-inferred-method-name
 
 [![npm](https://img.shields.io/npm/dm/eslint-plugin-no-inferred-method-name.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
@@ -169,9 +190,6 @@ Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It
 
 ```json
 {
-    "folders": [ {
-            "path": "."
-    } ],
     "SublimeLinter": {
         "linters": {
             "eslint_d": {
@@ -196,7 +214,42 @@ While using the plugin with `eslint` you will notice a delay when formatting. Th
 
 ### Watch npm script
 
-## Example
+## Example of .eslintrc.js
+
+```javascript
+module.exports = {
+    root  : true,
+    parser: "babel-eslint",
+
+    extends: [
+        "@codemachiner/eslint-config/rules/frontend",
+        "@codemachiner/eslint-config/rules/react",
+    ],
+
+    settings: {
+        "import/resolver": {
+            webpack: {
+                config: "./webpack.config.js",
+            },
+        },
+
+        // Recommended if you use eslint_d
+        "import/cache": {
+            lifetime: 5,
+        },
+    },
+
+    rules: {
+        // Don"t require .jsx extension when importing
+        "import/extensions": [
+            "error", "always", {
+                js : "never",
+                jsx: "never",
+            },
+        ],
+    },
+}
+```
 
 ## Do some reading while you're at it
 
@@ -211,27 +264,10 @@ While using the plugin with `eslint` you will notice a delay when formatting. Th
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-### Last release: 2.3.2 - 11 July 2017
+### Last release: 2.4.0 - 13 July 2017
+
+React support
 
 #### Added
 
-- ESLint 4.2: new rule [`getter-return`](http://eslint.org/docs/rules/getter-return) -  Enforces that a return statement is present in property getters.
-    - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js)
-    - Current value: `"getter-return": "error"`
-
-#### Changed
-
-- ESLint 4.2 allows [`no-sync`](http://eslint.org/docs/rules/no-sync) using sync methods on top level.
-    - Defined in [`node.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/node.js)
-    - Current value:
-
-    ```javascript
-    "no-sync": [
-        "error", {
-            allowAtRootLevel: true,
-        },
-    ],
-    ```
-- [`no-unexpected-multiline`](http://eslint.org/docs/rules/no-unexpected-multiline) to protect against edge cases of not using semicolons
-    - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
-    - Current value: `"no-unexpected-multiline": "error"`
+- `eslint-plugin-react` with recommended rules in [`/rules/react.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)

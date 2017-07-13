@@ -1,3 +1,5 @@
+<!-- markdownlint-disable no-duplicate-header -->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -7,7 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [2.3.2] - 11 July 2017
+## [2.4.0] - 13 July 2017
+
+React support
+
+### Added
+
+- `eslint-plugin-react` with recommended rules in [`/rules/react.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)
+
+## 2.3.2 - 11 July 2017
 
 ### Added
 
@@ -32,5 +42,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.3.2...HEAD
-[2.3.2]: https://github.com/codemachiner/eslint-rules/compare/v2.3.1...v2.3.2
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.4.0...HEAD
+[2.4.0]: https://github.com/codemachiner/eslint-rules/compare/v2.3.2...v2.4.0

@@ -113,5 +113,14 @@
     "line-length": {
         "line_length": 400,
         "headers": 80
-    }
+    },
+
+    /*
+     * MD024 - Multiple headers with the same content
+     *
+     * Triggered if there are multiple headers in the document that have the
+     * same text.
+     */
+
+    "no-duplicate-header": true
 }
