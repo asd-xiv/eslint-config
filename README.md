@@ -25,7 +25,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [eslint-plugin-no-inferred-method-name](#eslint-plugin-no-inferred-method-name)
 - [Using with SublimeText](#using-with-sublimetext)
     - [SublimeLinter](#sublimelinter)
-    - [SublimeLinter-eslint](#sublimelinter-eslint)
+    - [Sublime​Linter-contrib-eslint](#sublime%E2%80%8Blinter-contrib-eslint)
 - [Formatting your code using ESLint rules](#formatting-your-code-using-eslint-rules)
     - [ESLint-Formatter](#eslint-formatter)
     - [Watch npm script](#watch-npm-script)
@@ -93,7 +93,6 @@ The [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules
   ≡ style.js
   ≡ unicorn.js
   ≡ variables.js
-  ≡ vue.js      <-- not in `backend`
   ≡ node.js     <-- not in `frontend`
 ...
 ```
@@ -158,11 +157,32 @@ This custom ESLint rule will identify instances where a function name is being c
 
 Sublime Text 3 plugin that provides a framework for linting code. Whatever language you code in, SublimeLinter can help you write cleaner, better, more bug-free code. SublimeLinter has been designed to provide maximum flexibility and usability for users and maximum simplicity for linter authors.
 
-### SublimeLinter-eslint
+### Sublime​Linter-contrib-eslint
 
 [![SublimeLinter-contrib-eslint - Package Control](https://packagecontrol.herokuapp.com/downloads/SublimeLinter-contrib-eslint.svg?style=flat-square)](https://packagecontrol.io/packages/SublimeLinter-contrib-eslint)
 
 Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It will be used with files that have the "javascript" syntax.
+
+**:godmode: TIP 1:** use [`SublimeLinter-contrib-eslint_d`](https://github.com/roadhump/SublimeLinter-contrib-eslint_d) for "as you type lightning fast" linting.
+
+**:godmode: TIP 1.1:** in order to make `eslint-plugin-import` and `.eslintignore` work you need to add `chdir` to your `*.sublime-project` file:
+
+```json
+{
+    "folders": [ {
+            "path": "."
+    } ],
+    "SublimeLinter": {
+        "linters": {
+            "eslint_d": {
+                "chdir": "${project}"
+            }
+        }
+    }
+}
+```
+
+Read more here: [fix Sublime integration without workaround](https://github.com/benmosher/eslint-plugin-import/issues/146) and [Relative stdin-filename breaks my plugin](https://github.com/roadhump/SublimeLinter-eslint/issues/58)
 
 ## Formatting your code using ESLint rules
 
@@ -172,8 +192,7 @@ Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It
 
 Sublime Text 3 plugin to auto-format your javascript code according to the ESLint configuration files you already have.
 
-While using the plugin with `eslint` you will notice a bit of delay when formatting. This is because of the node startup time on each lint.  
-You [can configure it](https://github.com/TheSavior/ESLint-Formatter#performance) to use [`eslint_d`](https://github.com/mantoni/eslint_d.js) which starts a server in the background and interfaces `eslint`, making the linting (and fixing) almost instant.
+While using the plugin with `eslint` you will notice a delay when formatting. This is because of the node startup time on each lint. You [can configure it](https://github.com/TheSavior/ESLint-Formatter#performance) to use [`eslint_d`](https://github.com/mantoni/eslint_d.js) which starts a server in the background and interfaces `eslint`, making the formatting almost instant (there's still the .
 
 ### Watch npm script
 
