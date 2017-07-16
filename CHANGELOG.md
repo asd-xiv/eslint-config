@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.5.0] - 16 July 2017
+
+Added [`eslint-plugin-compat`](https://www.npmjs.com/package/eslint-plugin-compat) to show browser compatibility (using [caniuse](http://caniuse.com/)) of certain functionalities, ex. `fetch`.
+
+### Added
+
+- `eslint-plugin-compat` with rules in [`/rules/compat.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js)
+
+### Changed
+
+- Turn off `react/require-optimization`. Better put these kind of rules in your project's `.eslintrc`
+
 ## [2.4.0] - 13 July 2017
 
 React support
@@ -42,5 +54,6 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.4.0...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.5.0...HEAD
+[2.5.0]: https://github.com/codemachiner/eslint-rules/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/codemachiner/eslint-rules/compare/v2.3.2...v2.4.0

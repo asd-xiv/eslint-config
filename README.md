@@ -15,6 +15,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 <!-- MarkdownTOC depth=2 autolink=true indent="    " -->
 
 - [Installation & Usage](#installation--usage)
+- [Rule sets](#rule-sets)
 - [ESLint plugins used](#eslint-plugins-used)
     - [eslint-plugin-import](#eslint-plugin-import)
     - [eslint-plugin-json](#eslint-plugin-json)
@@ -23,17 +24,21 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [eslint-plugin-flowtype](#eslint-plugin-flowtype)
     - [eslint-plugin-html](#eslint-plugin-html)
     - [eslint-plugin-react](#eslint-plugin-react)
+    - [eslint-plugin-compat](#eslint-plugin-compat)
     - [eslint-plugin-no-inferred-method-name](#eslint-plugin-no-inferred-method-name)
 - [Using with SublimeText](#using-with-sublimetext)
     - [SublimeLinter](#sublimelinter)
     - [Sublime​Linter-contrib-eslint](#sublime%E2%80%8Blinter-contrib-eslint)
+    - [Fuzzy​File​Path](#fuzzy%E2%80%8Bfile%E2%80%8Bpath)
 - [Formatting your code using ESLint rules](#formatting-your-code-using-eslint-rules)
     - [ESLint-Formatter](#eslint-formatter)
     - [Watch npm script](#watch-npm-script)
-- [Example of .eslintrc.js](#example-of-eslintrcjs)
+- [Example of `.eslintrc.js` using `babel-eslint` and `eslint-import-resolver-webpack`](#example-of-eslintrcjs-using-babel-eslint-and-eslint-import-resolver-webpack)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
-    - [Last release: 2.4.0 - 13 July 2017](#last-release-240---13-july-2017)
+- [2.5.0 - 16 July 2017](#250---16-july-2017)
+    - [Added](#added)
+    - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
 
@@ -73,7 +78,9 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
 }
 ```
 
-The [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) files are just bundles, each loading it's specific rule files.
+## Rule sets
+
+[`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) files are just bundles, each loading it's specific set of rule files.
 
 ```text
 ...
@@ -81,20 +88,23 @@ The [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules
   ≡ frontend.js
   ≡ backend.js
 
-  ≡ best.practices.js
-  ≡ comments.js
-  ≡ errors.js
-  ≡ es6.js
-  ≡ flow.js
-  ≡ html.js     <-- not in `backend`
-  ≡ import.js
-  ≡ jsdoc.js
-  ≡ promise.js
-  ≡ react.js    <-- not in `frontend`
-  ≡ style.js
-  ≡ unicorn.js
-  ≡ variables.js
-  ≡ node.js     <-- not in `frontend`
+  ≡ best.practices.js   |
+  ≡ comments.js         |
+  ≡ errors.js           |
+  ≡ es6.js              |
+  ≡ flow.js             |
+  ≡ import.js           |> included `frontend` & `backend`
+  ≡ jsdoc.js            |
+  ≡ promise.js          |
+  ≡ style.js            |
+  ≡ unicorn.js          |
+  ≡ variables.js        |
+
+  ≡ html.js             |
+  ≡ react.js            |> only in `frontend`
+  ≡ compat.js           |
+
+  ≡ node.js             |> only in `backend`
 ...
 ```
 
@@ -105,7 +115,8 @@ The [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules
 [![npm](https://img.shields.io/npm/dm/eslint-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-import)
 
 Support for ES2015+ (ES6+) import/export syntax.  
-Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js).
+
+See rules in [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js).
 
 ### eslint-plugin-json
 
@@ -113,19 +124,23 @@ Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/es
 
 Lint JSON files.
 
+Get's loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) plugin definition.
+
 ### eslint-plugin-promise
 
 [![npm](https://img.shields.io/npm/dm/eslint-plugin-promise.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-promise)
 
-Enforce best practices for JavaScript promises.  
-Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js).
+Enforce best practices for JavaScript promises.
+
+See rules in [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js).
 
 ### eslint-plugin-unicorn
 
 [![npm](https://img.shields.io/npm/dm/eslint-plugin-unicorn.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-unicorn)
 
 Various awesome ESLint rules.  
-Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js).
+
+See rules in [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js).
 
 ### eslint-plugin-flowtype
 
@@ -133,7 +148,7 @@ Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/es
 
 [Flow](https://flow.org/) is a static type checker made by Facebook. It does a lot of work to make you more productive. Making you code faster, smarter, more confidently, and to a bigger scale.
 
-Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js).
+See rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js).
 
 ### eslint-plugin-html
 
@@ -141,7 +156,7 @@ Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/es
 
 Allows linting and fixing inline scripts contained in HTML files.
 
-Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js).
+See rules in [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js).
 
 You will need to install it separately since it's not in the `peerDependencies` list.
 
@@ -155,7 +170,7 @@ npm install eslint-plugin-html --save-dev
 
 React specific linting rules for ESLint.
 
-Can be loaded separately into your .eslintrc's `extends` from [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js).
+See rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js).
 
 You will need to install it separately since it's not in the `peerDependencies` list.
 
@@ -163,12 +178,36 @@ You will need to install it separately since it's not in the `peerDependencies` 
 npm install eslint-plugin-react --save-dev
 ```
 
+### eslint-plugin-compat
+
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-compat.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-compat)
+
+Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/)). Uses `browserslist` definition in your `package.json`.
+
+```json
+"browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 ie versions"
+],
+```
+
+You will need to install it separately since it's not in the `peerDependencies` list.
+
+```bash
+npm install eslint-plugin-compat --save-dev
+```
+
+See rules in [`@codemachiner/eslint-config/rules/compat`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js).
+
 ### eslint-plugin-no-inferred-method-name
 
 [![npm](https://img.shields.io/npm/dm/eslint-plugin-no-inferred-method-name.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
 
 In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead.
 This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+
+Get's loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) plugin definition.
 
 ## Using with SublimeText
 
@@ -184,9 +223,9 @@ Sublime Text 3 plugin that provides a framework for linting code. Whatever langu
 
 Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It will be used with files that have the "javascript" syntax.
 
-**:godmode: TIP 1:** use [`SublimeLinter-contrib-eslint_d`](https://github.com/roadhump/SublimeLinter-contrib-eslint_d) for "as you type lightning fast" linting.
+**:godmode: TIP 1:** Use [`SublimeLinter-contrib-eslint_d`](https://github.com/roadhump/SublimeLinter-contrib-eslint_d) for "as you type lightning fast" linting.
 
-**:godmode: TIP 1.1:** in order to make `eslint-plugin-import` and `.eslintignore` work you need to add `chdir` to your `*.sublime-project` file:
+**:godmode: TIP 1.1:** In order to make `eslint-plugin-import` and `.eslintignore` work you need to add `chdir` to your `*.sublime-project` file:
 
 ```json
 {
@@ -202,6 +241,41 @@ Sublime Text 3 plugin for SublimeLinter that provides an interface to ESLint. It
 
 Read more here: [fix Sublime integration without workaround](https://github.com/benmosher/eslint-plugin-import/issues/146) and [Relative stdin-filename breaks my plugin](https://github.com/roadhump/SublimeLinter-eslint/issues/58)
 
+### Fuzzy​File​Path
+
+[![Package Control](https://packagecontrol.herokuapp.com/downloads/FuzzyFilePath.svg?style=flat-square)](https://packagecontrol.io/packages/FuzzyFilePath)
+
+Fuzzy search and insert filenames inside your current project directory. Highly customizable.
+
+Example config for ES6 import:
+
+```javascript
+...
+"scopes": [
+    {
+        // ES6 import
+        "scope"         : "\\.js\\s",
+        "auto"          : true,
+        "relative"      : false,
+        "base_directory": false,
+        "prefix"        : [ "from", "import" ],
+        "extensions"    : [ "js", "jsx", "scss", "sass", "css" ],
+
+        "replace_on_insert": [
+            // Remove extensions from path
+            [ "\\.js$", "" ],
+            [ "\\.jsx$", "" ],
+            [ "\\.json$", "" ],
+
+            // Remove base path and setup Webpack to resolve
+            [ "\\/source/", "" ],
+            [ "\\/assets/", "" ]
+        ],
+    },
+]
+...
+```
+
 ## Formatting your code using ESLint rules
 
 ### ESLint-Formatter
@@ -210,23 +284,23 @@ Read more here: [fix Sublime integration without workaround](https://github.com/
 
 Sublime Text 3 plugin to auto-format your javascript code according to the ESLint configuration files you already have.
 
-While using the plugin with `eslint` you will notice a delay when formatting. This is because of the node startup time on each lint. You [can configure it](https://github.com/TheSavior/ESLint-Formatter#performance) to use [`eslint_d`](https://github.com/mantoni/eslint_d.js) which starts a server in the background and interfaces `eslint`, making the formatting almost instant (there's still the .
+While using the plugin with `eslint` you will notice a delay when formatting. This is because of the node startup time on each lint. You [can configure it](https://github.com/TheSavior/ESLint-Formatter#performance) to use [`eslint_d`](https://github.com/mantoni/eslint_d.js) which starts a server in the background and interfaces `eslint`, making the formatting almost instant.
 
 ### Watch npm script
 
-## Example of .eslintrc.js
+## Example of `.eslintrc.js` using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack)
 
 ```javascript
+/* eslint-env node */
+
 module.exports = {
     root  : true,
     parser: "babel-eslint",
 
-    extends: [
-        "@codemachiner/eslint-config/rules/frontend",
-        "@codemachiner/eslint-config/rules/react",
-    ],
+    extends: [ "@codemachiner/eslint-config/rules/frontend" ],
 
     settings: {
+        // Use webpack to resolve modules in imports
         "import/resolver": {
             webpack: {
                 config: "./webpack.config.js",
@@ -237,8 +311,13 @@ module.exports = {
         "import/cache": {
             lifetime: 5,
         },
+
+        // A list of regex strings that, if matched by a path, will not report
+        // the matching module if no exports are found.
+        "import/ignore": [ "\.(scss|less|css)$" ],
     },
 
+    // Add your custom rules here
     rules: {
         // Don"t require .jsx extension when importing
         "import/extensions": [
@@ -264,10 +343,14 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-### Last release: 2.4.0 - 13 July 2017
+## 2.5.0 - 16 July 2017
 
-React support
+Added [`eslint-plugin-compat`](https://www.npmjs.com/package/eslint-plugin-compat) to show browser compatibility (using [caniuse](http://caniuse.com/)) of certain functionalities, ex. `fetch`.
 
-#### Added
+### Added
 
-- `eslint-plugin-react` with recommended rules in [`/rules/react.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)
+- `eslint-plugin-compat` with rules in [`/rules/compat.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js)
+
+### Changed
+
+- Turn off `react/require-optimization`. Better put these kind of rules in your project's `.eslintrc`
