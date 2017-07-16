@@ -74,11 +74,7 @@ module.exports = {
         "react/require-render-return": "error",
 
         // Enforce React components to have a shouldComponentUpdate method
-        "react/require-optimization": [
-            "error", {
-                allowDecorators: [ "customDecorators" ],
-            },
-        ],
+        "react/require-optimization": "off",
 
         // Enforces consistent naming for boolean props
         // "react/boolean-prop-naming": [
