@@ -16,9 +16,11 @@ module.exports = {
         "./style",
         "./jsdoc",
         "./comments",
+        "./compat",
         "./flow",
         "./promise",
         "./html",
+        "./react",
     ].map( require.resolve ),
     parserOptions: {
         ecmaFeatures: {
