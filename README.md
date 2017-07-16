@@ -33,7 +33,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Formatting your code using ESLint rules](#formatting-your-code-using-eslint-rules)
     - [ESLint-Formatter](#eslint-formatter)
     - [Watch npm script](#watch-npm-script)
-- [Example of `.eslintrc.js` using `babel-eslint` and `eslint-import-resolver-webpack`](#example-of-eslintrcjs-using-babel-eslint-and-eslint-import-resolver-webpack)
+- [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
 - [2.5.0 - 16 July 2017](#250---16-july-2017)
@@ -259,7 +259,7 @@ Example config for ES6 import:
         "relative"      : false,
         "base_directory": false,
         "prefix"        : [ "from", "import" ],
-        "extensions"    : [ "js", "jsx", "scss", "sass", "css" ],
+        "extensions"    : [ "js", "jsx", "sass", "scss", "less", "css" ],
 
         "replace_on_insert": [
             // Remove extensions from path
@@ -288,7 +288,9 @@ While using the plugin with `eslint` you will notice a delay when formatting. Th
 
 ### Watch npm script
 
-## Example of `.eslintrc.js` using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack)
+## Example of `.eslintrc.js`
+
+Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack)
 
 ```javascript
 /* eslint-env node */
@@ -314,7 +316,7 @@ module.exports = {
 
         // A list of regex strings that, if matched by a path, will not report
         // the matching module if no exports are found.
-        "import/ignore": [ "\.(scss|less|css)$" ],
+        "import/ignore": [ "\.(sass|scss|less|css)$" ],
     },
 
     // Add your custom rules here
