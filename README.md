@@ -350,8 +350,8 @@ History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-
 
 Updated [`rules/style.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js):
 
-- changed `object-curly-newline`
-- added `object-property-newline`
+- changed [`object-curly-newline`](http://eslint.org/docs/rules/object-curly-newline)
+- added [`object-property-newline`](http://eslint.org/docs/rules/object-property-newline)
 
 Needed to satisfy:
 
