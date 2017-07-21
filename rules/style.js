@@ -260,7 +260,16 @@ module.exports = {
          * This rule enforces consistent line breaks inside braces of object
          * literals or destructuring assignments.
          */
-        "object-curly-newline": [ "error", "always" ],
+        "object-curly-newline": [
+            "error", {
+                consistent: true,
+            },
+        ],
+
+        /*
+         * Enforce placing object properties on separate lines
+         */
+        "object-property-newline": "error",
 
         /*
          * This rule enforce consistent spacing inside braces of object
