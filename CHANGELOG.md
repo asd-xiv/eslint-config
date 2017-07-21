@@ -9,6 +9,47 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.5.1] - 21 July 2017
+
+### Changed
+
+Updated [`rules/style.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js):
+
+- changed `object-curly-newline`
+- added `object-property-newline`
+
+Needed to satisfy:
+
+```javascript
+const a = { }
+const obj = {
+    foo: "foo",
+    bar: "bar",
+    baz: "baz",
+}
+let {} = obj
+const obj2 = {
+    foo: "foo",
+    bar: "bar",
+    baz: "baz",
+}
+const { f } = obj
+const { g, h } = obj
+const {
+    i,
+    j,
+} = obj
+const e = {
+    foo( { x, y } ) {
+        dosomething()
+    },
+}
+const h = ( opt = {} ) => ( {
+    x: 2,
+    y: opt,
+} )
+```
+
 ## [2.5.0] - 16 July 2017
 
 Added [`eslint-plugin-compat`](https://www.npmjs.com/package/eslint-plugin-compat) to show browser compatibility (using [caniuse](http://caniuse.com/)) of certain functionalities, ex. `fetch`.
@@ -54,6 +95,7 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.5.0...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.5.1...HEAD
+[2.5.1]: https://github.com/codemachiner/eslint-rules/compare/v2.5.0...v2.5.1
 [2.5.0]: https://github.com/codemachiner/eslint-rules/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/codemachiner/eslint-rules/compare/v2.3.2...v2.4.0

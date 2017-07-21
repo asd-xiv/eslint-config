@@ -36,8 +36,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
-- [2.5.0 - 16 July 2017](#250---16-july-2017)
-    - [Added](#added)
+- [2.5.1 - 21 July 2017](#251---21-july-2017)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -345,14 +344,43 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.5.0 - 16 July 2017
-
-Added [`eslint-plugin-compat`](https://www.npmjs.com/package/eslint-plugin-compat) to show browser compatibility (using [caniuse](http://caniuse.com/)) of certain functionalities, ex. `fetch`.
-
-### Added
-
-- `eslint-plugin-compat` with rules in [`/rules/compat.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js)
+## 2.5.1 - 21 July 2017
 
 ### Changed
 
-- Turn off `react/require-optimization`. Better put these kind of rules in your project's `.eslintrc`
+Updated [`rules/style.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js):
+
+- changed `object-curly-newline`
+- added `object-property-newline`
+
+Needed to satisfy:
+
+```javascript
+const a = { }
+const obj = {
+    foo: "foo",
+    bar: "bar",
+    baz: "baz",
+}
+let {} = obj
+const obj2 = {
+    foo: "foo",
+    bar: "bar",
+    baz: "baz",
+}
+const { f } = obj
+const { g, h } = obj
+const {
+    i,
+    j,
+} = obj
+const e = {
+    foo( { x, y } ) {
+        dosomething()
+    },
+}
+const h = ( opt = {} ) => ( {
+    x: 2,
+    y: opt,
+} )
+```
