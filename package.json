@@ -33,11 +33,12 @@
   "author": "Andrei Dumitrescu <andrei@codemachiner.com> (https://twitter.com/andreidcm)",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "4.2.0",
+    "eslint": "4.3.0",
     "eslint-plugin-compat": "1.0.4",
     "eslint-plugin-flowtype": "2.35.0",
     "eslint-plugin-html": "3.1.1",
     "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jest": "20.0.3",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-no-inferred-method-name": "1.0.2",
     "eslint-plugin-promise": "3.5.0",
@@ -47,7 +48,7 @@
     "npm-check": "5.4.5"
   },
   "peerDependencies": {
-    "eslint": "^4.2.0",
+    "eslint": "^4.3.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",

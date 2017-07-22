@@ -101,5 +101,17 @@ module.exports = {
 
         // Enforces that a return statement is present in property getters
         "getter-return": "error",
+
+        /*
+         * The parseInt() and Number.parseInt() functions can be used to turn
+         * binary, octal, and hexadecimal strings into integers. As binary,
+         * octal, and hexadecimal literals are supported in ES6, this rule
+         * encourages use of those numeric literals instead of parseInt() or
+         * Number.parseInt().
+         *
+         * 0b111110111 === 503; // not parseInt("111110111", 2) === 503;
+         * 0o767 === 503; // not parseInt("767", 8) === 503;
+         */
+        "prefer-numeric-literals": "error",
     },
 }
