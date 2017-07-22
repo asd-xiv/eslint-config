@@ -25,6 +25,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [eslint-plugin-html](#eslint-plugin-html)
     - [eslint-plugin-react](#eslint-plugin-react)
     - [eslint-plugin-compat](#eslint-plugin-compat)
+    - [eslint-plugin-jest](#eslint-plugin-jest)
     - [eslint-plugin-no-inferred-method-name](#eslint-plugin-no-inferred-method-name)
 - [Using with SublimeText](#using-with-sublimetext)
     - [SublimeLinter](#sublimelinter)
@@ -36,8 +37,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
-- [2.5.1 - 21 July 2017](#251---21-july-2017)
-    - [Changed](#changed)
+- [2.6.0 - 23 July 2017](#260---23-july-2017)
+    - [Added](#added)
 
 <!-- /MarkdownTOC -->
 
@@ -56,12 +57,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.2.0",
+    "eslint": "^4.3.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-unicorn": "^2.1.2"
 }
 ...
@@ -102,6 +103,7 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
   ≡ html.js             |
   ≡ react.js            |> only in `frontend`
   ≡ compat.js           |
+  ≡ jest.js             |
 
   ≡ node.js             |> only in `backend`
 ...
@@ -115,7 +117,8 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
 
 Support for ES2015+ (ES6+) import/export syntax.  
 
-See rules in [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js).
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js)
 
 ### eslint-plugin-json
 
@@ -123,7 +126,7 @@ See rules in [`@codemachiner/eslint-config/rules/import`](https://github.com/cod
 
 Lint JSON files.
 
-Get's loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) plugin definition.
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
 
 ### eslint-plugin-promise
 
@@ -131,7 +134,8 @@ Get's loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/
 
 Enforce best practices for JavaScript promises.
 
-See rules in [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js).
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js)
 
 ### eslint-plugin-unicorn
 
@@ -139,7 +143,8 @@ See rules in [`@codemachiner/eslint-config/rules/promise`](https://github.com/co
 
 Various awesome ESLint rules.  
 
-See rules in [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js).
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js)
 
 ### eslint-plugin-flowtype
 
@@ -147,7 +152,8 @@ See rules in [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/co
 
 [Flow](https://flow.org/) is a static type checker made by Facebook. It does a lot of work to make you more productive. Making you code faster, smarter, more confidently, and to a bigger scale.
 
-See rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js).
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js)
 
 ### eslint-plugin-html
 
@@ -155,13 +161,9 @@ See rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codem
 
 Allows linting and fixing inline scripts contained in HTML files.
 
-See rules in [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js).
-
-You will need to install it separately since it's not in the `peerDependencies` list.
-
-```bash
-npm install eslint-plugin-html --save-dev
-```
+- not in peerDependencies: `npm install --save-dev eslint-plugin-html`
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js)
 
 ### eslint-plugin-react
 
@@ -169,13 +171,9 @@ npm install eslint-plugin-html --save-dev
 
 React specific linting rules for ESLint.
 
-See rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js).
-
-You will need to install it separately since it's not in the `peerDependencies` list.
-
-```bash
-npm install eslint-plugin-react --save-dev
-```
+- not in peerDependencies: `npm install --save-dev eslint-plugin-react`
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)
 
 ### eslint-plugin-compat
 
@@ -191,13 +189,19 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
 ],
 ```
 
-You will need to install it separately since it's not in the `peerDependencies` list.
+- not in peerDependencies: `npm install --save-dev eslint-plugin-compat`
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@codemachiner/eslint-config/rules/compat`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js)
 
-```bash
-npm install eslint-plugin-compat --save-dev
-```
+### eslint-plugin-jest
 
-See rules in [`@codemachiner/eslint-config/rules/compat`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js).
+[![npm](https://img.shields.io/npm/dm/eslint-plugin-jest.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-jest)
+
+[Jest](https://github.com/facebook/jest) is used by Facebook to test all JavaScript code including React applications and it integrates seamlessly with Babel.
+
+- not in peerDependencies: `npm install --save-dev eslint-plugin-jest`
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@codemachiner/eslint-config/rules/jest`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js)
 
 ### eslint-plugin-no-inferred-method-name
 
@@ -206,7 +210,7 @@ See rules in [`@codemachiner/eslint-config/rules/compat`](https://github.com/cod
 In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead.
 This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 
-Get's loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) plugin definition.
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
 
 ## Using with SublimeText
 
@@ -246,19 +250,21 @@ Read more here: [fix Sublime integration without workaround](https://github.com/
 
 Fuzzy search and insert filenames inside your current project directory. Highly customizable.
 
-Example config for ES6 import:
+<details>
+<summary>Example config for ES6 import (see plugin default settings for more)</summary>
 
 ```javascript
 ...
 "scopes": [
     {
-        // ES6 import
+        // JS - ES6 import from/import "*"
         "scope"         : "\\.js\\s",
+        "prefix"        : [ "from", "import" ],
+        "extensions"    : [ "js", "jsx", "sass", "scss", "less", "css" ],
+
         "auto"          : true,
         "relative"      : false,
         "base_directory": false,
-        "prefix"        : [ "from", "import" ],
-        "extensions"    : [ "js", "jsx", "sass", "scss", "less", "css" ],
 
         "replace_on_insert": [
             // Remove extensions from path
@@ -270,10 +276,32 @@ Example config for ES6 import:
             [ "\\/source/", "" ],
             [ "\\/assets/", "" ]
         ],
+    }, {
+        // CSS - import ""
+        "scope"         : "source\\.(css|sass|less)",
+        "prefix"        : [ "import" ],
+        "extensions"    : [ "css", "scss", "less" ],
+
+        "auto"             : true,
+        "relative"         : true,
+        "base_directory"   : false,
+        "replace_on_insert": [],
+    }, {
+        // CSS - *: url()
+        "scope"         : "source\\.(css|sass|less)",
+        "prefix"        : [ "url" ],
+        "extensions"    : [ "png", "gif", "jpeg", "jpg", "woff", "ttf", "svg", "otf" ],
+
+        "auto"             : true,
+        "relative"         : true,
+        "base_directory"   : false,
+        "replace_on_insert": [],
     },
 ]
 ...
 ```
+
+</details>
 
 ## Formatting your code using ESLint rules
 
@@ -339,48 +367,54 @@ module.exports = {
 - [Stack Overflow: What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file?](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies)
 - [An Open Letter to JavaScript Leaders Regarding Semicolons](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
 - [Configuring ESLint](http://eslint.org/docs/user-guide/configuring)
+- [ES6 Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 ## Changelog
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.5.1 - 21 July 2017
+## 2.6.0 - 23 July 2017
 
-### Changed
+Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) and added support for [Jest](https://github.com/facebook/jest) testing framework.
 
-Updated [`rules/style.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L263):
+### Added
 
-- changed [`object-curly-newline`](http://eslint.org/docs/rules/object-curly-newline)
-- added [`object-property-newline`](http://eslint.org/docs/rules/object-property-newline)
+- Plugin [`eslint-plugin-jest`](https://www.npmjs.org/package/eslint-plugin-jest) with rules in [`/rules/jest.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js) and part of [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js#L24)
+- ESLint rule [`prefer-numeric-literals`](http://eslint.org/docs/rules/prefer-numeric-literals): Disllow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
+    - Defined in [`errors.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js#L115)
+    - Current value: `"prefer-numeric-literals": "error"`
+- ESLint rule [`prefer-destructuring`](http://eslint.org/docs/rules/prefer-destructuring): Prefer destructuring from arrays and objects.
+    - Defined in [`variables.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L63)
+    - Current value:
+        ```javascript
+        "prefer-destructuring": [
+            "error", {
+                object: true,
+                array : true,
+            }, {
+                enforceForRenamedProperties: true,
+            },
+        ],
+        ```
+    - Sample:
+        ```javascript
+        const array = [ 1,2,3,4,5 ]
+        const lorem = {
+            bar: "ipsum",
+            foo: "dolor",
+        }
 
-Needed to satisfy:
+        // const someIndex = 2
+        // const foo = array[ someIndex ]
+        const [ ,,foo ] = array
 
-```javascript
-const a = { }
-const obj = {
-    foo: "foo",
-    bar: "bar",
-    baz: "baz",
-}
-let {} = obj
-const obj2 = {
-    foo: "foo",
-    bar: "bar",
-    baz: "baz",
-}
-const { f } = obj
-const { g, h } = obj
-const {
-    i,
-    j,
-} = obj
-const e = {
-    foo( { x, y } ) {
-        dosomething()
-    },
-}
-const h = ( opt = {} ) => ( {
-    x: 2,
-    y: opt,
-} )
-```
+        // const bar = lorem.bar
+        let { bar } = lorem;
+
+        ( { bar } = {
+            bar: 2,
+            foo: 3,
+        } );
+
+        ( { foo: bar } = lorem )
+        ```

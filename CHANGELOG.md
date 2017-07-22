@@ -9,6 +9,52 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.6.0] - 23 July 2017
+
+Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) and added support for [Jest](https://github.com/facebook/jest) testing framework.
+
+### Added
+
+- Plugin [`eslint-plugin-jest`](https://www.npmjs.org/package/eslint-plugin-jest) with rules in [`/rules/jest.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js) and part of [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js#L24)
+- ESLint rule [`prefer-numeric-literals`](http://eslint.org/docs/rules/prefer-numeric-literals): Disllow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
+    - Defined in [`errors.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js#L115)
+    - Current value: `"prefer-numeric-literals": "error"`
+- ESLint rule [`prefer-destructuring`](http://eslint.org/docs/rules/prefer-destructuring): Prefer destructuring from arrays and objects.
+    - Defined in [`variables.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L63)
+    - Current value:
+        ```javascript
+        "prefer-destructuring": [
+            "error", {
+                object: true,
+                array : true,
+            }, {
+                enforceForRenamedProperties: true,
+            },
+        ],
+        ```
+    - Sample:
+        ```javascript
+        const array = [ 1,2,3,4,5 ]
+        const lorem = {
+            bar: "ipsum",
+            foo: "dolor",
+        }
+
+        // const someIndex = 2
+        // const foo = array[ someIndex ]
+        const [ ,,foo ] = array
+
+        // const bar = lorem.bar
+        let { bar } = lorem;
+
+        ( { bar } = {
+            bar: 2,
+            foo: 3,
+        } );
+
+        ( { foo: bar } = lorem )
+        ```
+
 ## [2.5.1] - 21 July 2017
 
 ### Changed
@@ -95,7 +141,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.5.1...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.6.0...HEAD
+[2.6.0]: https://github.com/codemachiner/eslint-rules/compare/v2.5.1...v2.6.0
 [2.5.1]: https://github.com/codemachiner/eslint-rules/compare/v2.5.0...v2.5.1
 [2.5.0]: https://github.com/codemachiner/eslint-rules/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/codemachiner/eslint-rules/compare/v2.3.2...v2.4.0
