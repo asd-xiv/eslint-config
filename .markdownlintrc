@@ -129,6 +129,7 @@
      *
      * Triggered whenever raw HTML is used in a markdown document. Allowing
      * summary and details to support github dropdown
+     *
      */
     "no-inline-html": {
         "allowed_elements": ["summary", "details"]
