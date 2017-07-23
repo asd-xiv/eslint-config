@@ -32,8 +32,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [Sublime​Linter-contrib-eslint](#sublime%E2%80%8Blinter-contrib-eslint)
     - [Fuzzy​File​Path](#fuzzy%E2%80%8Bfile%E2%80%8Bpath)
 - [Formatting your code using ESLint rules](#formatting-your-code-using-eslint-rules)
-    - [ESLint-Formatter](#eslint-formatter)
-    - [Watch npm script](#watch-npm-script)
+    - [Sublime Text 3 - ESLint-Formatter](#sublime-text-3---eslint-formatter)
+    - [eslint-watch](#eslint-watch)
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
@@ -305,15 +305,24 @@ Fuzzy search and insert filenames inside your current project directory. Highly 
 
 ## Formatting your code using ESLint rules
 
-### ESLint-Formatter
+### Sublime Text 3 - ESLint-Formatter
 
 [![ESLint-Formatter - Package Control](https://packagecontrol.herokuapp.com/downloads/ESLint-Formatter.svg?style=flat-square)](https://packagecontrol.io/packages/ESLint-Formatter)
 
-Sublime Text 3 plugin to auto-format your javascript code according to the ESLint configuration files you already have.
+Plugin to auto-format your javascript code according to the ESLint configuration files you already have.
 
 While using the plugin with `eslint` you will notice a delay when formatting. This is because of the node startup time on each lint. You [can configure it](https://github.com/TheSavior/ESLint-Formatter#performance) to use [`eslint_d`](https://github.com/mantoni/eslint_d.js) which starts a server in the background and interfaces `eslint`, making the formatting almost instant.
 
-### Watch npm script
+### eslint-watch
+
+[![npm](https://img.shields.io/npm/dm/eslint-watch.svg?style=flat-square)](https://www.npmjs.org/package/eslint-watch)
+
+You can autofix you files without any editor plugin by running [`eslint --fix`](http://eslint.org/docs/user-guide/command-line-interface#--fix) on files as they change. You will need to install [`eslint-watch`](https://github.com/rizowski/eslint-watch), which interfaces whatever `eslint` you have in your project.
+
+- `npm install eslint-watch --save-dev`
+- add a script to `package.json`:  
+    `"lint:watch": "esw --format simple-success --fix --watch --changed --ext .js,.jsx SOURCE_DIR"`
+- run in terminal: `npm run lint:watch`
 
 ## Example of `.eslintrc.js`
 
