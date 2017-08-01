@@ -60,11 +60,9 @@ module.exports = {
          * property through a member expression.
          */
         "prefer-destructuring": [
-            "error", {
-                object: true,
+            "warn", {
+                object: false,
                 array : true,
-            }, {
-                enforceForRenamedProperties: true,
             },
         ],
     },
