@@ -21,7 +21,6 @@ module.exports = {
         "./promise",
         "./html",
         "./react",
-        "./jest",
     ].map( require.resolve ),
     parserOptions: {
         ecmaFeatures: {
