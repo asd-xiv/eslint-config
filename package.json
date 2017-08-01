@@ -4,12 +4,13 @@
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
   "scripts": {
+    "flow": "flow check",
     "lint:js": "eslint ./rules/*",
     "lint:md": "markdownlint *.md",
     "lint": "npm run lint:js && npm run lint:md",
-    "install:modules": "rm -f package-lock.json && rm -rf node_modules && npm i",
+    "setup": "rm -f package-lock.json && rm -rf node_modules && npm i",
     "update": "npm-check -u",
-    "prepare": "npm run lint",
+    "prepare": "npm run lint && npm run flow",
     "preversion": "npm run prepare"
   },
   "homepage": "https://github.com/codemachiner/eslint-config",
@@ -26,7 +27,9 @@
     "eslint-rules",
     "react",
     "flow",
+    "flowtype",
     "config",
+    "jest",
     "javascript",
     "codemachiner"
   ],
@@ -36,6 +39,7 @@
     "eslint": "4.3.0",
     "eslint-plugin-compat": "1.0.4",
     "eslint-plugin-flowtype": "2.35.0",
+    "eslint-plugin-flowtype-errors": "3.3.1",
     "eslint-plugin-html": "3.1.1",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jest": "20.0.3",
@@ -44,17 +48,20 @@
     "eslint-plugin-promise": "3.5.0",
     "eslint-plugin-react": "7.1.0",
     "eslint-plugin-unicorn": "2.1.2",
+    "flow-bin": "0.51.1",
     "markdownlint-cli": "0.3.1",
     "npm-check": "5.4.5"
   },
   "peerDependencies": {
     "eslint": "^4.3.0",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-flowtype-errors": "^3.3.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-unicorn": "^2.1.2"
+    "eslint-plugin-unicorn": "^2.1.2",
+    "flow-bin": "^0.51.1"
   },
   "engines": {
     "node": ">= 6"

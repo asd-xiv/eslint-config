@@ -1,8 +1,18 @@
 /* eslint-env node */
 
 module.exports = {
-    plugins: [ "flowtype" ],
+    plugins: [ "flowtype", "flowtype-errors" ],
     rules  : {
+        /*
+         * Show flow errors
+         */
+        "flowtype-errors/show-errors": "error",
+
+        /*
+         * Error if flow coverage is below 80%
+         */
+        "flowtype-errors/enforce-min-coverage": [ "error", 80 ],
+
         /*
          * Enforces a particular style for boolean type annotations.
          */
