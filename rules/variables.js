@@ -42,7 +42,6 @@ module.exports = {
         "no-unused-vars": [
             "error", {
                 args: "after-used",
-                vars: "local",
             },
         ],
 
