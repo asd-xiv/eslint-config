@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.7.1] - 4 August 2017
+
+### Added
+
+- New `[eslint-plugin-flowtype-errors](https://github.com/codemachiner/eslint-config#eslint-plugin-flowtype-errors)` to the [flow](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
+
+### Changed
+
+- `[prefer-destructuring](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#62)` - set rule to warn and disabled for objects (was a nuisance)
+- Removed `[jest](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js)` from frontend bundle. Need to include it [separately](https://github.com/codemachiner/eslint-config#eslint-plugin-jest)
+
 ## [2.6.0] - 23 July 2017
 
 Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) and added support for [Jest](https://github.com/facebook/jest) testing framework.
@@ -141,7 +152,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.6.0...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.7.1...HEAD
+[2.7.1]: https://github.com/codemachiner/eslint-rules/compare/v2.6.0...v2.7.1
 [2.6.0]: https://github.com/codemachiner/eslint-rules/compare/v2.5.1...v2.6.0
 [2.5.1]: https://github.com/codemachiner/eslint-rules/compare/v2.5.0...v2.5.1
 [2.5.0]: https://github.com/codemachiner/eslint-rules/compare/v2.4.0...v2.5.0

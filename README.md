@@ -38,8 +38,9 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
 - [Changelog](#changelog)
-- [2.6.0 - 23 July 2017](#260---23-july-2017)
+- [2.7.1 - 4 August 2017](#271---4-august-2017)
     - [Added](#added)
+    - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
 
@@ -371,48 +372,13 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.6.0 - 23 July 2017
-
-Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) and added support for [Jest](https://github.com/facebook/jest) testing framework.
+## 2.7.1 - 4 August 2017
 
 ### Added
 
-- Plugin [`eslint-plugin-jest`](https://www.npmjs.org/package/eslint-plugin-jest) with rules in [`/rules/jest.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js) and part of [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js#L24)
-- ESLint rule [`prefer-numeric-literals`](http://eslint.org/docs/rules/prefer-numeric-literals): Disllow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
-    - Defined in [`errors.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js#L115)
-    - Current value: `"prefer-numeric-literals": "error"`
-- ESLint rule [`prefer-destructuring`](http://eslint.org/docs/rules/prefer-destructuring): Prefer destructuring from arrays and objects.
-    - Defined in [`variables.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L63)
-    - Current value:
-        ```javascript
-        "prefer-destructuring": [
-            "error", {
-                object: true,
-                array : true,
-            }, {
-                enforceForRenamedProperties: true,
-            },
-        ],
-        ```
-    - Sample:
-        ```javascript
-        const array = [ 1,2,3,4,5 ]
-        const lorem = {
-            bar: "ipsum",
-            foo: "dolor",
-        }
+- New `[eslint-plugin-flowtype-errors](https://github.com/codemachiner/eslint-config#eslint-plugin-flowtype-errors)` to the [flow](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
 
-        // const someIndex = 2
-        // const foo = array[ someIndex ]
-        const [ ,,foo ] = array
+### Changed
 
-        // const bar = lorem.bar
-        let { bar } = lorem;
-
-        ( { bar } = {
-            bar: 2,
-            foo: 3,
-        } );
-
-        ( { foo: bar } = lorem )
-        ```
+- `[prefer-destructuring](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#62)` - set rule to warn and disabled for objects (was a nuisance)
+- Removed `[jest](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js)` from frontend bundle. Need to include it [separately](https://github.com/codemachiner/eslint-config#eslint-plugin-jest)
