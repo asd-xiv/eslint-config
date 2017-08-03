@@ -376,9 +376,9 @@ History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-
 
 ### Added
 
-- New `[eslint-plugin-flowtype-errors](https://github.com/codemachiner/eslint-config#eslint-plugin-flowtype-errors)` to the [flow](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
+- New [`eslint-plugin-flowtype-errors`](https://github.com/codemachiner/eslint-config#eslint-plugin-flowtype-errors) to the [flow](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
 
 ### Changed
 
-- `[prefer-destructuring](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#62)` - set rule to warn and disabled for objects (was a nuisance)
-- Removed `[jest](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js)` from frontend bundle. Need to include it [separately](https://github.com/codemachiner/eslint-config#eslint-plugin-jest)
+- [`prefer-destructuring`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#62) - set rule to warn and disabled for objects (was a nuisance)
+- Removed [`jest`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js) from frontend bundle. Need to include it [separately](https://github.com/codemachiner/eslint-config#eslint-plugin-jest)
