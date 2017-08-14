@@ -34,6 +34,11 @@ module.exports = {
         // Prevent variables used in JSX to be incorrectly marked as unused
         "react/jsx-uses-vars": "error",
 
+        // When using a boolean attribute in JSX, you can set the attribute
+        // value to true or omit the value. This rule will enforce one or the
+        // other to keep consistency in your code.
+        "react/jsx-boolean-value": [ "error", "always" ],
+
         // Prevent passing of children as props
         "react/no-children-prop": "error",
 
@@ -77,10 +82,14 @@ module.exports = {
         "react/require-optimization": "off",
 
         // Enforces consistent naming for boolean props
-        // "react/boolean-prop-naming": [
-        //     "error", {
-        //         rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
-        //     },
-        // ],
+        "react/boolean-prop-naming": [
+            "error", {
+                rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+            },
+        ],
+
+        // Ensure no casing typos were made declaring static class properties
+        // and lifecycle methods.
+        "react/no-typos": "error",
     },
 }
