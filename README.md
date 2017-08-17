@@ -17,17 +17,16 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Installation & Usage](#installation--usage)
 - [Rule sets](#rule-sets)
 - [ESLint plugins used](#eslint-plugins-used)
-    - [eslint-plugin-import](#eslint-plugin-import)
-    - [eslint-plugin-json](#eslint-plugin-json)
-    - [eslint-plugin-promise](#eslint-plugin-promise)
-    - [eslint-plugin-unicorn](#eslint-plugin-unicorn)
-    - [eslint-plugin-flowtype](#eslint-plugin-flowtype)
-    - [eslint-plugin-flowtype-errors](#eslint-plugin-flowtype-errors)
-    - [eslint-plugin-html](#eslint-plugin-html)
-    - [eslint-plugin-react](#eslint-plugin-react)
-    - [eslint-plugin-compat](#eslint-plugin-compat)
-    - [eslint-plugin-jest](#eslint-plugin-jest)
-    - [eslint-plugin-no-inferred-method-name](#eslint-plugin-no-inferred-method-name)
+    - [import](#import)
+    - [json](#json)
+    - [promise](#promise)
+    - [unicorn](#unicorn)
+    - [flowtype & flowtype-errors](#flowtype--flowtype-errors)
+    - [html](#html)
+    - [react](#react)
+    - [compat](#compat)
+    - [jest](#jest)
+    - [no-inferred-method-name](#no-inferred-method-name)
 - [Using with SublimeText](#using-with-sublimetext)
     - [SublimeLinter](#sublimelinter)
     - [Sublime​Linter-contrib-eslint](#sublime%E2%80%8Blinter-contrib-eslint)
@@ -36,9 +35,9 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [ESLint-Formatter](#eslint-formatter)
     - [eslint-watch](#eslint-watch)
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
-- [Do some reading while you're at it](#do-some-reading-while-youre-at-it)
+- [Reading](#reading)
 - [Changelog](#changelog)
-- [2.7.1 - 4 August 2017](#271---4-august-2017)
+- [2.7.2 - 18 August 2017](#272---18-august-2017)
     - [Added](#added)
     - [Changed](#changed)
 
@@ -59,15 +58,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.3.0",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-flowtype-errors": "^3.3.1",
+    "eslint": "^4.4.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-unicorn": "^2.1.2",
-    "flow-bin": "^0.51.1"
+    "eslint-plugin-unicorn": "^2.1.2"
 }
 ...
 ```
@@ -96,7 +92,6 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
   ≡ comments.js         |
   ≡ errors.js           |
   ≡ es6.js              |
-  ≡ flow.js             |
   ≡ import.js           |> included `frontend` & `backend`
   ≡ jsdoc.js            |
   ≡ promise.js          |
@@ -111,53 +106,58 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
   ≡ node.js             |> only in `backend`
 
   ≡ jest.js             |> not in any
+  ≡ flow.js             |
 ...
 ```
 
 ## ESLint plugins used
 
-### [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import)
+### [import](https://www.npmjs.org/package/eslint-plugin-import)
 
 Support for ES2015+ (ES6+) import/export syntax.  
 
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
 - rules in [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js)
 
-### [eslint-plugin-json](https://www.npmjs.org/package/eslint-plugin-json)
+### [json](https://www.npmjs.org/package/eslint-plugin-json)
 
 Lint JSON files.
 
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
 
-### [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise)
+### [promise](https://www.npmjs.org/package/eslint-plugin-promise)
 
 Enforce best practices for JavaScript promises.
 
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
 - rules in [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js)
 
-### [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn)
+### [unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn)
 
 Various awesome ESLint rules.
 
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
 - rules in [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js)
 
-### [eslint-plugin-flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype)
+### [flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) & [flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors)
 
-[Flow](https://flow.org) specific linting rules.
+- *flowtype*: [Flow](https://flow.org) specific linting rules.
+- *flowtype-errors*: Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow.
 
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js#L20) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#L19) bundles
-- rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L19)
+- not in peerDependencies: `npm install --save-dev eslint-plugin-flowtype flowtype-errors`
+- not loaded in any bundle, need to extend it separately:
+    ```js
+    ...
+    "extends": [
+        "@codemachiner/eslint-config/rules/frontend",
+        "@codemachiner/eslint-config/rules/flow",
+    ],
+    ...
+    ```
 
-### [eslint-plugin-flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors)
+- rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js)
 
-Runs your code through [Flow](https://flow.org/) and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow.
-
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js#L20) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#L19) bundles
-- rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L9)
-
-### [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html)
+### [html](https://www.npmjs.org/package/eslint-plugin-html)
 
 Allows linting and fixing inline scripts contained in HTML files.
 
@@ -165,7 +165,7 @@ Allows linting and fixing inline scripts contained in HTML files.
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
 - rules in [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js)
 
-### [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react)
+### [react](https://www.npmjs.org/package/eslint-plugin-react)
 
 React specific linting rules.
 
@@ -173,7 +173,7 @@ React specific linting rules.
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
 - rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)
 
-### [eslint-plugin-compat](https://www.npmjs.org/package/eslint-plugin-compat)
+### [compat](https://www.npmjs.org/package/eslint-plugin-compat)
 
 Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/)). Uses `browserslist` definition in your `package.json`.
 
@@ -189,7 +189,7 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
 - rules in [`@codemachiner/eslint-config/rules/compat`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js)
 
-### [eslint-plugin-jest](https://www.npmjs.org/package/eslint-plugin-jest)
+### [jest](https://www.npmjs.org/package/eslint-plugin-jest)
 
 [Jest](https://github.com/facebook/jest) is used by Facebook to test all JavaScript code including React applications and it integrates seamlessly with Babel.
 
@@ -205,7 +205,7 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
     ```
 - rules in [`@codemachiner/eslint-config/rules/jest`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js)
 
-### [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
+### [no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
 
 In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead.
 This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
@@ -358,7 +358,7 @@ module.exports = {
 }
 ```
 
-## Do some reading while you're at it
+## Reading
 
 - [Detect Problems in JavaScript Automatically with ESLint](https://davidwalsh.name/eslint)
 - [Elements of JavaScript Style](https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f) - while not related to ESLint, it set's you on the path of structuring and organizing yourself better.
@@ -372,13 +372,14 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.7.1 - 4 August 2017
+## 2.7.2 - 18 August 2017
+
+Removed Flow from both bundles, need to be loaded separately.
 
 ### Added
 
-- New [`eslint-plugin-flowtype-errors`](https://github.com/codemachiner/eslint-config#eslint-plugin-flowtype-errors) to the [flow](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
+- React [`boolean-prop-naming`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L85), [`no-typos`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L93) and [`jsx-boolean-value`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L40)
 
 ### Changed
 
-- [`prefer-destructuring`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js#62) - set rule to warn and disabled for objects (was a nuisance)
-- Removed [`jest`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js) from frontend bundle. Need to include it [separately](https://github.com/codemachiner/eslint-config#eslint-plugin-jest)
+- Removed [`flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js) from both bundles. Need to include it [separately](https://github.com/codemachiner/eslint-config#flowtype--flowtype-errors)
