@@ -17,7 +17,6 @@ module.exports = {
         "./jsdoc",
         "./comments",
         "./compat",
-        "./flow",
         "./promise",
         "./html",
         "./react",

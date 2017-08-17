@@ -16,7 +16,6 @@ module.exports = {
         "./style",
         "./jsdoc",
         "./comments",
-        "./flow",
         "./promise",
         "./node",
     ].map( require.resolve ),
