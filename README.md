@@ -24,6 +24,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [flowtype & flowtype-errors](#flowtype--flowtype-errors)
     - [html](#html)
     - [react](#react)
+    - [jsx-control-statements](#jsx-control-statements)
     - [compat](#compat)
     - [jest](#jest)
     - [no-inferred-method-name](#no-inferred-method-name)
@@ -37,7 +38,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.8.0 - 18 September 2017](#280---18-september-2017)
+- [2.8.1 - 23 September 2017](#281---23-september-2017)
+    - [Added](#added)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -171,6 +173,14 @@ React specific linting rules.
 - not in peerDependencies: `npm install --save-dev eslint-plugin-react`
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
 - rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)
+
+### [jsx-control-statements](https://github.com/vkbansal/eslint-plugin-jsx-control-statements)
+
+ESLint plugin for babel plugin [JSX-Control-Statements](https://github.com/AlexGilleran/jsx-control-statements) (Neater If and For for React JSX)
+
+- not in peerDependencies: `npm install --save-dev eslint-plugin-jsx-control-statements`
+- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L94)
 
 ### [compat](https://www.npmjs.org/package/eslint-plugin-compat)
 
@@ -371,10 +381,14 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.8.0 - 18 September 2017
+## 2.8.1 - 23 September 2017
 
-Updated main packages (`eslint` & `flow-bin`) & others that kept up with eslint 4.7 update
+Updated packages & added `eslint-plugin-jsx-control-statements`
+
+### Added
+
+- New [`jsx-control-statements`](https://github.com/codemachiner/eslint-config#jsx-control-statements) to the [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L94) rules.
 
 ### Changed
 
-- [`package.json`](https://github.com/codemachiner/eslint-config/blob/master/package.json)
+- [`react/jsx-no-undef`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#34) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
