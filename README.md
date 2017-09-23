@@ -180,7 +180,7 @@ ESLint plugin for babel plugin [JSX-Control-Statements](https://github.com/AlexG
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-jsx-control-statements`
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L94)
+- rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L104)
 
 ### [compat](https://www.npmjs.org/package/eslint-plugin-compat)
 
@@ -387,7 +387,7 @@ Updated packages & added `eslint-plugin-jsx-control-statements`
 
 ### Added
 
-- New [`jsx-control-statements`](https://github.com/codemachiner/eslint-config#jsx-control-statements) to the [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L94) rules.
+- New [`jsx-control-statements`](https://github.com/codemachiner/eslint-config#jsx-control-statements) to the [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L104) rules.
 
 ### Changed
 
