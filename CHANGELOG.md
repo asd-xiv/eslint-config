@@ -19,7 +19,7 @@ Updated packages & added `eslint-plugin-jsx-control-statements`
 
 ### Changed
 
-- [`react/jsx-no-undef`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#34) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
+- [`react/jsx-no-undef`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L36) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
 
 ## [2.8.0] - 18 September 2017
 
