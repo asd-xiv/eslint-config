@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.8.2] - 24 September 2017
+
+### Changed
+
+- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L125) with more jsx style rules
+
 ## [2.8.1] - 23 September 2017
 
 Updated packages & added `eslint-plugin-jsx-control-statements`
@@ -180,7 +186,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.1...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.2...HEAD
+[2.8.2]: https://github.com/codemachiner/eslint-rules/compare/v2.8.1...v2.8.2
 [2.8.1]: https://github.com/codemachiner/eslint-rules/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/codemachiner/eslint-rules/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/codemachiner/eslint-rules/compare/v2.7.1...v2.7.2

@@ -38,8 +38,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.8.1 - 23 September 2017](#281---23-september-2017)
-    - [Added](#added)
+- [2.8.2 - 24 September 2017](#282---24-september-2017)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -59,7 +58,7 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.7.0",
+    "eslint": "^4.7.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
@@ -176,7 +175,7 @@ React specific linting rules.
 
 ### [jsx-control-statements](https://github.com/vkbansal/eslint-plugin-jsx-control-statements)
 
-ESLint plugin for babel plugin [JSX-Control-Statements](https://github.com/AlexGilleran/jsx-control-statements) (Neater If and For for React JSX)
+ESLint rules for [JSX-Control-Statements](https://github.com/AlexGilleran/jsx-control-statements) babel plugin (Neater If and For for React JSX).
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-jsx-control-statements`
 - loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
@@ -381,14 +380,8 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.8.1 - 23 September 2017
-
-Updated packages & added `eslint-plugin-jsx-control-statements`
-
-### Added
-
-- New [`jsx-control-statements`](https://github.com/codemachiner/eslint-config#jsx-control-statements) to the [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L104) rules.
+## 2.8.2 - 24 September 2017
 
 ### Changed
 
-- [`react/jsx-no-undef`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L36) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
+- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L125) with more jsx style rules
