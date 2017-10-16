@@ -52,7 +52,9 @@ module.exports = {
         "no-div-regex": 0,
 
         // Disallow else after a return in an if
-        "no-else-return": "error",
+        "no-else-return": [ "error", {
+            allowElseIf: false,
+        } ],
 
         // Disallow use of empty destructuring patterns
         "no-empty-pattern": 0,
@@ -72,8 +74,10 @@ module.exports = {
         // Disallow fallthrough of case statements
         "no-fallthrough": "error",
 
-        // Disallow the use of leading or trailing decimal points in numeric
-        // Literals
+        /*
+         * Disallow the use of leading or trailing decimal points in numeric
+         * Literals
+         */
         "no-floating-decimal": "error",
 
         // Disallow the type conversions with shorter notations
@@ -103,9 +107,11 @@ module.exports = {
         // Disallow the use of magic numbers
         "no-magic-numbers": 0,
 
-        // This rule aims to disallow multiple whitespace around logical
-        // Expressions, conditional expressions, declarations, array elements,
-        // Object properties, sequences and function parameters.
+        /*
+         * This rule aims to disallow multiple whitespace around logical
+         * Expressions, conditional expressions, declarations, array elements,
+         * Object properties, sequences and function parameters.
+         */
         "no-multi-spaces": "error",
 
         // Disallow use of multiline strings
@@ -114,8 +120,10 @@ module.exports = {
         // Disallow reassignments of native objects
         "no-native-reassign": "error",
 
-        // Disallow use of new operator when not part of the assignment or
-        // Comparison
+        /*
+         * Disallow use of new operator when not part of the assignment or
+         * Comparison
+         */
         "no-new": "error",
 
         // Disallow use of new operator for Function object
@@ -127,8 +135,10 @@ module.exports = {
         // Disallow use of (old style) octal literals
         "no-octal": "error",
 
-        // Disallow use of octal escape sequences in string literals, such as
-        // Var foo = "Copyright \251";
+        /*
+         * Disallow use of octal escape sequences in string literals, such as
+         * Var foo = "Copyright \251";
+         */
         "no-octal-escape": "error",
 
         // Disallow reassignment of function parameters

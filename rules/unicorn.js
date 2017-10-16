@@ -12,10 +12,8 @@ module.exports = {
          *  fooBar.test.js
          *  fooBar.testUtils.js
          */
-        "unicorn/filename-case": [
-            "warn", {
-                case: "camelCase",
-            },
-        ],
+        "unicorn/filename-case": [ "warn", {
+            case: "camelCase",
+        } ],
     },
 }

@@ -52,9 +52,11 @@ module.exports = {
         // Prevent variables used in JSX to be incorrectly marked as unused
         "react/jsx-uses-vars": "error",
 
-        // When using a boolean attribute in JSX, you can set the attribute
-        // value to true or omit the value. This rule will enforce one or the
-        // other to keep consistency in your code.
+        /*
+         * When using a boolean attribute in JSX, you can set the attribute
+         * value to true or omit the value. This rule will enforce one or the
+         * other to keep consistency in your code.
+         */
         "react/jsx-boolean-value": [ "error", "always" ],
 
         // Prevent passing of children as props
@@ -106,14 +108,14 @@ module.exports = {
         "react/require-optimization": "off",
 
         // Enforces consistent naming for boolean props
-        "react/boolean-prop-naming": [
-            "error", {
-                rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
-            },
-        ],
+        "react/boolean-prop-naming": [ "error", {
+            rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+        } ],
 
-        // Ensure no casing typos were made declaring static class properties
-        // and lifecycle methods.
+        /*
+         * Ensure no casing typos were made declaring static class properties
+         * and lifecycle methods.
+         */
         "react/no-typos": "error",
 
         /*
@@ -147,13 +149,11 @@ module.exports = {
          * closing bracket of self-closing elements, and between the angle
          * bracket and slash of JSX closing or self-closing elements.
          */
-        "react/jsx-tag-spacing": [
-            "error", {
-                closingSlash     : "never",
-                beforeSelfClosing: "always",
-                afterOpening     : "never",
-            },
-        ],
+        "react/jsx-tag-spacing": [ "error", {
+            closingSlash     : "never",
+            beforeSelfClosing: "always",
+            afterOpening     : "never",
+        } ],
 
         /*
          * Enforces coding style that user-defined JSX components are defined
@@ -175,12 +175,10 @@ module.exports = {
          * Ensures that any component or prop methods used to handle events
          * are correctly prefixed.
          */
-        "react/jsx-handler-names": [
-            "error", {
-                eventHandlerPrefix    : "_?handle",
-                eventHandlerPropPrefix: "on",
-            },
-        ],
+        "react/jsx-handler-names": [ "error", {
+            eventHandlerPrefix    : "_?handle",
+            eventHandlerPropPrefix: "on",
+        } ],
 
         /*
          * Ensure correct position of the first property.
@@ -202,12 +200,10 @@ module.exports = {
          * This rule allows you to enforce curly braces or disallow
          * unnecessary curly braces in JSX props and/or children.
          */
-        // "react/jsx-curly-brace-presence": [
-        //     "error", {
-        //         props   : "never",
-        //         children: "never",
-        //     },
-        // ],
+        "react/jsx-curly-brace-presence": [ "error", {
+            props   : "never",
+            children: "never",
+        } ],
 
         /*
          * This rule checks all JSX multiline elements and verifies the
@@ -237,63 +233,61 @@ module.exports = {
          * Components without children can be self-closed to avoid unnecessary
          * extra closing tag.
          */
-        "react/self-closing-comp": [
-            "error", {
-                component: true,
-                html     : true,
-            },
-        ],
+        "react/self-closing-comp": [ "error", {
+            component: true,
+            html     : true,
+        } ],
 
         /*
          * When creating React components it is more convenient to always
          * follow the same organisation for method order to help you easily
          * find lifecyle methods, event handlers, etc.
          */
-        "react/sort-comp": [
-            "error", {
-                order: [
-                    "init",
-                    "rendering",
+        "react/sort-comp": [ "error", {
+            order: [
+                "init",
+                "rendering",
 
-                    // all that remains is static-methods. if static-methods
-                    // are after render then the static propTypes that we want
-                    // before render will throw an error
-                    "everything-else",
-                    "lifecycle",
-                    "/^on.+$/",
-                    "/^(_?)handle.+$/",
+                /*
+                 * all that remains is static-methods. if static-methods
+                 * are after render then the static propTypes that we want
+                 * before render will throw an error
+                 */
+                "everything-else",
+                "lifecycle",
+                "/^on.+$/",
+                "/^(_?)handle.+$/",
+            ],
+            groups: {
+                init: [
+                    "displayName",
+                    "propTypes",
+                    "defaultProps",
+                    "state",
+                    "contextTypes",
+                    "childContextTypes",
+                    "statics",
+                    "constructor",
                 ],
-                groups: {
-                    init: [
-                        "displayName",
-                        "propTypes",
-                        "defaultProps",
-                        "state",
-                        "contextTypes",
-                        "childContextTypes",
-                        "statics",
-                        "constructor",
-                    ],
-                    rendering: [
-                        "render",
-                        "/^_?render.+$/",
-                    ],
-                    lifecycle: [
-                        "mixins",
-                        "getDefaultProps",
-                        "getInitialState",
-                        "getChildContext",
-                        "componentWillMount",
-                        "componentDidMount",
-                        "componentWillReceiveProps",
-                        "shouldComponentUpdate",
-                        "componentWillUpdate",
-                        "componentDidUpdate",
-                        "componentWillUnmount",
-                    ],
-                },
+                rendering: [
+                    "render",
+                    "/^_?render.+$/",
+                ],
+                lifecycle: [
+                    "mixins",
+                    "getDefaultProps",
+                    "getInitialState",
+                    "getChildContext",
+                    "componentWillMount",
+                    "componentDidMount",
+                    "componentWillReceiveProps",
+                    "shouldComponentUpdate",
+                    "componentWillUpdate",
+                    "componentDidUpdate",
+                    "componentWillUnmount",
+                ],
             },
-        ],
+        } ],
 
         /*
          * A bind call or arrow function in a JSX prop will create a brand new

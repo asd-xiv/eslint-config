@@ -60,13 +60,11 @@ module.exports = {
          * types can cause flow to silently skip over portions of your code,
          * which would have otherwise caused type errors.
          */
-        "flowtype/no-weak-types": [
-            "error", {
-                Function: false,
-                Object  : false,
-                any     : true,
-            },
-        ],
+        "flowtype/no-weak-types": [ "error", {
+            Function: false,
+            Object  : false,
+            any     : true,
+        } ],
 
         /*
          * Enforces consistent separators between properties in Flow object
@@ -85,11 +83,9 @@ module.exports = {
          * annotations, common typos (e.g. // @floww), and enforce a
          * consistant annotation style.
          */
-        "flowtype/require-valid-file-annotation": [
-            "error", "always", {
-                annotationStyle: "line",
-            },
-        ],
+        "flowtype/require-valid-file-annotation": [ "error", "always", {
+            annotationStyle: "line",
+        } ],
 
         // Requires that all variable declarators have type annotations.
         "flowtype/require-variable-type": "off",
@@ -110,11 +106,9 @@ module.exports = {
          * Enforces consistent spacing after the type annotation colon.
          * Require a space after the type annotation colon (e.g. foo: BarType).
          */
-        "flowtype/space-after-type-colon": [
-            "error", "always", {
-                allowLineBreak: false,
-            },
-        ],
+        "flowtype/space-after-type-colon": [ "error", "always", {
+            allowLineBreak: false,
+        } ],
 
         /*
          * Enforces consistent spacing before the opening < of generic type
@@ -135,10 +129,10 @@ module.exports = {
         "flowtype/union-intersection-spacing": [ "error", "always" ],
 
         /*
-        * Marks Flow type alias declarations as used.
-        * Used to suppress no-unused-vars errors that are triggered by type
-        * aliases.
-        */
+         * Marks Flow type alias declarations as used.
+         * Used to suppress no-unused-vars errors that are triggered by type
+         * aliases.
+         */
         "flowtype/use-flow-type": 1,
 
         //

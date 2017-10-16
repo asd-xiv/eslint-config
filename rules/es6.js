@@ -38,8 +38,10 @@ module.exports = {
         // Suggest using arrow functions as callbacks
         "prefer-arrow-callback": "warn",
 
-        // Suggest using of const declaration for variables that are never
-        // Modified after declared
+        /*
+         * Suggest using of const declaration for variables that are never
+         * Modified after declared
+         */
         "prefer-const": "error",
 
         // Suggest using Reflect methods where applicable

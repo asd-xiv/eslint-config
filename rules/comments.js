@@ -17,11 +17,9 @@ module.exports = {
          * starting with the following words: eslint, jshint, jslint,
          * istanbul, global, exported, jscs, falls through.
          */
-        "line-comment-position": [
-            "error", {
-                position: "above",
-            },
-        ],
+        "line-comment-position": [ "error", {
+            position: "above",
+        } ],
 
         /*
          * This rule requires empty lines before and/or after comments. It can
@@ -30,25 +28,21 @@ module.exports = {
          * as code and does not require empty lines at the beginning or end of
          * a file.
          */
-        "lines-around-comment": [
-            "error", {
-                afterBlockComment : false,
-                afterLineComment  : false,
-                allowArrayStart   : true,
-                allowBlockStart   : true,
-                allowObjectStart  : true,
-                beforeBlockComment: true,
-                beforeLineComment : true,
-            },
-        ],
+        "lines-around-comment": [ "error", {
+            afterBlockComment : false,
+            afterLineComment  : false,
+            allowArrayStart   : true,
+            allowBlockStart   : true,
+            allowObjectStart  : true,
+            beforeBlockComment: true,
+            beforeLineComment : true,
+        } ],
 
         // Disallow usage of configurable warning terms in comments: e.g. todo
-        "no-warning-comments": [
-            0, {
-                location: "start",
-                terms   : [ "todo", "fixme", "xxx" ],
-            },
-        ],
+        "no-warning-comments": [ 0, {
+            location: "start",
+            terms   : [ "todo", "fixme", "xxx" ],
+        } ],
 
         /*
          * Enforce consistency of spacing after the start of a comment // or
@@ -56,5 +50,11 @@ module.exports = {
          * styles.
          */
         "spaced-comment": [ "error", "always" ],
+
+        /*
+         * This rule aims to enforce a particular style for
+         * multiline comments.
+         */
+        "multiline-comment-style": [ "error", "starred-block" ],
     },
 }

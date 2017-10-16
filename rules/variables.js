@@ -39,11 +39,9 @@ module.exports = {
         "no-undefined": 0,
 
         // Disallow declaration of variables that are not used in the code
-        "no-unused-vars": [
-            "error", {
-                args: "after-used",
-            },
-        ],
+        "no-unused-vars": [ "error", {
+            args: "after-used",
+        } ],
 
         // Disallow use of variables before they are defined
         "no-use-before-define": "error",
@@ -59,11 +57,9 @@ module.exports = {
          * rule enforces usage of destructuring instead of accessing a
          * property through a member expression.
          */
-        "prefer-destructuring": [
-            "warn", {
-                object: false,
-                array : true,
-            },
-        ],
+        "prefer-destructuring": [ "warn", {
+            object: false,
+            array : true,
+        } ],
     },
 }

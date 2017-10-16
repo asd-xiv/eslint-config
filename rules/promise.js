@@ -26,7 +26,7 @@ module.exports = {
          * Ensure that inside a then() or a catch() we always return or throw
          * a raw value instead of wrapping in Promise.resolve or Promise.reject
          */
-        "promise/no-return-wrap": "error",
+        "promise/no-return-wrap": [ "error", { allowReject: false } ],
 
         // Enforce standard parameter names for Promise constructors
         "promise/param-names": "error",
@@ -48,8 +48,10 @@ module.exports = {
         // Avoid calling cb() inside of a then() (use nodeify] instead)
         "promise/no-callback-in-promise": "warn",
 
-        // Avoid creating new promises outside of utility libs (use pify
-        // instead)
+        /*
+         * Avoid creating new promises outside of utility libs (use pify
+         * instead)
+         */
         "promise/avoid-new": "warn",
 
         // Prefer await to then() for reading Promise values
@@ -57,5 +59,11 @@ module.exports = {
 
         // Prefer async/await to the callback pattern
         "promise/prefer-await-to-callbacks": "warn",
+
+        /*
+         * Disallow return statements inside a callback passed to finally(),
+         * since nothing would consume what's returned.
+         */
+        "promise/no-return-in-finally": "warn",
     },
 }

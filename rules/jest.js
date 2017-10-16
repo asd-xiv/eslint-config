@@ -10,7 +10,7 @@ module.exports = {
     },
 
     rules: {
-        /**
+        /*
          * Jest has a feature that allows you to skip tests by appending .skip
          * or prepending x to a test-suite or a test-case. Sometimes tests are
          * skipped as part of a debugging process and aren't intended to be
@@ -19,7 +19,7 @@ module.exports = {
          */
         "jest/no-disabled-tests": "warn",
 
-        /**
+        /*
          * Jest has a feature that allows you to focus tests by appending
          * .only or prepending f to a test-suite or a test-case. This feature
          * is really helpful to debug a failing test, so you don’t have to
@@ -29,7 +29,7 @@ module.exports = {
          */
         "jest/no-focused-tests": "error",
 
-        /**
+        /*
          * Having identical titles for two different tests or test suites may
          * create confusion. For example, when a test with the same title as
          * another test in the same test suite fails, it is harder to know
@@ -37,7 +37,7 @@ module.exports = {
          */
         "jest/no-identical-title": "error",
 
-        /**
+        /*
          * Ensure expect() is called with a single argument and there is an
          * actual expectation made.
          */

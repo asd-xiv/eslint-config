@@ -62,8 +62,10 @@ module.exports = {
         // Disallow function or variable declarations in nested blocks
         "no-inner-declarations": "error",
 
-        // Disallow invalid regular expression strings in the RegExp
-        // Constructor
+        /*
+         * Disallow invalid regular expression strings in the RegExp
+         * Constructor
+         */
         "no-invalid-regexp": "error",
 
         // Disallow irregular whitespace outside of strings and comments
@@ -72,31 +74,41 @@ module.exports = {
         // Disallow negation of the left operand of an in expression
         "no-negated-in-lhs": "error",
 
-        // Disallow the use of object properties of the global object (Math
-        // And JSON) as functions
+        /*
+         * Disallow the use of object properties of the global object (Math
+         * And JSON) as functions
+         */
         "no-obj-calls": "error",
 
         // Disallow multiple spaces in a regular expression literal
         "no-regex-spaces": "error",
 
-        // This rule disallows sparse array literals which have "holes" where
-        // Commas are not preceded by elements. It does not apply to a
-        // Trailing comma following the last element.
+        /*
+         * This rule disallows sparse array literals which have "holes" where
+         * Commas are not preceded by elements. It does not apply to a
+         * Trailing comma following the last element.
+         */
         "no-sparse-arrays": "error",
 
-        // Disallows confusing multiline expressions where a newline
-        // looks like it is ending a statement, but is not.
+        /*
+         * Disallows confusing multiline expressions where a newline
+         * looks like it is ending a statement, but is not.
+         */
         "no-unexpected-multiline": "error",
 
-        // Disallow unreachable statements after a return, throw, continue, or
-        // Break statement
+        /*
+         * Disallow unreachable statements after a return, throw, continue, or
+         * Break statement
+         */
         "no-unreachable": "error",
 
         // Disallow comparisons with the value NaN
         "use-isnan": "error",
 
-        // Ensure that the results of typeof are compared against a valid
-        // String
+        /*
+         * Ensure that the results of typeof are compared against a valid
+         * String
+         */
         "valid-typeof": "error",
 
         // Enforces that a return statement is present in property getters

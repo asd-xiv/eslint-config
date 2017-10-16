@@ -7,11 +7,7 @@ module.exports = {
          * This rule enforces line breaks after opening and before closing
          * array brackets.
          */
-        "array-bracket-newline": [
-            "error", {
-                multiline: true,
-            },
-        ],
+        "array-bracket-newline": [ "error", "consistent" ],
 
         // This rule enforces consistent spacing inside array brackets.
         "array-bracket-spacing": [ "error", "always" ],
@@ -170,11 +166,9 @@ module.exports = {
          * deep member access. Computed property accesses such as instance[
          * something] are excluded.
          */
-        "newline-per-chained-call": [
-            "error", {
-                ignoreChainWithDepth: 2,
-            },
-        ],
+        "newline-per-chained-call": [ "error", {
+            ignoreChainWithDepth: 2,
+        } ],
 
         /*
          * This rule disallows if statements as the only statement in else
@@ -316,8 +310,10 @@ module.exports = {
         // Disallows semicolons as the end of statements.
         "semi": [ "error", "never" ],
 
-        // Checks all property definitions of object expressions and verifies
-        // That all variables are sorted alphabetically.
+        /*
+         * Checks all property definitions of object expressions and verifies
+         * That all variables are sorted alphabetically.
+         */
         "sort-keys": "off",
 
         /*
@@ -387,5 +383,12 @@ module.exports = {
             },
         ],
 
+        /*
+         * This rule improves readability by enforcing lines between class
+         * members. It will not check empty lines before the first member and
+         * after the last member, since that is already taken care of by
+         * padded-blocks.
+         */
+        "lines-between-class-members": [ "error", "always" ],
     },
 }
