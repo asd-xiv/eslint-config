@@ -38,7 +38,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.8.3 - 24 September 2017](#283---24-september-2017)
+- [2.9.0 - 16 October 2017](#290---16-october-2017)
+    - [Added](#added)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -58,11 +59,11 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.7.2",
+    "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
-    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-unicorn": "^2.1.2"
 }
 ...
@@ -380,10 +381,16 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.8.3 - 24 September 2017
+## 2.9.0 - 16 October 2017
+
+Update packages and new rules for react & promise
+
+### Added
+
+- [`react/jsx-curly-brace-presence`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L205)
+- [`promise/no-return-in-finally`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js#L65)
 
 ### Changed
 
-- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js) rules with:
-    - [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L252) - predefined order of component methods (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/sort-comp.md))
-    - [`react/jsx-no-bind`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L306) - no longer bind function in render (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-bind.md))
+- [`no-else-return`](https://github.com/codemachiner/eslint-config/blob/master/rules/best.practices.js#L55)
+- [`array-bracket-newline`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L10)
