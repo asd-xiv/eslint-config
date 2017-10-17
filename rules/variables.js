@@ -40,7 +40,8 @@ module.exports = {
 
         // Disallow declaration of variables that are not used in the code
         "no-unused-vars": [ "error", {
-            args: "after-used",
+            args             : "after-used",
+            varsIgnorePattern: "debug",
         } ],
 
         // Disallow use of variables before they are defined
