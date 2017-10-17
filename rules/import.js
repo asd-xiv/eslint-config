@@ -60,5 +60,13 @@ module.exports = {
          * correct parsing goal.
          */
         "import/unambiguous": "off",
+
+        /*
+         * A list of file extensions that will be parsed as modules and
+         * inspected for exports.
+         */
+        "import/extensions": [ "error", "always", {
+            js: "never",
+        } ],
     },
 }

@@ -353,5 +353,16 @@ module.exports = {
         "jsx-control-statements/jsx-jcs-no-undef": "error",
 
         "no-undef": "off",
+
+        /*
+         * A list of file extensions that will be parsed as modules and
+         * inspected for exports.
+         */
+        "import/extensions": [
+            "error", "always", {
+                js : "never",
+                jsx: "never",
+            },
+        ],
     },
 }
