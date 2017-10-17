@@ -27,7 +27,7 @@ module.exports = {
          * This rule prevents comment strings (e.g. beginning with // or /*)
          * from being accidentally injected as a text node in JSX statements.
          */
-        "react/jsx-no-comment-textnodes": "error",
+        "react/jsx-no-comment-textnodes": "warn",
 
         // Prevent duplicate properties in JSX
         "react/jsx-no-duplicate-props": "error",
@@ -44,7 +44,9 @@ module.exports = {
         "react/jsx-no-target-blank": "error",
 
         // Disallow undeclared variables in JSX
-        "react/jsx-no-undef": [ "error", { allowGlobals: true } ],
+        "react/jsx-no-undef": [ "error", {
+            allowGlobals: true,
+        } ],
 
         // Prevent React to be incorrectly marked as unused
         "react/jsx-uses-react": "error",
@@ -169,7 +171,7 @@ module.exports = {
         /*
          * This option validates a specific indentation style for props.
          */
-        "react/jsx-indent-props": [ "error",2 ],
+        "react/jsx-indent-props": [ "error", 4 ],
 
         /*
          * Ensures that any component or prop methods used to handle events
@@ -194,7 +196,9 @@ module.exports = {
          * This rule aims to maintain consistency around the spacing inside of
          * JSX attributes and expressions inside element children.
          */
-        "react/jsx-curly-spacing": [ "error", { when: "always" } ],
+        "react/jsx-curly-spacing": [ "error", {
+            when: "always",
+        } ],
 
         /*
          * This rule allows you to enforce curly braces or disallow
