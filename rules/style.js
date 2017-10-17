@@ -17,12 +17,10 @@ module.exports = {
         "array-element-newline": [ "off" ],
 
         // Require space before/after arrow function's arrow
-        "arrow-spacing": [
-            "error", {
-                after : true,
-                before: true,
-            },
-        ],
+        "arrow-spacing": [ "error", {
+            after : true,
+            before: true,
+        } ],
 
         // Enforces consistent spacing inside computed property brackets.
         "computed-property-spacing": [ "error", "always" ],
@@ -93,18 +91,16 @@ module.exports = {
          * object literal properties. In the case of long lines, it is
          * acceptable to add a new line wherever whitespace is allowed.
          */
-        "key-spacing": [
-            "error", {
-                afterColon: true,
-                align     : {
-                    afterColon : true,
-                    beforeColon: false,
-                    on         : "colon",
-                },
+        "key-spacing": [ "error", {
+            afterColon: true,
+            align     : {
+                afterColon : true,
                 beforeColon: false,
-                mode       : "strict",
+                on         : "colon",
             },
-        ],
+            beforeColon: false,
+            mode       : "strict",
+        } ],
 
         /*
          * Enforces consistent spacing around keywords and keyword-like
@@ -118,12 +114,10 @@ module.exports = {
          * designed carefully not to conflict with other spacing rules: it
          * does not apply to spacing where other rules report problems.
          */
-        "keyword-spacing": [
-            "error", {
-                after : true,
-                before: true,
-            },
-        ],
+        "keyword-spacing": [ "error", {
+            after : true,
+            before: true,
+        } ],
 
         /*
          * Enforces a maximum line length to increase code readability and
@@ -182,18 +176,16 @@ module.exports = {
          * this and no-extra-parens rule together, you need to use the
          * nestedBinaryExpressions option of no-extra-parens rule.
          */
-        "no-mixed-operators": [
-            "error", {
-                allowSamePrecedence: true,
-                groups             : [
-                    [ "+", "-", "*", "/", "%", "**" ],
-                    [ "&", "|", "^", "~", "<<", ">>", ">>>" ],
-                    [ "==", "!=", "===", "!==", ">", ">=", "<", "<=" ],
-                    [ "&&", "||" ],
-                    [ "in", "instanceof" ],
-                ],
-            },
-        ],
+        "no-mixed-operators": [ "error", {
+            allowSamePrecedence: true,
+            groups             : [
+                [ "+", "-", "*", "/", "%", "**" ],
+                [ "&", "|", "^", "~", "<<", ">>", ">>>" ],
+                [ "==", "!=", "===", "!==", ">", ">=", "<", "<=" ],
+                [ "&&", "||" ],
+                [ "in", "instanceof" ],
+            ],
+        } ],
 
         /*
          * This rule disallows using multiple assignments within a single
@@ -202,13 +194,11 @@ module.exports = {
         "no-multi-assign": "error",
 
         // Enforces the consistent use of empty lines.
-        "no-multiple-empty-lines": [
-            "error", {
-                max   : 2,
-                maxBOF: 0,
-                maxEOF: 1,
-            },
-        ],
+        "no-multiple-empty-lines": [ "error", {
+            max   : 2,
+            maxBOF: 0,
+            maxEOF: 1,
+        } ],
 
         /*
          * This rule disallows negated conditions in either of the following:
@@ -221,21 +211,17 @@ module.exports = {
          * This rule disallows trailing whitespace (spaces, tabs, and other
          * Unicode whitespace characters) at the end of lines.
          */
-        "no-trailing-spaces": [
-            "error", {
-                skipBlankLines: false,
-            },
-        ],
+        "no-trailing-spaces": [ "error", {
+            skipBlankLines: false,
+        } ],
 
         /*
          * This rule disallow ternary operators when simpler alternatives
          * exist.
          */
-        "no-unneeded-ternary": [
-            "error", {
-                defaultAssignment: true,
-            },
-        ],
+        "no-unneeded-ternary": [ "error", {
+            defaultAssignment: true,
+        } ],
 
         /*
          * This rule disallows whitespace around the dot or before the opening
@@ -254,11 +240,9 @@ module.exports = {
          * This rule enforces consistent line breaks inside braces of object
          * literals or destructuring assignments.
          */
-        "object-curly-newline": [
-            "error", {
-                consistent: true,
-            },
-        ],
+        "object-curly-newline": [ "error", {
+            consistent: true,
+        } ],
 
         /*
          * Enforce placing object properties on separate lines
@@ -290,13 +274,11 @@ module.exports = {
          * kinds of statements. Properly blank lines help developers to
          * understand the code.
          */
-        "padding-line-between-statements": [
-            "error", {
-                blankLine: "always",
-                next     : "return",
-                prev     : "var",
-            },
-        ],
+        "padding-line-between-statements": [ "error", {
+            blankLine: "always",
+            next     : "return",
+            prev     : "var",
+        } ],
 
         // This rule requires quotes around object literal property names.
         "quote-props": [ "error", "consistent-as-needed" ],
@@ -331,20 +313,22 @@ module.exports = {
          *      - This rule ignores spacing which is between a keyword and a
          *      block. The spacing is handled by the keyword-spacing rule.
          */
-        "space-before-blocks": [
-            "error", {
-                classes  : "always",
-                functions: "always",
-                keywords : "always",
-            },
-        ],
+        "space-before-blocks": [ "error", {
+            classes  : "always",
+            functions: "always",
+            keywords : "always",
+        } ],
 
         /*
          * This rule aims to enforce consistent spacing before function
          * parentheses and as such, will warn whenever whitespace doesn’t
          * match the preferences specified.
          */
-        "space-before-function-paren": [ "error", "never" ],
+        "space-before-function-paren": [ "error", {
+            anonymous : "always",
+            named     : "always",
+            asyncArrow: "always",
+        } ],
 
         /*
          * This rule will enforce consistency of spacing directly inside of
@@ -364,24 +348,20 @@ module.exports = {
          * This rule enforces consistency regarding the spaces after words
          * unary operators and after/before nonwords unary operators.
          */
-        "space-unary-ops": [
-            "error", {
-                nonwords: false,
-                words   : true,
-            },
-        ],
+        "space-unary-ops": [ "error", {
+            nonwords: false,
+            words   : true,
+        } ],
 
         /*
          * This rule controls spacing around colons of case and default clauses
          * in switch statements. This rule does the check only if the
          * consecutive tokens exist on the same line.
          */
-        "switch-colon-spacing": [
-            "error", {
-                after : true,
-                before: false,
-            },
-        ],
+        "switch-colon-spacing": [ "error", {
+            after : true,
+            before: false,
+        } ],
 
         /*
          * This rule improves readability by enforcing lines between class
