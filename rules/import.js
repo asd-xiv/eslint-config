@@ -2,7 +2,16 @@
 
 module.exports = {
     plugins: [ "import" ],
-    rules  : {
+
+    settings: {
+        /*
+         * A list of regex strings that, if matched by a path, will not report
+         * the matching module if no exports are found.
+         */
+        "import/ignore": [ "\.(sass|scss|less|css)$" ],
+    },
+
+    rules: {
         /*
          * If a default import is requested, this rule will report if there is
          * no default export in the imported module.
