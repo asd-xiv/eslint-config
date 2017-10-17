@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.9.1] - 17 October 2017
+
+### Added
+
+- [`import/ignore`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L11) to ignore css/scss/sass files
+- [`import/extensions`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L77) `.js` and `['.js', '.jsx']` if [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L361) is loaded.
+
+### Changed
+
+- [`react/jsx-no-comment-textnodes`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L30)
+- [`object-property-newline`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L250)
+- [`no-multi-spaces`](https://github.com/codemachiner/eslint-config/blob/master/rules/best.practices.js#L115)
+- [`no-unused-vars`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L42)
+- [`space-before-function-paren`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L329)
+
 ## [2.9.0] - 16 October 2017
 
 Update packages and new rules for react & promise
@@ -208,7 +223,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.0...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.1...HEAD
+[2.9.1]: https://github.com/codemachiner/eslint-rules/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/codemachiner/eslint-rules/compare/v2.8.3...v2.9.0
 [2.8.3]: https://github.com/codemachiner/eslint-rules/compare/v2.8.2...v2.8.3
 [2.8.2]: https://github.com/codemachiner/eslint-rules/compare/v2.8.1...v2.8.2

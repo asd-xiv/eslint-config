@@ -38,7 +38,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.9.0 - 16 October 2017](#290---16-october-2017)
+- [2.9.1 - 17 October 2017](#291---17-october-2017)
     - [Added](#added)
     - [Changed](#changed)
 
@@ -381,16 +381,17 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.0 - 16 October 2017
-
-Update packages and new rules for react & promise
+## 2.9.1 - 17 October 2017
 
 ### Added
 
-- [`react/jsx-curly-brace-presence`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L205)
-- [`promise/no-return-in-finally`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js#L65)
+- [`import/ignore`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L11) to ignore css/scss/sass files
+- [`import/extensions`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L77) `.js` and `['.js', '.jsx']` if [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L361) is loaded.
 
 ### Changed
 
-- [`no-else-return`](https://github.com/codemachiner/eslint-config/blob/master/rules/best.practices.js#L55)
-- [`array-bracket-newline`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L10)
+- [`react/jsx-no-comment-textnodes`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L30)
+- [`object-property-newline`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L250)
+- [`no-multi-spaces`](https://github.com/codemachiner/eslint-config/blob/master/rules/best.practices.js#L115)
+- [`no-unused-vars`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L42)
+- [`space-before-function-paren`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L329)
