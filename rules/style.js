@@ -247,7 +247,9 @@ module.exports = {
         /*
          * Enforce placing object properties on separate lines
          */
-        "object-property-newline": "error",
+        "object-property-newline": [ "error", {
+            allowMultiplePropertiesPerLine: true,
+        } ],
 
         /*
          * This rule enforce consistent spacing inside braces of object
