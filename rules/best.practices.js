@@ -112,7 +112,7 @@ module.exports = {
          * Expressions, conditional expressions, declarations, array elements,
          * Object properties, sequences and function parameters.
          */
-        "no-multi-spaces": "error",
+        "no-multi-spaces": "warn",
 
         // Disallow use of multiline strings
         "no-multi-str": "error",
