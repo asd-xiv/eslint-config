@@ -59,12 +59,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.12.1",
+    "eslint": "^4.15.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-unicorn": "^3.0.0"
+    "eslint-plugin-unicorn": "^3.0.1"
 }
 ...
 ```
