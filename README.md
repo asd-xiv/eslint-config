@@ -381,17 +381,8 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.3 - 2 December 2017
+## 2.9.4 - 14 January 2018
 
 ### Added
 
-- [`react/jsx-one-expression-per-line`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L312)
-- [`react/destructuring-assignment`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L318)
-- [`react/no-access-state-in-setstate`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L323)
-- [`react/button-has-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L328)
-- [`react/jsx-wrap-multilines`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L333)
-
-### Changed
-
-- [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L252)
-- [`react/require-default-props`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L223)
+- [`camelcase`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L35)
