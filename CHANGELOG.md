@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.9.6] - 23 April 2018
+
+Bumped versions
+
 ## [2.9.5] - 14 February 2018
 
 ### Added
@@ -273,7 +277,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.5...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.6...HEAD
+[2.9.6]: https://github.com/codemachiner/eslint-rules/compare/v2.9.5...v2.9.6
 [2.9.5]: https://github.com/codemachiner/eslint-rules/compare/v2.9.4...v2.9.5
 [2.9.4]: https://github.com/codemachiner/eslint-rules/compare/v2.9.3...v2.9.4
 [2.9.3]: https://github.com/codemachiner/eslint-rules/compare/v2.9.2...v2.9.3
