@@ -43,8 +43,6 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 
 ## Installation & Usage
 
-Requires ESLint >= 4.0.0
-
 ```bash
 npm i eslint @codemachiner/eslint-config --save-dev
 ```
@@ -56,12 +54,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-json": "^1.2.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-unicorn": "^4.0.3"
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-unicorn": "^6.0.1"
 }
 ...
 ```
@@ -361,6 +359,6 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.6 - 23 April 2018
+## 2.9.7 - 14 September 2018
 
 Bumped versions
