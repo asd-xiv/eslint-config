@@ -1,4 +1,5 @@
 <!-- markdownlint-disable line-length -->
+
 # JavaScript ESLint rules
 
 [![npm package version](https://badge.fury.io/js/%40codemachiner%2Feslint-config.svg)](https://badge.fury.io/js/%40codemachiner%2Feslint-config)
@@ -84,7 +85,7 @@ Add the `react` or `node` target file in your `.eslintrc` file:
         "@codemachiner/eslint-config/targets/react",
 
         // optional Flow support
-        "@codemachiner/eslint-config/rules/flow", 
+        "@codemachiner/eslint-config/rules/flow",
     ]
 }
 ```
@@ -95,7 +96,7 @@ When using `react` target, besides the peer dependencies, also install `eslint-p
 npm install --save-dev eslint-plugin-jsx-control-statements
 ```
 
-When using with flow, Install `eslint-plugin-flowtype` and `eslint-plugin-flowtype-errors`. 
+When using with flow, Install `eslint-plugin-flowtype` and `eslint-plugin-flowtype-errors`.
 
 ```bash
 npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
