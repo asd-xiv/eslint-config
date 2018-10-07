@@ -1,213 +1,200 @@
 /* eslint-env node */
 
 module.exports = {
-    rules: {
-        // Enforces getter/setter pairs in objects
-        "accessor-pairs": 0,
+  rules: {
+    // Enforces getter/setter pairs in objects
+    "accessor-pairs": 0,
 
-        // Treat var statements as if they were block scoped
-        "block-scoped-var": "error",
+    // Treat var statements as if they were block scoped
+    "block-scoped-var": "error",
 
-        // Specify the maximum cyclomatic complexity allowed in a program
-        "complexity": [ 0, 11 ],
+    // Specify the maximum cyclomatic complexity allowed in a program
+    complexity: [0, 5],
 
-        // Require return statements to either always or never specify values
-        "consistent-return": "error",
+    // Require return statements to either always or never specify values
+    "consistent-return": "error",
 
-        // Specify curly brace conventions for all control statements
-        "curly": [ "error", "multi-line" ],
+    // Require default case in switch statements
+    "default-case": "error",
 
-        // Require default case in switch statements
-        "default-case": "error",
+    // Encourages use of dot notation whenever possible
+    "dot-notation": [
+      "error",
+      {
+        allowKeywords: true,
+      },
+    ],
 
-        // Enforces consistent newlines before or after dots
-        "dot-location": 0,
+    // Require the use of === and !==
+    eqeqeq: "error",
 
-        // Encourages use of dot notation whenever possible
-        "dot-notation": [
-            "error", {
-                allowKeywords: true,
-            },
-        ],
+    // Make sure for-in loops have an if statement
+    "guard-for-in": "error",
 
-        // Require the use of === and !==
-        "eqeqeq": "error",
+    // Disallow the use of alert, confirm, and prompt
+    "no-alert": 1,
 
-        // Make sure for-in loops have an if statement
-        "guard-for-in": "error",
+    // Disallow use of arguments.caller or arguments.callee
+    "no-caller": "error",
 
-        // Disallow the use of alert, confirm, and prompt
-        "no-alert": 1,
+    // Disallow lexical declarations in case clauses
+    "no-case-declarations": "error",
 
-        // Disallow use of arguments.caller or arguments.callee
-        "no-caller": "error",
+    /*
+     * Disallow division operators explicitly at beginning of regular
+     * expression
+     */
+    "no-div-regex": 0,
 
-        // Disallow lexical declarations in case clauses
-        "no-case-declarations": "error",
+    // Disallow else after a return in an if
+    "no-else-return": [
+      "error",
+      {
+        allowElseIf: false,
+      },
+    ],
 
-        /*
-         * Disallow division operators explicitly at beginning of regular
-         * expression
-         */
-        "no-div-regex": 0,
+    // Disallow use of empty destructuring patterns
+    "no-empty-pattern": 0,
 
-        // Disallow else after a return in an if
-        "no-else-return": [ "error", {
-            allowElseIf: false,
-        } ],
+    // Disallow comparisons to null without a type-checking operator
+    "no-eq-null": 0,
 
-        // Disallow use of empty destructuring patterns
-        "no-empty-pattern": 0,
+    // Disallow use of eval()
+    "no-eval": "error",
 
-        // Disallow comparisons to null without a type-checking operator
-        "no-eq-null": 0,
+    // Disallow adding to native types
+    "no-extend-native": "error",
 
-        // Disallow use of eval()
-        "no-eval": "error",
+    // Disallow unnecessary function binding
+    "no-extra-bind": "error",
 
-        // Disallow adding to native types
-        "no-extend-native": "error",
+    // Disallow fallthrough of case statements
+    "no-fallthrough": "error",
 
-        // Disallow unnecessary function binding
-        "no-extra-bind": "error",
+    // Disallow the type conversions with shorter notations
+    "no-implicit-coercion": 0,
 
-        // Disallow fallthrough of case statements
-        "no-fallthrough": "error",
+    // Disallow use of eval()-like methods
+    "no-implied-eval": "error",
 
-        /*
-         * Disallow the use of leading or trailing decimal points in numeric
-         * Literals
-         */
-        "no-floating-decimal": "error",
+    // Disallow this keywords outside of classes or class-like objects
+    "no-invalid-this": 0,
 
-        // Disallow the type conversions with shorter notations
-        "no-implicit-coercion": 0,
+    // Disallow usage of __iterator__ property
+    "no-iterator": "error",
 
-        // Disallow use of eval()-like methods
-        "no-implied-eval": "error",
+    // Disallow use of labels for anything other then loops and switches
+    "no-label": 0,
 
-        // Disallow this keywords outside of classes or class-like objects
-        "no-invalid-this": 0,
+    // Disallow use of labeled statements
+    "no-labels": "error",
 
-        // Disallow usage of __iterator__ property
-        "no-iterator": "error",
+    // Disallow unnecessary nested blocks
+    "no-lone-blocks": "error",
 
-        // Disallow use of labels for anything other then loops and switches
-        "no-label": 0,
+    // Disallow creation of functions within loops
+    "no-loop-func": "error",
 
-        // Disallow use of labeled statements
-        "no-labels": "error",
+    // Disallow the use of magic numbers
+    "no-magic-numbers": 0,
 
-        // Disallow unnecessary nested blocks
-        "no-lone-blocks": "error",
+    // Disallow use of multiline strings
+    "no-multi-str": "error",
 
-        // Disallow creation of functions within loops
-        "no-loop-func": "error",
+    // Disallow reassignments of native objects
+    "no-native-reassign": "error",
 
-        // Disallow the use of magic numbers
-        "no-magic-numbers": 0,
+    /*
+     * Disallow use of new operator when not part of the assignment or
+     * Comparison
+     */
+    "no-new": "error",
 
-        /*
-         * This rule aims to disallow multiple whitespace around logical
-         * Expressions, conditional expressions, declarations, array elements,
-         * Object properties, sequences and function parameters.
-         */
-        "no-multi-spaces": "warn",
+    // Disallow use of new operator for Function object
+    "no-new-func": "error",
 
-        // Disallow use of multiline strings
-        "no-multi-str": "error",
+    // Disallows creating new instances of String,Number, and Boolean
+    "no-new-wrappers": "error",
 
-        // Disallow reassignments of native objects
-        "no-native-reassign": "error",
+    // Disallow use of (old style) octal literals
+    "no-octal": "error",
 
-        /*
-         * Disallow use of new operator when not part of the assignment or
-         * Comparison
-         */
-        "no-new": "error",
+    /*
+     * Disallow use of octal escape sequences in string literals, such as
+     * Var foo = "Copyright \251";
+     */
+    "no-octal-escape": "error",
 
-        // Disallow use of new operator for Function object
-        "no-new-func": "error",
+    // Disallow reassignment of function parameters
+    "no-param-reassign": [
+      "error",
+      {
+        props: false,
+      },
+    ],
 
-        // Disallows creating new instances of String,Number, and Boolean
-        "no-new-wrappers": "error",
+    // Disallow use of process.env
+    "no-process-env": 0,
 
-        // Disallow use of (old style) octal literals
-        "no-octal": "error",
+    // Disallow usage of __proto__ property
+    "no-proto": "error",
 
-        /*
-         * Disallow use of octal escape sequences in string literals, such as
-         * Var foo = "Copyright \251";
-         */
-        "no-octal-escape": "error",
+    // Disallow declaring the same variable more then once
+    "no-redeclare": "error",
 
-        // Disallow reassignment of function parameters
-        "no-param-reassign": [
-            "error", {
-                props: false,
-            },
-        ],
+    // Disallow use of assignment in return statement
+    "no-return-assign": "error",
 
-        // Disallow use of process.env
-        "no-process-env": 0,
+    // Disallow use of `javascript:` urls.
+    "no-script-url": "error",
 
-        // Disallow usage of __proto__ property
-        "no-proto": "error",
+    // Disallow comparisons where both sides are exactly the same
+    "no-self-compare": "error",
 
-        // Disallow declaring the same variable more then once
-        "no-redeclare": "error",
+    // Disallow use of comma operator
+    "no-sequences": "error",
 
-        // Disallow use of assignment in return statement
-        "no-return-assign": "error",
+    // Restrict what can be thrown as an exception
+    "no-throw-literal": "error",
 
-        // Disallow use of `javascript:` urls.
-        "no-script-url": "error",
+    // Disallow usage of expressions in statement position
+    "no-unused-expressions": [
+      "error",
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+      },
+    ],
 
-        // Disallow comparisons where both sides are exactly the same
-        "no-self-compare": "error",
+    // Disallow unnecessary .call() and .apply()
+    "no-useless-call": 0,
 
-        // Disallow use of comma operator
-        "no-sequences": "error",
+    // Disallow unnecessary concatenation of literals or template literals
+    "no-useless-concat": 0,
 
-        // Restrict what can be thrown as an exception
-        "no-throw-literal": "error",
+    // Disallow use of void operator
+    "no-void": 0,
 
-        // Disallow usage of expressions in statement position
-        "no-unused-expressions": [ "error", {
-            allowShortCircuit: true,
-            allowTernary     : true,
-        } ],
+    // Disallow usage of configurable warning terms in comments: e.g. todo
+    "no-warning-comments": [
+      0,
+      {
+        location: "start",
+        terms: ["todo", "fixme", "xxx"],
+      },
+    ],
 
-        // Disallow unnecessary .call() and .apply()
-        "no-useless-call": 0,
+    // Disallow use of the with statement
+    "no-with": "error",
 
-        // Disallow unnecessary concatenation of literals or template literals
-        "no-useless-concat": 0,
+    // Require use of the second argument for parseInt()
+    radix: "error",
 
-        // Disallow use of void operator
-        "no-void": 0,
+    // Requires to declare all vars on top of their containing scope
+    "vars-on-top": "error",
 
-        // Disallow usage of configurable warning terms in comments: e.g. todo
-        "no-warning-comments": [
-            0, {
-                location: "start",
-                terms   : [ "todo", "fixme", "xxx" ],
-            },
-        ],
-
-        // Disallow use of the with statement
-        "no-with": "error",
-
-        // Require use of the second argument for parseInt()
-        "radix": "error",
-
-        // Requires to declare all vars on top of their containing scope
-        "vars-on-top": "error",
-
-        // Require immediate function invocation to be wrapped in parentheses
-        "wrap-iife": [ "error", "outside" ],
-
-        // Require or disallow Yoda conditions
-        "yoda": 0,
-    },
+    // Require or disallow Yoda conditions
+    yoda: 0,
+  },
 }

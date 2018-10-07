@@ -1,6 +1,26 @@
 /* eslint-env node */
 
 module.exports = {
+  /*
+   * Disabled by prettier
+   * https://github.com/prettier/eslint-config-prettier/blob/master/react.js
+   *
+   * "react/jsx-child-element-spacing": "off",
+   * "react/jsx-closing-bracket-location": "off",
+   * "react/jsx-closing-tag-location": "off",
+   * "react/jsx-curly-spacing": "off",
+   * "react/jsx-equals-spacing": "off",
+   * "react/jsx-first-prop-new-line": "off",
+   * "react/jsx-indent": "off",
+   * "react/jsx-indent-props": "off",
+   * "react/jsx-max-props-per-line": "off",
+   * "react/jsx-one-expression-per-line": "off",
+   * "react/jsx-props-no-multi-spaces": "off",
+   * "react/jsx-space-before-closing": "off",
+   * "react/jsx-tag-spacing": "off",
+   * "react/jsx-wrap-multilines": "off"
+   */
+
   rules: {
     // Prevent missing displayName in a React component definition
     "react/display-name": "error",
@@ -264,6 +284,7 @@ module.exports = {
             "contextTypes",
             "childContextTypes",
             "constructor",
+            "getDerivedStateFromProps",
           ],
           rendering: ["render", "/^_?render.+$/"],
           lifecycle: [
@@ -278,6 +299,7 @@ module.exports = {
             "componentWillUpdate",
             "componentDidUpdate",
             "componentWillUnmount",
+            "componentDidCatch",
           ],
         },
       },
@@ -333,10 +355,8 @@ module.exports = {
      */
     "jsx-control-statements/jsx-otherwise-once-last": "error",
 
-    /*
-     * Use If tag instead of ternary operator.
-     */
-    "jsx-control-statements/jsx-use-if-tag": "error",
+    // Use If tag instead of ternary operator.
+    "jsx-control-statements/jsx-use-if-tag": "warn",
 
     /*
      * Warn if When tag is missing condition attribute.
