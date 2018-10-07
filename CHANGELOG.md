@@ -9,6 +9,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.0.0] - 8 October 2018
+
+Restructuring bundles as "target" files. Supporting React and Node.js, with optional Flow support.
+
+Delegating all stylistic rules to [`prettier`](https://prettier.io) via [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) and [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier).
+
+### Added
+
+- unicorn: [`unicorn/no-process-exit`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L12), [`unicorn/number-literal-case`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L20), [`unicorn/no-fn-reference-in-iterator`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L23), [`unicorn/import-index`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L29), [`unicorn/prefer-spread`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L36), [`unicorn/prefer-add-event-listener`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L45), [`unicorn/prefer-exponentiation-operator`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js#L48)
+- react: [`react/void-dom-elements-no-children`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L12), [`react/prefer-es6-class`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L15), [`react/no-unused-prop-types`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L18), [`react/no-unused-state`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L21), [`react/no-unsafe`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L24), [`react/no-will-update-set-state`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L27), [`react/forbid-dom-props`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L30), [`react/forbid-prop-types`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L32), [`react/jsx-filename-extension`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L40), [`react/jsx-max-depth`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L43)
+- flowtype-errors: [`flowtype-errors/type-import-style`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L34), [`flowtype-errors/require-types-at-top`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L40), [`flowtype-errors/no-unused-expressions`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L47), [`flowtype-errors/array-style-complex-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L50), [`flowtype-errors/array-style-simple-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L53)
+
+### Changed
+
+- [`jsx-control-statements/jsx-use-if-tag`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L339) from "error" -> "warn"
+- [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L247) added `getDerivedStateFromProps` and `componentDidCatch`
+- [`flowtype/require-return-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js#L) from "off" -> "error"
+
 ## [2.9.7] - 14 September 2018
 
 Bumped versions
@@ -281,7 +299,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.7...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/codemachiner/eslint-rules/compare/v2.9.7...v3.0.0
 [2.9.7]: https://github.com/codemachiner/eslint-rules/compare/v2.9.6...v2.9.7
 [2.9.6]: https://github.com/codemachiner/eslint-rules/compare/v2.9.5...v2.9.6
 [2.9.5]: https://github.com/codemachiner/eslint-rules/compare/v2.9.4...v2.9.5
