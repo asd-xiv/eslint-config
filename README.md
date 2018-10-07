@@ -1,3 +1,4 @@
+<!-- markdownlint-disable line-length -->
 # JavaScript ESLint rules
 
 [![npm package version](https://badge.fury.io/js/%40codemachiner%2Feslint-config.svg)](https://badge.fury.io/js/%40codemachiner%2Feslint-config)

@@ -1,4 +1,4 @@
-<!-- markdownlint-disable no-duplicate-header -->
+<!-- markdownlint-disable no-duplicate-header line-length -->
 
 # Changelog
 
