@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.0.1] - 17 November 2018
+
+Update packages and rename to @asd14
+
 ## [3.0.0] - 8 October 2018
 
 Restructuring bundles as "target" files. Supporting React and Node.js, with optional Flow support.
@@ -299,7 +303,9 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v3.0.1...HEAD
+
+[3.0.1]: https://github.com/codemachiner/eslint-rules/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/codemachiner/eslint-rules/compare/v2.9.7...v3.0.0
 [2.9.7]: https://github.com/codemachiner/eslint-rules/compare/v2.9.6...v2.9.7
 [2.9.6]: https://github.com/codemachiner/eslint-rules/compare/v2.9.5...v2.9.6
