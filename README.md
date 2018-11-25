@@ -159,6 +159,8 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/blob/master/CHANGELOG.md)
 
-## 3.0.1 - 17 November 2018
+### 3.0.2 - 25 November 2018
 
-Update packages and rename to @asd14
+#### Change
+
+- Fix flow rules assing to `flowtype-errors` instead of `flowtype`
