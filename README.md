@@ -94,7 +94,7 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 `.eslintrc`
 
-```json
+```js
 {
     "root"  : true,
     "parser": "babel-eslint",
@@ -127,7 +127,7 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 `.prettierrc`
 
-```json
+```js
 {
   "semi": false,
   "printWidth": 80,
