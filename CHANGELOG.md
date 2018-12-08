@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.0.0] - 8 December 2018
+
+### Change
+
+- Change [`flowtype/type-id-match`](rules/flow.js#L139) to allow multiple starting uppercase letters
+- [`flowtype-errors/enforce-min-coverage`](rules/flow.js#L139) lowered to 60. Makes learning curve easier
+- Remove `style` from [`react/forbid-dom-props`](rules/react.js#L50)
+
+### Remove
+
+- Remove `jsx-control-statements` plugin. Adds too much complexity when using with `flow`
+- Disable [`react/no-unused-prop-types`](rules/flow.js#L31) rule when using `flow`
+- Disable [`flowtype/require-exact-type`](rules/flow.js#L77) rule. Too strict and unrealistic
+- Disable [`unicorn/filename-case`](rules/unicorn.js#57) and [`unicorn/no-fn-reference-in-iterator`](rules/unicorn.js#L21)
+- Disable [`promise/prefer-await-to-then`](rules/promise.js#L58) and [`promise/prefer-await-to-callbacks`](rules/promise.js#L61)
+
 ## [3.0.2] - 25 November 2018
 
 ### Change
@@ -309,26 +325,27 @@ React support
     - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/asd14/eslint-rules/compare/v3.0.2...HEAD
+[Unreleased]: https://github.com/asd14/eslint-config/compare/v4.0.0...HEAD
 
-[3.0.2]: https://github.com/asd14/eslint-rules/compare/v3.0.1...v3.0.2
-[3.0.1]: https://github.com/asd14/eslint-rules/compare/v3.0.0...v3.0.1
-[3.0.0]: https://github.com/asd14/eslint-rules/compare/v2.9.7...v3.0.0
-[2.9.7]: https://github.com/asd14/eslint-rules/compare/v2.9.6...v2.9.7
-[2.9.6]: https://github.com/asd14/eslint-rules/compare/v2.9.5...v2.9.6
-[2.9.5]: https://github.com/asd14/eslint-rules/compare/v2.9.4...v2.9.5
-[2.9.4]: https://github.com/asd14/eslint-rules/compare/v2.9.3...v2.9.4
-[2.9.3]: https://github.com/asd14/eslint-rules/compare/v2.9.2...v2.9.3
-[2.9.2]: https://github.com/asd14/eslint-rules/compare/v2.9.0...v2.9.2
-[2.9.1]: https://github.com/asd14/eslint-rules/compare/v2.9.0...v2.9.1
-[2.9.0]: https://github.com/asd14/eslint-rules/compare/v2.8.3...v2.9.0
-[2.8.3]: https://github.com/asd14/eslint-rules/compare/v2.8.2...v2.8.3
-[2.8.2]: https://github.com/asd14/eslint-rules/compare/v2.8.1...v2.8.2
-[2.8.1]: https://github.com/asd14/eslint-rules/compare/v2.8.0...v2.8.1
-[2.8.0]: https://github.com/asd14/eslint-rules/compare/v2.7.2...v2.8.0
-[2.7.2]: https://github.com/asd14/eslint-rules/compare/v2.7.1...v2.7.2
-[2.7.1]: https://github.com/asd14/eslint-rules/compare/v2.6.0...v2.7.1
-[2.6.0]: https://github.com/asd14/eslint-rules/compare/v2.5.1...v2.6.0
-[2.5.1]: https://github.com/asd14/eslint-rules/compare/v2.5.0...v2.5.1
-[2.5.0]: https://github.com/asd14/eslint-rules/compare/v2.4.0...v2.5.0
-[2.4.0]: https://github.com/asd14/eslint-rules/compare/v2.3.2...v2.4.0
+[4.0.0]: https://github.com/asd14/eslint-config/compare/v3.0.2...v4.0.0
+[3.0.2]: https://github.com/asd14/eslint-config/compare/v3.0.1...v3.0.2
+[3.0.1]: https://github.com/asd14/eslint-config/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/asd14/eslint-config/compare/v2.9.7...v3.0.0
+[2.9.7]: https://github.com/asd14/eslint-config/compare/v2.9.6...v2.9.7
+[2.9.6]: https://github.com/asd14/eslint-config/compare/v2.9.5...v2.9.6
+[2.9.5]: https://github.com/asd14/eslint-config/compare/v2.9.4...v2.9.5
+[2.9.4]: https://github.com/asd14/eslint-config/compare/v2.9.3...v2.9.4
+[2.9.3]: https://github.com/asd14/eslint-config/compare/v2.9.2...v2.9.3
+[2.9.2]: https://github.com/asd14/eslint-config/compare/v2.9.0...v2.9.2
+[2.9.1]: https://github.com/asd14/eslint-config/compare/v2.9.0...v2.9.1
+[2.9.0]: https://github.com/asd14/eslint-config/compare/v2.8.3...v2.9.0
+[2.8.3]: https://github.com/asd14/eslint-config/compare/v2.8.2...v2.8.3
+[2.8.2]: https://github.com/asd14/eslint-config/compare/v2.8.1...v2.8.2
+[2.8.1]: https://github.com/asd14/eslint-config/compare/v2.8.0...v2.8.1
+[2.8.0]: https://github.com/asd14/eslint-config/compare/v2.7.2...v2.8.0
+[2.7.2]: https://github.com/asd14/eslint-config/compare/v2.7.1...v2.7.2
+[2.7.1]: https://github.com/asd14/eslint-config/compare/v2.6.0...v2.7.1
+[2.6.0]: https://github.com/asd14/eslint-config/compare/v2.5.1...v2.6.0
+[2.5.1]: https://github.com/asd14/eslint-config/compare/v2.5.0...v2.5.1
+[2.5.0]: https://github.com/asd14/eslint-config/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/asd14/eslint-config/compare/v2.3.2...v2.4.0
