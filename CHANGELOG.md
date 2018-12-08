@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.0.1] - 8 December 2018
+
+### Remove
+
+- Disable [promise/always-return](rules/promise.js#L23)
+
 ## [4.0.0] - 8 December 2018
 
 ### Change
@@ -325,8 +331,9 @@ React support
     - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/asd14/eslint-config/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/asd14/eslint-config/compare/v4.0.1...HEAD
 
+[4.0.1]: https://github.com/asd14/eslint-config/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/asd14/eslint-config/compare/v3.0.2...v4.0.0
 [3.0.2]: https://github.com/asd14/eslint-config/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/asd14/eslint-config/compare/v3.0.0...v3.0.1

@@ -1,10 +1,10 @@
 <!-- markdownlint-disable line-length -->
 
-# JavaScript ESLint rules
-
 [![npm package version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
 [![dev-badge](https://david-dm.org/asd14/eslint-config/dev-status.svg)](https://david-dm.org/asd14/eslint-config?type=dev)
 [![peer-badge](https://david-dm.org/asd14/eslint-config/peer-status.svg)](https://david-dm.org/asd14/eslint-config?type=peer)
+
+# JavaScript ESLint rules
 
 > JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
 >
@@ -21,7 +21,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Inside](#inside)
 - [Example config](#example-config)
 - [Changelog](#changelog)
-    - [4.0.0 - 8 December 2018](#400---8-december-2018)
+    - [4.0.1 - 8 December 2018](#401---8-december-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -145,18 +145,8 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/blob/master/CHANGELOG.md)
 
-### 4.0.0 - 8 December 2018
-
-#### Change
-
-- Change [`flowtype/type-id-match`](rules/flow.js#L139) to allow multiple starting uppercase letters
-- [`flowtype-errors/enforce-min-coverage`](rules/flow.js#L139) lowered to 60. Makes learning curve easier
-- Remove `style` from [`react/forbid-dom-props`](rules/react.js#L50)
+### 4.0.1 - 8 December 2018
 
 #### Remove
 
-- Remove `jsx-control-statements` plugin. Adds too much complexity when using with `flow`
-- Disable [`react/no-unused-prop-types`](rules/flow.js#L31) rule when using `flow`
-- Disable [`flowtype/require-exact-type`](rules/flow.js#L77) rule. Too strict and unrealistic
-- Disable [`unicorn/filename-case`](rules/unicorn.js#57) and [`unicorn/no-fn-reference-in-iterator`](rules/unicorn.js#L21)
-- Disable [`promise/prefer-await-to-then`](rules/promise.js#L58) and [`promise/prefer-await-to-callbacks`](rules/promise.js#L61)
+- Disable [promise/always-return](rules/promise.js#L23)
