@@ -1,10 +1,10 @@
+# JavaScript ESLint rules
+
 <!-- markdownlint-disable line-length -->
 
 [![npm package version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
 [![dev-badge](https://david-dm.org/asd14/eslint-config/dev-status.svg)](https://david-dm.org/asd14/eslint-config?type=dev)
 [![peer-badge](https://david-dm.org/asd14/eslint-config/peer-status.svg)](https://david-dm.org/asd14/eslint-config?type=peer)
-
-# JavaScript ESLint rules
 
 > JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
 >
