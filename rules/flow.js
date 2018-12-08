@@ -27,6 +27,9 @@ module.exports = {
    */
 
   rules: {
+    // conflicting rules from other plugins
+    "react/no-unused-prop-types": "off",
+
     // Show flow errors
     "flowtype-errors/show-errors": "error",
 
@@ -50,7 +53,7 @@ module.exports = {
     "flowtype/array-style-simple-type": ["error", "shorthand"],
 
     // Error if flow coverage is below 80%
-    "flowtype-errors/enforce-min-coverage": ["error", 80],
+    "flowtype-errors/enforce-min-coverage": ["error", 60],
 
     /*
      * Enforces a particular style for type imports: 'declaration' style
@@ -71,7 +74,7 @@ module.exports = {
     "flowtype/define-flow-type": 1,
 
     // Report all object type definitions that aren't exact.
-    "flowtype/require-exact-type": ["error", "always"],
+    "flowtype/require-exact-type": "off",
 
     /*
      * Checks for duplicate properties in Object annotations.
@@ -133,7 +136,7 @@ module.exports = {
     "flowtype/sort-keys": "off",
 
     // Enforces a consistent naming pattern for type aliases.
-    "flowtype/type-id-match": ["error", "^([A-Z][a-z0-9]+)+Type$"],
+    "flowtype/type-id-match": ["error", "^([A-Z]{1,}[a-z0-9]{0,})+Type$"],
 
     /*
      * Marks Flow type alias declarations as used.
