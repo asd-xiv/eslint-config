@@ -20,7 +20,7 @@ module.exports = {
      * We also allow someone to throw inside a then() which is essentially
      * the same as return Promise.reject().
      */
-    "promise/always-return": "error",
+    "promise/always-return": "off",
 
     /*
      * Ensure that inside a then() or a catch() we always return or throw
