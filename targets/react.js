@@ -50,4 +50,22 @@ module.exports = {
      */
     "import/ignore": [".(sass|scss|less|css)$"],
   },
+
+  settings: {
+    /*
+     * Can add a path segment here that will act like a source root, for
+     * in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
+     */
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx"],
+
+        /*
+         * Can add a path segment here that will act like a source root, for
+         * in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
+         */
+        moduleDirectory: ["node_modules", "src"],
+      },
+    },
+  },
 }

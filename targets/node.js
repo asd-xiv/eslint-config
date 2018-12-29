@@ -36,4 +36,22 @@ module.exports = {
   },
 
   plugins: ["import", "unicorn", "json", "no-inferred-method-name"],
+
+  settings: {
+    /*
+     * Can add a path segment here that will act like a source root, for
+     * in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
+     */
+    "import/resolver": {
+      node: {
+        extensions: [".js"],
+
+        /*
+         * Can add a path segment here that will act like a source root, for
+         * in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
+         */
+        moduleDirectory: ["node_modules", "src"],
+      },
+    },
+  },
 }
