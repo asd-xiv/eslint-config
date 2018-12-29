@@ -1,12 +1,11 @@
-# JavaScript ESLint rules
-
 <!-- markdownlint-disable line-length -->
 
 [![npm package version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
-[![dev-badge](https://david-dm.org/asd14/eslint-config/dev-status.svg)](https://david-dm.org/asd14/eslint-config?type=dev)
 [![peer-badge](https://david-dm.org/asd14/eslint-config/peer-status.svg)](https://david-dm.org/asd14/eslint-config?type=peer)
 
-> JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
+# JavaScript ESLint rules
+
+> JavaScript ESLint bundle with best practices and common use rules for writing more consistent code
 >
 > [`"semi": [ "error", "never" ]`](http://eslint.org/docs/rules/semi) :godmode: ... [the horror](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding) :goberserk:
 
@@ -58,10 +57,10 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 ```javascript
 {
     "extends": [
-        // use for Node.js projects
+        // for Node.js projects
         "@asd14/eslint-config/targets/node",
 
-        // use for React projects
+        // for React projects
         "@asd14/eslint-config/targets/react",
 
         // optional Flow support
@@ -70,7 +69,7 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 }
 ```
 
-When including "@asd14/eslint-config/rules/flow" also install:
+When including `@asd14/eslint-config/rules/flow` also install:
 
 ```bash
 npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
@@ -149,4 +148,4 @@ History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/
 
 #### Add
 
-- `import/resolver` setting in [`node`](src/targets/node.js#L45) and [`react`](src/targets/react.js#L59) target files
+- `import/resolver` setting in [`node`](targets/node.js#L45) and [`react`](targets/react.js#L59) target files

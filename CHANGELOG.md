@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Add
 
-- `import/resolver` setting in [`node`](src/targets/node.js#L45) and [`react`](src/targets/react.js#L59) target files
+- `import/resolver` setting in [`node`](targets/node.js#L45) and [`react`](targets/react.js#L59) target files
 
 ## [4.0.1] - 8 December 2018
 
