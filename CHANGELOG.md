@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.0.2] - 28 December 2018
+
+### Add
+
+- `import/resolver` setting in [`node`](src/targets/node.js#L45) and [`react`](src/targets/react.js#L59) target files
+
 ## [4.0.1] - 8 December 2018
 
 ### Remove
@@ -331,8 +337,9 @@ React support
     - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/asd14/eslint-config/compare/v4.0.1...HEAD
+[Unreleased]: https://github.com/asd14/eslint-config/compare/v4.0.2...HEAD
 
+[4.0.2]: https://github.com/asd14/eslint-config/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/asd14/eslint-config/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/asd14/eslint-config/compare/v3.0.2...v4.0.0
 [3.0.2]: https://github.com/asd14/eslint-config/compare/v3.0.1...v3.0.2

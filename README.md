@@ -21,7 +21,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Inside](#inside)
 - [Example config](#example-config)
 - [Changelog](#changelog)
-    - [4.0.1 - 8 December 2018](#401---8-december-2018)
+    - [4.0.2 - 28 December 2018](#402---28-december-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -38,13 +38,13 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^5.10.0",
+    "eslint": "^5.11.1",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-json": "^1.3.2",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-unicorn": "^6.0.1",
     "prettier": "^1.15.3"
 }
@@ -70,7 +70,7 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 }
 ```
 
-When including "@asd14/eslint-config/rules/flow"
+When including "@asd14/eslint-config/rules/flow" also install:
 
 ```bash
 npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
@@ -145,8 +145,8 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/blob/master/CHANGELOG.md)
 
-### 4.0.1 - 8 December 2018
+### 4.0.2 - 28 December 2018
 
-#### Remove
+#### Add
 
-- Disable [promise/always-return](rules/promise.js#L23)
+- `import/resolver` setting in [`node`](src/targets/node.js#L45) and [`react`](src/targets/react.js#L59) target files
