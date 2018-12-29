@@ -1,4 +1,4 @@
-<!-- markdownlint-disable line-length -->
+<!-- markdownlint-disable first-line-h1 line-length -->
 
 [![npm package version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
 [![peer-badge](https://david-dm.org/asd14/eslint-config/peer-status.svg)](https://david-dm.org/asd14/eslint-config?type=peer)
