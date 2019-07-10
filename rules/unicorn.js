@@ -1,13 +1,14 @@
 /* eslint-env node */
 
 module.exports = {
+  plugins: ["unicorn"],
+
   /*
    * Disabled by prettier
    * https://github.com/prettier/eslint-config-prettier/blob/master/unicorn.js
    *
    * "unicorn/number-literal-case": "off"
    */
-
   rules: {
     /*
      * Extension to ESLint's no-process-exit rule, that allows process.exit()

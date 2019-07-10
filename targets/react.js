@@ -8,26 +8,20 @@ module.exports = {
   },
 
   extends: [
-    ...[
-      "../rules/best.practices",
-      "../rules/comments",
-      "../rules/compat",
-      "../rules/errors",
-      "../rules/es6",
-      "../rules/html",
-      "../rules/import",
-      "../rules/jsdoc",
-      "../rules/promise",
-      "../rules/react",
-      "../rules/style",
-      "../rules/unicorn",
-      "../rules/variables",
-    ].map(require.resolve),
-
-    "plugin:prettier/recommended",
-    "prettier/react",
-    "prettier/unicorn",
-  ],
+    "../rules/best.practices",
+    "../rules/comments",
+    "../rules/errors",
+    "../rules/es6",
+    "../rules/html",
+    "../rules/import",
+    "../rules/jsdoc",
+    "../rules/promise",
+    "../rules/react",
+    "../rules/style",
+    "../rules/unicorn",
+    "../rules/variables",
+    "../rules/prettier",
+  ].map(require.resolve),
 
   parserOptions: {
     ecmaFeatures: {
@@ -39,11 +33,9 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["import", "unicorn", "react", "json", "no-inferred-method-name"],
+  plugins: ["json", "no-inferred-method-name"],
 
   rules: {
-    "prettier/prettier": "error",
-
     /*
      * A list of regex strings that, if matched by a path, will not report
      * the matching module if no exports are found.

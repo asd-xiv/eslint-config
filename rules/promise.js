@@ -2,13 +2,14 @@
 
 module.exports = {
   plugins: ["promise"],
+
   rules: {
     /*
      * Ensure that each time a then() is applied to a promise, a catch()
      * is applied as well. Exceptions are made if you are returning that
      * promise.
      */
-    "promise/catch-or-return": "error",
+    "promise/catch-or-return": "warn",
 
     /*
      * Ensure that inside a then() you make sure to return a new promise

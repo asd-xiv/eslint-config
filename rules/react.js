@@ -1,6 +1,10 @@
 /* eslint-env node */
 
 module.exports = {
+  plugins: ["react"],
+
+  extends: ["prettier/react"],
+
   /*
    * Disabled by prettier
    * https://github.com/prettier/eslint-config-prettier/blob/master/react.js
@@ -20,7 +24,6 @@ module.exports = {
    * "react/jsx-tag-spacing": "off",
    * "react/jsx-wrap-multilines": "off"
    */
-
   rules: {
     // Prevent missing displayName in a React component definition
     "react/display-name": "error",

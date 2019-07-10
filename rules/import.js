@@ -1,6 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
+  plugins: ["import"],
   rules: {
     /*
      * If a default import is requested, this rule will report if there is
