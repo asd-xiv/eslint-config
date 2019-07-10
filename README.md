@@ -13,16 +13,18 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 
 ---
 
-<!-- MarkdownTOC levels="1,2,3" autolink="true" indent="    " -->
+<!-- vim-markdown-toc GFM -->
 
-- [Install](#install)
-- [Use](#use)
-- [Inside](#inside)
-- [Example config](#example-config)
-- [Changelog](#changelog)
-    - [4.0.2 - 28 December 2018](#402---28-december-2018)
+* [Install](#install)
+* [Use](#use)
+* [Inside](#inside)
+* [Example config](#example-config)
+* [Changelog](#changelog)
+  * [5.0 - 10 July 2018](#50---10-july-2018)
+    * [Change](#change)
+    * [Remove](#remove)
 
-<!-- /MarkdownTOC -->
+<!-- vim-markdown-toc -->
 
 ## Install
 
@@ -37,15 +39,15 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^5.11.1",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-json": "^1.3.2",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-unicorn": "^6.0.1",
-    "prettier": "^1.15.3"
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-unicorn": "^9.1.1",
+    "prettier": "^1.18.2"
 }
 ...
 ```
@@ -62,30 +64,18 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 
         // for React projects
         "@asd14/eslint-config/targets/react",
-
-        // optional Flow support
-        "@asd14/eslint-config/rules/flow",
     ]
 }
 ```
 
-When including `@asd14/eslint-config/rules/flow` also install:
-
-```bash
-npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
-```
-
 ## Inside
 
-- [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
-- [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
-- [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
-- [eslint-plugin-flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) - [Flow](https://flow.org) specific linting rules
-- [eslint-plugin-flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors) - Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow
-- [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
-- [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
-- [eslint-plugin-compat](https://www.npmjs.org/package/eslint-plugin-compat) - Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/)). Uses `browserslist` definition in your `package.json`.
-- [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+* [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
+* [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
+* [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
+* [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
+* [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
+* [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 
 ## Example config
 
@@ -140,12 +130,34 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 }
 ```
 
+Optional `.editorconfig`
+
+```bash
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+```
+
 ## Changelog
 
 History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/blob/master/CHANGELOG.md)
 
-### 4.0.2 - 28 December 2018
+### 5.0 - 10 July 2018
 
-#### Add
+#### Change
 
-- `import/resolver` setting in [`node`](targets/node.js#L45) and [`react`](targets/react.js#L59) target files
+* Moved loading plugins and other extensions from `target` into `rules` files
+
+#### Remove
+
+* Flow support and related plugins
+* `compat` plugin
