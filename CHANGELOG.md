@@ -229,6 +229,7 @@ Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) a
 * ESLint rule [`prefer-destructuring`](http://eslint.org/docs/rules/prefer-destructuring): Prefer destructuring from arrays and objects.
   * Defined in [`variables.js`](/rules/variables.js#L63)
   * Current value:
+
       ```javascript
       "prefer-destructuring": [
             "error", {
@@ -240,6 +241,7 @@ Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) a
         ],
         ```
     * Sample:
+
         ```javascript
         const array = [ 1,2,3,4,5 ]
         const lorem = {
@@ -334,8 +336,8 @@ React support
 ### Changed
 
 * ESLint 4.2 allows [`no-sync`](http://eslint.org/docs/rules/no-sync) using sync methods on top level.
-   * Defined in [`node.js`](/rules/node.js)
-   * Current value:
+  * Defined in [`node.js`](/rules/node.js)
+  * Current value:
 
     ```javascript
     "no-sync": [
@@ -344,6 +346,7 @@ React support
         },
     ],
     ```
+
 * [`no-unexpected-multiline`](http://eslint.org/docs/rules/no-unexpected-multiline) to protect against edge cases of not using semicolons
   * Defined in [`error.js`](/rules/errors.js):
   * Current value: `"no-unexpected-multiline": "error"`
