@@ -152,9 +152,9 @@ Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/
 
 ```text
 <type>(<scope>): <subject>
-<BLANK LINE>
+
 <body>
-<BLANK LINE>
+
 <footer>
 ```
 
