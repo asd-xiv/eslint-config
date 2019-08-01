@@ -20,11 +20,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 * [Use](#use)
 * [Inside](#inside)
 * [Example config](#example-config)
-* [Commit message pattern](#commit-message-pattern)
+* [Commit messages](#commit-messages)
 * [Changelog](#changelog)
-  * [5.1 - 30 July 2019](#51---30-july-2019)
-    * [Add](#add)
-    * [Change](#change)
 
 <!-- vim-markdown-toc -->
 
@@ -149,7 +146,7 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-## Commit message pattern
+## Commit messages
 
 Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
 
@@ -166,14 +163,4 @@ Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/
 
 ## Changelog
 
-History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/blob/master/CHANGELOG.md)
-
-### 5.1 - 30 July 2019
-
-#### Add
-
-* CircleCI config file
-
-#### Change
-
-* `import/ignore` from rule to setting
+See the [releases section](https://github.com/asd14/eslint-config/releases) for details.
