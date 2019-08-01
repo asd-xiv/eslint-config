@@ -81,7 +81,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - m-{{ .Branch }}-{{ checksum "package.json" }}
+            - eslint-config-{{ .Branch }}-{{ checksum "package.json" }}
 
       - run:
           name: "eslint-config: Release to npm with semantic-release"
