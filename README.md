@@ -150,7 +150,13 @@ trim_trailing_whitespace = false
 
 Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
 
-`type(scope/component): message`, where `type` is one of:
+```text
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
 
 * **feat**: A new feature
 * **fix**: A bug fix
