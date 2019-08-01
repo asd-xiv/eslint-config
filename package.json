@@ -12,14 +12,15 @@
   },
   "main": "targets/node.js",
   "scripts": {
-    "----UTILS------------------------------------": "",
+    "----UTIL": "",
     "setup": "rm -rf ./node_modules && npm i && npm audit fix",
-    "update": "npm-check -u",
-    "----TEST-------------------------------------": "",
+    "setup:ci": "npm ci && npm audit fix",
+    "update": "npm-check --update --save-exact",
+    "----TEST": "",
     "lint:js": "eslint rules/* targets/*",
     "lint:md": "markdownlint *.md",
     "lint": "npm run lint:js && npm run lint:md",
-    "----BUILD------------------------------------": "",
+    "----BUILD": "",
     "prepublishOnly": "npm audit fix && npm run lint"
   },
   "keywords": [
@@ -30,7 +31,8 @@
     "eslint-rules",
     "javascript",
     "prettier",
-    "react"
+    "react",
+    "node"
   ],
   "author": {
     "name": "Andrei Dumitrescu",
@@ -38,29 +40,30 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-html": "6.0.0",
-    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-no-inferred-method-name": "1.0.2",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-react": "7.14.2",
-    "eslint-plugin-unicorn": "9.1.1",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-unicorn": "10.0.0",
     "markdownlint-cli": "0.17.0",
     "npm-check": "5.9.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "semantic-release": "15.13.19"
   },
   "peerDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-unicorn": "^9.1.1",
+    "eslint-plugin-unicorn": "^10.0.0",
     "prettier": "^1.18.2"
   },
   "engines": {

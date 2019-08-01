@@ -1,5 +1,6 @@
 <!-- markdownlint-disable first-line-h1 line-length -->
 
+[![CircleCI](https://circleci.com/gh/asd14/eslint-config/tree/master.svg?style=svg)](https://circleci.com/gh/asd14/eslint-config/tree/master)
 [![npm package version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
 [![peer-badge](https://david-dm.org/asd14/eslint-config/peer-status.svg)](https://david-dm.org/asd14/eslint-config?type=peer)
 
@@ -19,10 +20,11 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 * [Use](#use)
 * [Inside](#inside)
 * [Example config](#example-config)
+* [Commit message pattern](#commit-message-pattern)
 * [Changelog](#changelog)
-  * [5.0 - 10 July 2018](#50---10-july-2018)
+  * [5.1 - 30 July 2019](#51---30-july-2019)
+    * [Add](#add)
     * [Change](#change)
-    * [Remove](#remove)
 
 <!-- vim-markdown-toc -->
 
@@ -147,17 +149,31 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
+## Commit message pattern
+
+Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
+
+`type(scope/component): message`, where `type` is one of:
+
+* **feat**: A new feature
+* **fix**: A bug fix
+* **docs**: Documentation only changes
+* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+* **refactor**: A code change that neither fixes a bug nor adds a feature
+* **perf**: A code change that improves performance
+* **test**: Adding missing or correcting existing tests
+* **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+
 ## Changelog
 
 History of all changes in [CHANGELOG.md](https://github.com/asd14/eslint-config/blob/master/CHANGELOG.md)
 
-### 5.0 - 10 July 2018
+### 5.1 - 30 July 2019
+
+#### Add
+
+* CircleCI config file
 
 #### Change
 
-* Moved loading plugins and other extensions from `target` into `rules` files
-
-#### Remove
-
-* Flow support and related plugins
-* `compat` plugin
+* `import/ignore` from rule to setting
