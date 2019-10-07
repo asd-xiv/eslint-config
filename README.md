@@ -1,8 +1,8 @@
 <!-- markdownlint-disable first-line-h1 line-length -->
 
-[![CircleCI](https://circleci.com/gh/asd14/eslint-config/tree/master.svg?style=svg)](https://circleci.com/gh/asd14/eslint-config/tree/master)
-[![npm package version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
-[![peer-badge](https://david-dm.org/asd14/eslint-config/peer-status.svg)](https://david-dm.org/asd14/eslint-config?type=peer)
+[![CircleCI](https://circleci.com/gh/mutantlove/eslint-config.svg?style=svg)](https://circleci.com/gh/mutantlove/eslint-config)
+[![npm package version](https://badge.fury.io/js/%40mutantlove%2Feslint-config.svg)](https://badge.fury.io/js/%40mutantlove%2Feslint-config)
+[![peer-badge](https://david-dm.org/mutantlove/eslint-config/peer-status.svg)](https://david-dm.org/mutantlove/eslint-config?type=peer)
 
 # JavaScript ESLint rules
 
@@ -28,10 +28,10 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 ## Install
 
 ```bash
-npm i eslint @asd14/eslint-config --save-dev
+npm install eslint @mutantlove/eslint-config --save-dev
 ```
 
-Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the packages needed in your own `package.json`.
+Run `npm info "@mutantlove/eslint-config@latest" peerDependencies` to get the packages needed in your own `package.json`.
 
 It should be something like this:
 
@@ -59,10 +59,10 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 {
     "extends": [
         // for Node.js projects
-        "@asd14/eslint-config/targets/node",
+        "@mutantlove/eslint-config/targets/node",
 
         // for React projects
-        "@asd14/eslint-config/targets/react",
+        "@mutantlove/eslint-config/targets/react",
     ]
 }
 ```
@@ -87,7 +87,7 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
     "root"  : true,
     "parser": "babel-eslint",
 
-    "extends": [ "@asd14/eslint-config/targets/react" ],
+    "extends": [ "@mutantlove/eslint-config/targets/react" ],
 
     "settings": {
         // Use webpack to resolve modules in imports
@@ -169,4 +169,4 @@ Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/
 
 ## Changelog
 
-See the [releases section](https://github.com/asd14/eslint-config/releases) for details.
+See the [releases section](https://github.com/mutantlove/eslint-config/releases) for details.
