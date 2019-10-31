@@ -26,7 +26,7 @@ module.exports = {
    */
   rules: {
     // Prevent missing displayName in a React component definition
-    "react/display-name": "error",
+    "react/display-name": "off",
 
     // Detect missing key prop
     "react/jsx-key": "error",
@@ -63,7 +63,7 @@ module.exports = {
     "react/jsx-filename-extension": "error",
 
     // Validate JSX maximum depth
-    "react/jsx-max-depth": ["error", { max: 3 }],
+    "react/jsx-max-depth": "off",
 
     // Prevent this from being used in stateless functional components
     "react/no-this-in-sfc": "error",
@@ -316,7 +316,7 @@ module.exports = {
      * function is passed as a prop to a component that uses reference
      * equality check on the prop to determine if it should update.
      */
-    "react/jsx-no-bind": "error",
+    "react/jsx-no-bind": "off",
 
     /*
      * Enforce consistent usage of destructuring assignment of props,
