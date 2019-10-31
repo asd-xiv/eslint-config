@@ -38,14 +38,14 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-json": "^1.4.0",
-    "eslint-plugin-no-inferred-method-name": "^1.0.2",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-unicorn": "^9.1.1",
+    "eslint-plugin-unicorn": "^12.1.0",
     "prettier": "^1.18.2"
 }
 ...
