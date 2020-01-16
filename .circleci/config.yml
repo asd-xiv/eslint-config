@@ -10,8 +10,7 @@ version: 2
 job_defaults: &job_defaults
   working_directory: ~/eslint-config-repo
   docker:
-    - image: circleci/node:8
-
+    - image: circleci/node:lts
 #
 # Run all jobs in sequence
 #
