@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins: ["react"],
+  plugins: ["react", "react-hooks"],
 
   extends: ["prettier/react"],
 
@@ -25,6 +25,12 @@ module.exports = {
    * "react/jsx-wrap-multilines": "off"
    */
   rules: {
+    // Checks rules of Hooks
+    "react-hooks/rules-of-hooks": "error",
+
+    // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn",
+
     // Prevent missing displayName in a React component definition
     "react/display-name": "off",
 

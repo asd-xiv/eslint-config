@@ -38,15 +38,15 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-json": "^2.0.1",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-unicorn": "^12.1.0",
-    "prettier": "^1.18.2"
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "prettier": "^1.19.1"
 }
 ...
 ```
@@ -74,6 +74,7 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 * [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
 * [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
 * [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
+* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Linting rules rules of React Hooks.
 * [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 
 ## Example config
