@@ -39,13 +39,13 @@ It should be something like this:
 ...
 "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-json": "^2.0.1",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-unicorn": "^15.0.1",
+    "eslint-plugin-unicorn": "^16.0.0",
     "prettier": "^1.19.1"
 }
 ...
