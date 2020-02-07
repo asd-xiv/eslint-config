@@ -12,7 +12,7 @@ module.exports = {
     complexity: [0, 5],
 
     // Require return statements to either always or never specify values
-    "consistent-return": "error",
+    "consistent-return": "warn",
 
     // Require default case in switch statements
     "default-case": "error",
@@ -91,7 +91,7 @@ module.exports = {
     "no-labels": "error",
 
     // Disallow unnecessary nested blocks
-    "no-lone-blocks": "error",
+    "no-lone-blocks": "warn",
 
     // Disallow creation of functions within loops
     "no-loop-func": "error",
