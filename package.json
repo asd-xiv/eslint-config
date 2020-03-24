@@ -1,14 +1,14 @@
 {
-  "name": "@mutantlove/eslint-config",
+  "name": "@mutant-ws/eslint-config",
   "version": "5.0.0",
   "description": "JavaScript ESLint rules",
-  "homepage": "https://github.com/mutantlove/eslint-config",
+  "homepage": "https://github.com/mutant-ws/eslint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mutantlove/eslint-config.git"
+    "url": "git+https://github.com/mutant-ws/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/mutantlove/eslint-config/issues"
+    "url": "https://github.com/mutant-ws/eslint-config/issues"
   },
   "main": "targets/node.js",
   "scripts": {
@@ -35,36 +35,36 @@
   ],
   "author": {
     "name": "Andrei Dumitrescu",
-    "url": "https://github.com/andreidcm"
+    "url": "https://github.com/andrei-dumitrescu"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.0",
-    "eslint-plugin-html": "6.0.0",
-    "eslint-plugin-import": "2.20.1",
-    "eslint-plugin-json": "2.0.1",
-    "eslint-plugin-no-inferred-method-name": "2.0.0",
-    "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-react": "7.18.3",
-    "eslint-plugin-react-hooks": "2.3.0",
-    "eslint-plugin-unicorn": "16.0.0",
-    "markdownlint-cli": "0.21.0",
-    "npm-check": "5.9.0",
-    "prettier": "1.19.1",
-    "semantic-release": "17.0.2"
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^2.1.1",
+    "eslint-plugin-no-inferred-method-name": "^2.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "eslint-plugin-unicorn": "^17.2.0",
+    "markdownlint-cli": "^0.22.0",
+    "npm-check": "^5.9.2",
+    "prettier": "^2.0.2",
+    "semantic-release": "^17.0.4"
   },
   "peerDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-json": "^2.1.1",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-unicorn": "^16.0.0",
-    "prettier": "^1.19.1"
+    "eslint-plugin-unicorn": "^17.2.0",
+    "prettier": "^2.0.2"
   },
   "engines": {
     "node": ">= 6"
