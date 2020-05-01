@@ -20,7 +20,6 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 * [Use](#use)
 * [Inside](#inside)
 * [Example config](#example-config)
-* [Commit messages](#commit-messages)
 * [Changelog](#changelog)
 
 <!-- vim-markdown-toc -->
@@ -37,22 +36,22 @@ It should be something like:
 
 ```javascript
 "eslint": "^6.8.0",
-"eslint-config-prettier": "^6.10.1",
-"eslint-plugin-import": "^2.20.1",
+"eslint-config-prettier": "^6.11.0",
+"eslint-plugin-import": "^2.20.2",
 "eslint-plugin-json": "^2.1.1",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-promise": "^4.2.1",
-"eslint-plugin-prettier": "^3.1.2",
-"eslint-plugin-unicorn": "^17.2.0",
-"prettier": "^2.0.2"
+"eslint-plugin-prettier": "^3.1.3",
+"eslint-plugin-unicorn": "^19.0.1",
+"prettier": "^2.0.5"
 ```
 
 For React projects you'll also have to add:
 
 ```javascript
-"eslint-plugin-html": "^6.0.0",
+"eslint-plugin-html": "^6.0.2",
 "eslint-plugin-react": "^7.19.0",
-"eslint-plugin-react-hooks": "^2.5.1",
+"eslint-plugin-react-hooks": "^4.0.0",
 ```
 
 ## Use
@@ -146,27 +145,6 @@ insert_final_newline = true
 [*.md]
 trim_trailing_whitespace = false
 ```
-
-## Commit messages
-
-Using Angular's [conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
-
-```text
-<type>(<scope>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
-```
-
-* **feat**: A new feature
-* **fix**: A bug fix
-* **docs**: Documentation only changes
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **perf**: A code change that improves performance
-* **test**: Adding missing or correcting existing tests
-* **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
 
 ## Changelog
 
