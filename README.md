@@ -35,14 +35,14 @@ Run `npm info "@mutant-ws/eslint-config@latest" peerDependencies` to get the pac
 It should be something like:
 
 ```javascript
-"eslint": "^6.8.0",
+"eslint": "^7.4.0",
 "eslint-config-prettier": "^6.11.0",
-"eslint-plugin-import": "^2.20.2",
+"eslint-plugin-import": "^2.22.0",
 "eslint-plugin-json": "^2.1.1",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-promise": "^4.2.1",
-"eslint-plugin-prettier": "^3.1.3",
-"eslint-plugin-unicorn": "^19.0.1",
+"eslint-plugin-prettier": "^3.1.4",
+"eslint-plugin-unicorn": "^20.1.0",
 "prettier": "^2.0.5"
 ```
 
@@ -50,8 +50,8 @@ For React projects you'll also have to add:
 
 ```javascript
 "eslint-plugin-html": "^6.0.2",
-"eslint-plugin-react": "^7.19.0",
-"eslint-plugin-react-hooks": "^4.0.0",
+"eslint-plugin-react": "^7.20.3",
+"eslint-plugin-react-hooks": "^4.0.8",
 ```
 
 ## Use
