@@ -1,0 +1,65 @@
+{
+  "name": "tpl-node",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "homepage": "https://github.com/{}",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/{}.git"
+  },
+  "bugs": {
+    "url": "https://github.com/{}/issues"
+  },
+  "author": {
+    "name": "Andrei Dumitrescu",
+    "url": "https://github.com/andreid-asd"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "node"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "----UTIL": "",
+    "setup": "rm -rf ./node_modules && npm i && npm audit fix",
+    "setup:ci": "npm ci && npm audit fix",
+    "update": "npm-check --update",
+    "----BUILD": "",
+    "prepublishOnly": "npm audit fix && npm test && npm run lint",
+    "----LINT": "",
+    "lint:md": "markdownlint *.md",
+    "lint:js": "eslint --ext .jsx,.js src",
+    "lint": "npm run lint:md && npm run lint:js",
+    "----TEST": "",
+    "test": "node tests/index.js",
+    "tdd": "nodemon --watch src --watch tests --exec \"npm test\"",
+    "coverage:ci": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "@mutant-ws/m": "^2.6.0"
+  },
+  "devDependencies": {
+    "@mutant-ws/eslint-config": "^5.11.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-no-inferred-method-name": "^2.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-unicorn": "^21.0.0",
+    "markdownlint-cli": "^0.23.2",
+    "nodemon": "^2.0.4",
+    "npm-check": "^5.9.2",
+    "nyc": "^15.1.0",
+    "prettier": "^2.0.5",
+    "riteway": "^6.1.2",
+    "semantic-release": "^17.1.1",
+    "tap-nirvana": "^1.1.0"
+  }
+}
