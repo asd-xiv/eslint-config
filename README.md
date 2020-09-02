@@ -1,14 +1,12 @@
 <!-- markdownlint-disable first-line-h1 line-length -->
 
-[![CircleCI](https://circleci.com/gh/mutant-ws/eslint-config.svg?style=svg)](https://circleci.com/gh/mutant-ws/eslint-config)
-[![npm package version](https://badge.fury.io/js/%40mutant-ws%2Feslint-config.svg)](https://badge.fury.io/js/%40mutant-ws%2Feslint-config)
-[![peer-badge](https://david-dm.org/mutant-ws/eslint-config/peer-status.svg)](https://david-dm.org/mutant-ws/eslint-config?type=peer)
+[![CircleCI](https://circleci.com/gh/andreidmt/eslint-config-xyz.svg?style=svg)](https://circleci.com/gh/andreidmt/eslint-config-xyz)
+[![npm package version](https://badge.fury.io/js/andreidmt%2Feslint-config-xyz.svg)](https://badge.fury.io/js/eslint-config-xyz)
+[![peer-badge](https://david-dm.org/andreidmt/eslint-config-xyz/peer-status.svg)](https://david-dm.org/andreidmt/eslint-config-xyz?type=peer)
 
 # JavaScript ESLint rules
 
 > JavaScript ESLint bundle with best practices and common use rules for writing more consistent code
->
-> [`"semi": [ "error", "never" ]`](http://eslint.org/docs/rules/semi) :godmode: ... [the horror](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding) :goberserk:
 
 Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb), [eslint-config-google](https://github.com/google/eslint-config-google), [more](https://www.npmjs.com/search?q=+eslint-config-)
 
@@ -27,7 +25,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 ## Install
 
 ```bash
-npm install eslint @mutant-ws/eslint-config --save-dev
+npm install eslint eslint-config-xyz --save-dev
 ```
 
 Run `npm info "@mutant-ws/eslint-config@latest" peerDependencies` to get the packages needed in your own `devDependencies` in `package.json`.
@@ -35,15 +33,15 @@ Run `npm info "@mutant-ws/eslint-config@latest" peerDependencies` to get the pac
 It should be something like:
 
 ```javascript
-"eslint": "^7.4.0",
+"eslint": "^7.8.1",
 "eslint-config-prettier": "^6.11.0",
 "eslint-plugin-import": "^2.22.0",
-"eslint-plugin-json": "^2.1.1",
+"eslint-plugin-json": "^2.1.2",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-promise": "^4.2.1",
 "eslint-plugin-prettier": "^3.1.4",
-"eslint-plugin-unicorn": "^20.1.0",
-"prettier": "^2.0.5"
+"eslint-plugin-unicorn": "^21.0.0",
+"prettier": "^2.1.1"
 ```
 
 For React projects you'll also have to add:
@@ -61,7 +59,7 @@ Add `react`, `html` or `node` target file in your `.eslintrc` file:
 ```javascript
 {
     "extends": [
-        "@mutant-ws/eslint-config/targets/react|html|node",
+        "eslint-config-xyz/targets/react|html|node",
     ]
 }
 ```
@@ -87,7 +85,7 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
     "root"  : true,
     "parser": "babel-eslint",
 
-    "extends": [ "@mutant-ws/eslint-config/targets/react" ],
+    "extends": [ "eslint-config-xyz/targets/react" ],
 
     "settings": {
         // Use webpack to resolve modules in imports
@@ -148,4 +146,4 @@ trim_trailing_whitespace = false
 
 ## Changelog
 
-See the [releases section](https://github.com/mutant-ws/eslint-config/releases) for details.
+See the [releases section](https://github.com/andreidmt/eslint-config-xyz/releases) for details.
