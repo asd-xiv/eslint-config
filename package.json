@@ -1,14 +1,14 @@
 {
-  "name": "eslint-config-xyz",
+  "name": "eslint-config.xyz",
   "version": "5.0.0",
   "description": "JavaScript ESLint rules",
-  "homepage": "https://github.com/andreidmt/eslint-config-xyz",
+  "homepage": "https://github.com/andreidmt/eslint-config.xyz",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andreidmt/eslint-config-xyz.git"
+    "url": "git+https://github.com/andreidmt/eslint-config.xyz.git"
   },
   "bugs": {
-    "url": "https://github.com/andreidmt/eslint-config-xyz/issues"
+    "url": "https://github.com/andreidmt/eslint-config.xyz/issues"
   },
   "author": {
     "name": "Andrei Dumitrescu",
