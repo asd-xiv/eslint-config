@@ -13,7 +13,7 @@
   },
   "author": {
     "name": "Andrei Dumitrescu",
-    "url": "https://github.com/andreid-asd"
+    "url": "https://github.com/andreidmt"
   },
   "main": "src/index.js",
   "keywords": [
@@ -39,27 +39,27 @@
     "coverage:ci": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "@mutant-ws/m": "^2.6.0"
+    "m.xyz": "^2.13.0"
   },
   "devDependencies": {
-    "@mutant-ws/eslint-config": "^5.11.0",
     "coveralls": "^3.1.0",
-    "eslint": "^7.6.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-html": "^6.0.2",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config.xyz": "^5.13.0",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-unicorn": "^21.0.0",
+    "eslint-plugin-unicorn": "^22.0.0",
     "markdownlint-cli": "^0.23.2",
     "nodemon": "^2.0.4",
     "npm-check": "^5.9.2",
     "nyc": "^15.1.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.2",
     "riteway": "^6.1.2",
-    "semantic-release": "^17.1.1",
+    "semantic-release": "^17.1.2",
     "tap-nirvana": "^1.1.0"
   }
 }
