@@ -10,7 +10,7 @@
 
 ## Stack
 
-* Functional: [ramda](https://github.com/@mutant-ws/m)
-* Testing: [tape](https://github.com/substack/tape) with [riteway](https://github.com/ericelliott/riteway)
-* Linting: [ESLint](https://github.com/eslint/eslint) with [@mutant-ws/eslint-config](https://github.com/mutant-ws/eslint-config)
+* Functional: [m](https://github.com/andreidmt/m.xyz)
+* Testing: [tape](https://github.com/substack/tape), [riteway](https://github.com/ericelliott/riteway)
+* Linting: [ESLint](https://github.com/eslint/eslint), [eslint-config-xyz](https://github.com/andreidmt/eslint-config-xyz)
 * Code formatting: ESLint rules + [prettier](https://github.com/prettier/prettier)
