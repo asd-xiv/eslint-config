@@ -59,7 +59,7 @@ Add `react`, `html` or `node` target file in your `.eslintrc` file:
 ```javascript
 {
     "extends": [
-        "eslint-config-xyz/targets/react|html|node",
+        "@asd14/eslint-config/targets/react|html|node",
     ]
 }
 ```
@@ -85,7 +85,7 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
     "root"  : true,
     "parser": "babel-eslint",
 
-    "extends": [ "eslint-config-xyz/targets/react" ],
+    "extends": [ "@asd14/eslint-config/targets/react" ],
 
     "settings": {
         // Use webpack to resolve modules in imports
@@ -146,4 +146,4 @@ trim_trailing_whitespace = false
 
 ## Changelog
 
-See the [releases section](https://github.com/andreidmt/eslint-config-xyz/releases) for details.
+See the [releases section](https://github.com/asd14-xyz/eslint-config/releases) for details.
