@@ -1,8 +1,8 @@
 <!-- markdownlint-disable first-line-h1 line-length -->
 
-[![CircleCI](https://circleci.com/gh/andreidmt/eslint-config-xyz.svg?style=svg)](https://circleci.com/gh/andreidmt/eslint-config-xyz)
-[![npm package version](https://badge.fury.io/js/andreidmt%2Feslint-config-xyz.svg)](https://badge.fury.io/js/eslint-config-xyz)
-[![peer-badge](https://david-dm.org/andreidmt/eslint-config-xyz/peer-status.svg)](https://david-dm.org/andreidmt/eslint-config-xyz?type=peer)
+[![CircleCI](https://circleci.com/gh/asd14-xyz/eslint-config.svg?style=svg)](https://circleci.com/gh/asd14-xyz/eslint-config)
+[![npm version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
+[![peer-badge](https://david-dm.org/asd14-xyz/eslint-config/peer-status.svg)](https://david-dm.org/asd14-xyz/eslint-config?type=peer)
 
 # JavaScript ESLint rules
 
@@ -25,31 +25,31 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 ## Install
 
 ```bash
-npm install eslint eslint-config-xyz --save-dev
+npm install @asd14/eslint-config --save-dev
 ```
 
-Run `npm info "@mutant-ws/eslint-config@latest" peerDependencies` to get the packages needed in your own `devDependencies` in `package.json`.
+Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the packages needed in your own `devDependencies` in `package.json`.
 
 It should be something like:
 
 ```javascript
-"eslint": "^7.8.1",
-"eslint-config-prettier": "^6.11.0",
-"eslint-plugin-import": "^2.22.0",
+"eslint": "^7.11.0",
+"eslint-config-prettier": "^6.12.0",
+"eslint-plugin-import": "^2.22.1",
 "eslint-plugin-json": "^2.1.2",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-promise": "^4.2.1",
 "eslint-plugin-prettier": "^3.1.4",
-"eslint-plugin-unicorn": "^21.0.0",
-"prettier": "^2.1.1"
+"eslint-plugin-unicorn": "^22.0.0",
+"prettier": "^2.1.2"
 ```
 
 For React projects you'll also have to add:
 
 ```javascript
-"eslint-plugin-html": "^6.0.2",
-"eslint-plugin-react": "^7.20.3",
-"eslint-plugin-react-hooks": "^4.0.8",
+"eslint-plugin-html": "^6.1.0",
+"eslint-plugin-react": "^7.21.3",
+"eslint-plugin-react-hooks": "^4.1.2",
 ```
 
 ## Use
