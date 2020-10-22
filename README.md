@@ -1,21 +1,25 @@
 <!-- markdownlint-disable first-line-h1 line-length -->
 
-[![CircleCI](https://circleci.com/gh/asd14-xyz/eslint-config.svg?style=svg)](https://circleci.com/gh/asd14-xyz/eslint-config)
+[![CircleCI](https://circleci.com/gh/asd-xiv/eslint-config.svg?style=svg)](https://circleci.com/gh/asd-xiv/eslint-config)
 [![npm version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
 [![peer-badge](https://david-dm.org/asd14-xyz/eslint-config/peer-status.svg)](https://david-dm.org/asd14-xyz/eslint-config?type=peer)
 
 # JavaScript ESLint rules
 
-> JavaScript ESLint bundle with best practices and common use rules for writing more consistent code
+JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
 
-Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb), [eslint-config-google](https://github.com/google/eslint-config-google), [more](https://www.npmjs.com/search?q=+eslint-config-)
+Other similar bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb), [eslint-config-google](https://github.com/google/eslint-config-google), [more](https://www.npmjs.com/search?q=+eslint-config-)
 
 ---
 
 <!-- vim-markdown-toc GFM -->
 
 * [Install](#install)
-* [Use](#use)
+* [Targets](#targets)
+  * [Node.js](#nodejs)
+  * [Node.js with Typescript](#nodejs-with-typescript)
+  * [HTML](#html)
+  * [React](#react)
 * [Inside](#inside)
 * [Example config](#example-config)
 * [Changelog](#changelog)
@@ -28,39 +32,87 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 npm install @asd14/eslint-config --save-dev
 ```
 
-Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the packages needed in your own `devDependencies` in `package.json`.
+## Targets
+
+Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the base packages needed.
 
 It should be something like:
 
 ```javascript
 "eslint": "^7.11.0",
-"eslint-config-prettier": "^6.12.0",
+"eslint-config-prettier": "^6.14.0",
 "eslint-plugin-import": "^2.22.1",
 "eslint-plugin-json": "^2.1.2",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-promise": "^4.2.1",
 "eslint-plugin-prettier": "^3.1.4",
-"eslint-plugin-unicorn": "^22.0.0",
+"eslint-plugin-unicorn": "^23.0.0",
 "prettier": "^2.1.2"
 ```
 
-For React projects you'll also have to add:
+Add these packages to your `devDependencies` in `package.json`.
+
+### Node.js
+
+Link ESLint to `node` target.
 
 ```javascript
-"eslint-plugin-html": "^6.1.0",
-"eslint-plugin-react": "^7.21.3",
-"eslint-plugin-react-hooks": "^4.1.2",
+// .eslintrc
+{
+  "extends": [
+    "@asd14/eslint-config/targets/node",
+  ]
+}
 ```
 
-## Use
+### Node.js with Typescript
 
-Add `react`, `html` or `node` target file in your `.eslintrc` file:
+Install additional packages:
+
+```bash
+npm install -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+```
+
+Link ESLint to `node-ts` target.
 
 ```javascript
+// .eslintrc
 {
-    "extends": [
-        "@asd14/eslint-config/targets/react|html|node",
-    ]
+  "extends": [
+    "@asd14/eslint-config/targets/node-ts",
+  ]
+}
+```
+
+### HTML
+
+Link ESLint to `html` target.
+
+```javascript
+// .eslintrc
+{
+  "extends": [
+    "@asd14/eslint-config/targets/html",
+  ]
+}
+```
+
+### React
+
+Install additional packages:
+
+```bash
+npm install -D eslint-plugin-html eslint-plugin-react eslint-plugin-react-hooks
+```
+
+Link ESLint to `react` target.
+
+```javascript
+// .eslintrc
+{
+  "extends": [
+    "@asd14/eslint-config/targets/react",
+  ]
 }
 ```
 
@@ -73,6 +125,8 @@ Add `react`, `html` or `node` target file in your `.eslintrc` file:
 * [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
 * [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Linting rules rules of React Hooks.
 * [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+* [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) - ESLint parser which leverages TypeScript ESTree to allow for ESLint to lint TypeScript source code.
+* [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) - ESLint plugin which provides lint rules for TypeScript codebases.
 
 ## Example config
 
