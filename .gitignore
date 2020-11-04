@@ -44,3 +44,6 @@ jspm_packages
 # Sublime project & workspace
 *.sublime-project
 *.sublime-workspace
+
+# Vim ctags
+tags
