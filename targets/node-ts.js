@@ -42,4 +42,17 @@ module.exports = {
   ],
 
   plugins: ["json", "no-inferred-method-name"],
+
+  rules: {
+    "@typescript-eslint/no-var-requires": "off",
+
+    "no-unused-vars": "off",
+
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        args: "after-used",
+      },
+    ],
+  },
 }
