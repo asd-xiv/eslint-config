@@ -8,8 +8,6 @@ module.exports = {
   },
 
   extends: [
-    "plugin:eslint-plugin-jsdoc/recommended",
-
     ...[
       "../rules/best.practices",
       "../rules/comments",
@@ -37,7 +35,7 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["jsdoc", "json", "no-inferred-method-name"],
+  plugins: ["json", "no-inferred-method-name"],
 
   settings: {
     /*

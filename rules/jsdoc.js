@@ -1,6 +1,10 @@
 /* eslint-env node */
 
 module.exports = {
+  plugins: ["jsdoc"],
+
+  extends: ["plugin:eslint-plugin-jsdoc/recommended"],
+
   rules: {
     /*
      * JSDoc is a JavaScript API documentation generator. It uses
@@ -28,5 +32,8 @@ module.exports = {
         requireReturnType: true,
       },
     ],
+
+    "jsdoc/check-indentation": "error",
+    "jsdoc/check-line-alignment": ["error", "always"],
   },
 }

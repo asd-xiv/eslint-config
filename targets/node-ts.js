@@ -18,13 +18,6 @@ module.exports = {
   },
 
   extends: [
-    "plugin:eslint-plugin-jsdoc/recommended",
-    "plugin:@typescript-eslint/recommended",
-
-    // Disable ESLint rules from @typescript-eslint/eslint-plugin that
-    // conflict with prettier
-    "prettier/@typescript-eslint",
-
     ...[
       "../rules/best.practices",
       "../rules/comments",
@@ -40,9 +33,15 @@ module.exports = {
       "../rules/variables",
       "../rules/prettier",
     ].map(require.resolve),
+
+    "plugin:@typescript-eslint/recommended",
+
+    // Disable ESLint rules from @typescript-eslint/eslint-plugin that
+    // conflict with prettier
+    "prettier/@typescript-eslint",
   ],
 
-  plugins: ["jsdoc", "json", "no-inferred-method-name"],
+  plugins: ["json", "no-inferred-method-name"],
 
   rules: {
     "@typescript-eslint/no-var-requires": "off",
