@@ -89,17 +89,6 @@ module.exports = {
 
   rules: {
     /**
-     * If a block (for example after if, else, for or while) contains only one
-     * statement, JavaScript allows omitting the curly braces around that
-     * statement. This rule enforces if or when those optional curly
-     * braces should be omitted.
-     *
-     * ! Needs to be Prettier compatible:
-     * https://github.com/prettier/eslint-config-prettier#curly
-     */
-    curly: ["error", "all"],
-
-    /**
      * This rule looks for any underscores (_) located within the source
      * code. It ignores leading and trailing underscores and only checks
      * those in the middle of a variable name. If ESLint decides that the
