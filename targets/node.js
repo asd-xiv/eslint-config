@@ -8,19 +8,23 @@ module.exports = {
   },
 
   extends: [
-    "../rules/best.practices",
-    "../rules/comments",
-    "../rules/errors",
-    "../rules/es6",
-    "../rules/import",
-    "../rules/jsdoc",
-    "../rules/node",
-    "../rules/promise",
-    "../rules/style",
-    "../rules/unicorn",
-    "../rules/variables",
-    "../rules/prettier",
-  ].map(require.resolve),
+    "plugin:eslint-plugin-jsdoc/recommended",
+
+    ...[
+      "../rules/best.practices",
+      "../rules/comments",
+      "../rules/errors",
+      "../rules/es6",
+      "../rules/import",
+      "../rules/jsdoc",
+      "../rules/node",
+      "../rules/promise",
+      "../rules/style",
+      "../rules/unicorn",
+      "../rules/variables",
+      "../rules/prettier",
+    ].map(require.resolve),
+  ],
 
   parserOptions: {
     ecmaFeatures: {
@@ -31,7 +35,7 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["json", "no-inferred-method-name"],
+  plugins: ["jsdoc", "json", "no-inferred-method-name"],
 
   settings: {
     /*

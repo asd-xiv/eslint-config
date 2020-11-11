@@ -39,9 +39,10 @@ Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the base pa
 It should be something like:
 
 ```javascript
-"eslint": "^7.11.0",
-"eslint-config-prettier": "^6.14.0",
+"eslint": "^7.13.0",
+"eslint-config-prettier": "^6.15.0",
 "eslint-plugin-import": "^2.22.1",
+"eslint-plugin-jsdoc": "^30.7.7",
 "eslint-plugin-json": "^2.1.2",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-promise": "^4.2.1",
@@ -118,6 +119,7 @@ Link ESLint to `react` target.
 
 ## Inside
 
+* [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) -  JSDoc specific linting rules
 * [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
 * [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
 * [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
