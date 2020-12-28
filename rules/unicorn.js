@@ -10,6 +10,18 @@ module.exports = {
    * "unicorn/number-literal-case": "off"
    */
   rules: {
+    // Improve regexes by making them shorter, consistent, and safer
+    "unicorn/better-regex": "error",
+
+    // Enforce a specific parameter name in catch clauses
+    "unicorn/catch-error-name": "error",
+
+    // Move function definitions to the highest possible scope
+    "unicorn/consistent-function-scoping": "error",
+
+    // Add expiration conditions to TODO comments
+    "unicorn/expiring-todo-comments": "warn",
+
     /*
      * Extension to ESLint's no-process-exit rule, that allows process.exit()
      * to be called in files that start with a hashbang → #!/usr/bin/env node.
@@ -27,6 +39,8 @@ module.exports = {
      */
     "unicorn/import-index": "error",
 
+    // Enforce specific import styles per module
+
     /*
      * Enforces the use of the spread operator over Array.from(). This rule
      * adds on to the built-in prefer-spread rule, which only flags uses of
@@ -43,8 +57,12 @@ module.exports = {
      */
     "unicorn/prefer-add-event-listener": "error",
 
-    // Enforces the use of the exponentiation operator over Math.pow()
-    "unicorn/prefer-exponentiation-operator": "error",
+    // Prefer String#slice() over String#substr() and String#substring()
+    "unicorn/prefer-string-slice": "error",
+
+    // Prefer String#trimStart() / String#trimEnd() over
+    // String#trimLeft() / String#trimRight()
+    "unicorn/prefer-string-trim-start-end": "error",
 
     /*
      * Enforces all linted files to have their names in a certain case
@@ -55,7 +73,12 @@ module.exports = {
      *      foo-bar.test.js
      *      foo-bar.test-utils.js
      */
-    "unicorn/filename-case": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        case: "kebabCase",
+      },
+    ],
 
     // Enforce explicitly comparing the length property of a value
     "unicorn/explicit-length-check": [
@@ -72,7 +95,7 @@ module.exports = {
     "unicorn/escape-case": "error",
 
     // Require Array.isArray() instead of instanceof Array
-    "unicorn/no-array-instanceof": "error",
+    "unicorn/no-instanceof-array": "error",
 
     /*
      * Enforce the use of Buffer.from() and Buffer.alloc() instead of the
@@ -86,12 +109,6 @@ module.exports = {
     // Enforce correct Error subclassing
     "unicorn/custom-error-definition": "error",
 
-    /*
-     * Prefer String#startsWith & String#endsWith over more complex
-     * alternatives
-     */
-    "unicorn/prefer-starts-ends-with": "error",
-
     // Enforce throwing TypeError in type checking conditions
     "unicorn/prefer-type-error": "error",
 
@@ -100,9 +117,6 @@ module.exports = {
      * Boolean
      */
     "unicorn/new-for-builtins": "error",
-
-    // Enforce the use of regex shorthands to improve readability
-    "unicorn/regex-shorthand": "error",
 
     /*
      * Disallow unsafe regular expressions. Uses safe-regex to disallow
