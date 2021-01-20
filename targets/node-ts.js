@@ -43,6 +43,8 @@ module.exports = {
 
   plugins: ["json", "no-inferred-method-name"],
 
+  ignorePatterns: ["dist/*.js", "*.d.ts"],
+
   rules: {
     "@typescript-eslint/no-var-requires": "off",
 

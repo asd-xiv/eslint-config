@@ -65,9 +65,6 @@ module.exports = {
       },
     ],
 
-    // Restrict file extensions that may contain JSX
-    "react/jsx-filename-extension": "error",
-
     // Validate JSX maximum depth
     "react/jsx-max-depth": "off",
 
@@ -335,18 +332,5 @@ module.exports = {
 
     // Prevent usage of button elements without an explicit type attribute
     "react/button-has-type": "error",
-
-    /*
-     * A list of file extensions that will be parsed as modules and
-     * inspected for exports.
-     */
-    "import/extensions": [
-      "error",
-      "always",
-      {
-        js: "never",
-        jsx: "never",
-      },
-    ],
   },
 }

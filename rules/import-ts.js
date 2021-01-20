@@ -3,12 +3,6 @@
 module.exports = {
   rules: {
     /*
-     * A list of file extensions that will be parsed as modules and
-     * inspected for exports.
-     */
-    "import/extensions": ["error", "always", { js: "never", ts: "never" }],
-
-    /*
      * TypeScript compilation already ensures that named imports exist in the
      * referenced module
      */
@@ -16,8 +10,6 @@ module.exports = {
   },
 
   settings: {
-    "import/extensions": [".ts", ".tsx", ".d.ts", ".js", ".jsx"],
-
     "import/external-module-folders": ["node_modules", "node_modules/@types"],
 
     "import/parsers": {

@@ -37,7 +37,37 @@ module.exports = {
 
   plugins: ["json", "no-inferred-method-name"],
 
+  rules: {
+    "no-unused-vars": [
+      "error",
+      {
+        args: "after-used",
+        varsIgnorePattern: "debug",
+      },
+    ],
+
+    /*
+     * A list of file extensions that will be parsed as modules and
+     * inspected for exports.
+     */
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        js: "never",
+        jsx: "never",
+      },
+    ],
+
+    // Restrict file extensions that may contain JSX
+    "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
+  },
+
   settings: {
+    react: {
+      version: "detect",
+    },
+
     /*
      * A list of regex strings that, if matched by a path, will not report
      * the matching module if no exports are found.
