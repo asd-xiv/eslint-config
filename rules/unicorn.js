@@ -10,14 +10,15 @@ module.exports = {
    * "unicorn/number-literal-case": "off"
    */
   rules: {
+    // Move function definitions to the highest possible scope.
+    // Too noisy when curring functions
+    "unicorn/consistent-function-scoping": "off",
+
     // Improve regexes by making them shorter, consistent, and safer
     "unicorn/better-regex": "error",
 
     // Enforce a specific parameter name in catch clauses
     "unicorn/catch-error-name": "error",
-
-    // Move function definitions to the highest possible scope
-    "unicorn/consistent-function-scoping": "error",
 
     // Add expiration conditions to TODO comments
     "unicorn/expiring-todo-comments": "warn",

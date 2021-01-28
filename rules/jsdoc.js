@@ -23,17 +23,19 @@ module.exports = {
       },
     ],
 
-    // Ensure JSDoc comments are valid
-    "valid-jsdoc": [
+    // Leave it up to jsdoc plugin
+    "valid-jsdoc": "off",
+
+    // Noise
+    "jsdoc/require-param-description": "off",
+    "jsdoc/require-returns-description": "off",
+    "jsdoc/require-property-description": "off",
+
+    "jsdoc/check-indentation": [
       "error",
-      {
-        requireReturn: false,
-        requireReturnDescription: false,
-        requireReturnType: true,
-      },
+      { excludeTags: ["example", "type", "typedef"] },
     ],
 
-    "jsdoc/check-indentation": "error",
     "jsdoc/check-line-alignment": ["error", "always"],
   },
 }
