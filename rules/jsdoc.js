@@ -49,10 +49,40 @@ module.exports = {
       },
     ],
 
+    "jsdoc/check-tag-names": [
+      "warn",
+      {
+        definedTags: [
+          "api",
+          "apiDefine",
+          "apiDeprecated",
+          "apiDescription",
+          "apiError",
+          "apiErrorExample",
+          "apiExample",
+          "apiGroup",
+          "apiHeader",
+          "apiHeaderExample",
+          "apiIgnore",
+          "apiName",
+          "apiParam",
+          "apiParamExample",
+          "apiPermission",
+          "apiPrivate",
+          "apiSampleRequest",
+          "apiSuccess",
+          "apiSuccessExample",
+          "apiUse",
+          "apiVersion",
+        ],
+      },
+    ],
+
     // Noise
     "jsdoc/require-param-description": "off",
     "jsdoc/require-returns-description": "off",
     "jsdoc/require-property-description": "off",
+    "jsdoc/check-types": "off",
 
     "jsdoc/check-indentation": [
       "error",
