@@ -24,7 +24,30 @@ module.exports = {
     ],
 
     // Leave it up to jsdoc plugin
-    "valid-jsdoc": "off",
+    "valid-jsdoc": [
+      "error",
+      {
+        requireParamType: true,
+        requireParamDescription: false,
+        requireReturnType: true,
+        requireReturnDescription: false,
+
+        prefer: {
+          arg: "param",
+          argument: "param",
+          class: "constructor",
+          return: "returns",
+          virtual: "abstract",
+        },
+
+        preferType: {
+          Boolean: "boolean",
+          Number: "number",
+          object: "Object",
+          String: "string",
+        },
+      },
+    ],
 
     // Noise
     "jsdoc/require-param-description": "off",
