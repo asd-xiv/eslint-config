@@ -3,6 +3,8 @@
 module.exports = {
   plugins: ["unicorn"],
 
+  extends: "plugin:unicorn/recommended",
+
   /*
    * Disabled by prettier
    * https://github.com/prettier/eslint-config-prettier/blob/master/unicorn.js
@@ -33,6 +35,9 @@ module.exports = {
 
     // Prevents passing a function reference directly to iterator methods
     "unicorn/no-fn-reference-in-iterator": "off",
+
+    // Prevent passing a function reference directly to iterator methods
+    "unicorn/no-array-callback-reference": "off",
 
     /*
      * Enforces importing index file with . instead of ./, ./index or
