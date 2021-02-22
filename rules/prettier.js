@@ -1,10 +1,9 @@
 /* eslint-env node */
 
 module.exports = {
-  extends: ["plugin:prettier/recommended", "prettier/unicorn"],
-  rules: {
-    "prettier/prettier": "error",
+  extends: ["plugin:prettier/recommended"],
 
+  rules: {
     /**
      * If a block (for example after if, else, for or while) contains only one
      * statement, JavaScript allows omitting the curly braces around that
