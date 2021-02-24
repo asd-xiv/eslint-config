@@ -35,10 +35,6 @@ module.exports = {
     ].map(require.resolve),
 
     "plugin:@typescript-eslint/recommended",
-
-    // Disable ESLint rules from @typescript-eslint/eslint-plugin that
-    // conflict with prettier
-    "prettier/@typescript-eslint",
   ],
 
   plugins: ["json", "no-inferred-method-name"],

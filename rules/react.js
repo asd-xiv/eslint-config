@@ -3,8 +3,6 @@
 module.exports = {
   plugins: ["react", "react-hooks"],
 
-  extends: ["prettier/react"],
-
   /*
    * Disabled by prettier
    * https://github.com/prettier/eslint-config-prettier/blob/master/react.js
