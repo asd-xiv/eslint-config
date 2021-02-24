@@ -12,6 +12,28 @@ module.exports = {
    * "unicorn/number-literal-case": "off"
    */
   rules: {
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        replacements: {
+          i: false,
+          params: false,
+          args: {
+            params: true,
+          },
+          props: false,
+          opts: {
+            props: true,
+          },
+          input: {
+            source: true,
+          },
+          fn: false,
+          acc: false,
+        },
+      },
+    ],
+
     // Move function definitions to the highest possible scope.
     // Too noisy when curring functions
     "unicorn/consistent-function-scoping": "off",
