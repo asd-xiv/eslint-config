@@ -9,6 +9,7 @@ module.exports = {
 
   extends: [
     ...[
+      "../rules/json",
       "../rules/best.practices",
       "../rules/comments",
       "../rules/errors",
@@ -35,7 +36,7 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["json", "no-inferred-method-name"],
+  plugins: ["no-inferred-method-name"],
 
   rules: {
     "no-unused-vars": [

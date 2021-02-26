@@ -101,12 +101,7 @@ module.exports = {
      *      foo-bar.test.js
      *      foo-bar.test-utils.js
      */
-    "unicorn/filename-case": [
-      "error",
-      {
-        case: "kebabCase",
-      },
-    ],
+    "unicorn/filename-case": "off",
 
     // Enforce explicitly comparing the length property of a value
     "unicorn/explicit-length-check": [

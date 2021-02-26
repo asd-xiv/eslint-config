@@ -17,6 +17,7 @@ module.exports = {
 
   extends: [
     ...[
+      "../rules/json",
       "../rules/best.practices",
       "../rules/comments",
       "../rules/errors",
@@ -36,7 +37,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
   ],
 
-  plugins: ["json", "no-inferred-method-name"],
+  plugins: ["no-inferred-method-name"],
 
   ignorePatterns: ["dist/*.js", "*.d.ts"],
 
