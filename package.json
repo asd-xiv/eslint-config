@@ -15,19 +15,23 @@
     "url": "https://github.com/andreidmt"
   },
   "main": "targets/node.js",
+  "files": [
+    "/targets",
+    "/rules"
+  ],
   "scripts": {
     "----UTIL": "",
-    "clean": "rm -rf ./node_modules",
-    "setup": "npm run clean && npm i && npm audit fix",
+    "clean:setup": "rm -rf ./node_modules",
+    "setup": "npm run clean:setup && npm i && npm audit fix",
     "setup:ci": "npm ci && npm audit fix",
     "update": "npm-check --update",
     "update-force": "npm-check --update-all",
     "----TEST": "",
-    "lint:js": "eslint --quiet rules/* targets/*",
+    "lint:js": "eslint --quiet 'rules/*' 'targets/*'",
     "lint:md": "markdownlint *.md",
     "lint": "npm run lint:js && npm run lint:md",
     "----BUILD": "",
-    "prepublishOnly": "npm audit fix && npm run lint"
+    "prepublishOnly": "npm run lint"
   },
   "keywords": [
     "config",
