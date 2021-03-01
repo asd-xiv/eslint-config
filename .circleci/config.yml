@@ -81,5 +81,5 @@ jobs:
 
       - run:
           name: "eslint-config: Release to npm with semantic-release"
-          command: "npx semantic-release"
+          command: "npm run publish"
 

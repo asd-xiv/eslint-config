@@ -1,6 +1,6 @@
 {
   "name": "@asd14/eslint-config",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "JavaScript ESLint rules",
   "homepage": "https://github.com/asd-xiv/eslint-config",
   "repository": {
@@ -14,6 +14,16 @@
     "name": "Andrei Dumitrescu",
     "url": "https://github.com/andreidmt"
   },
+  "keywords": [
+    "config",
+    "eslint",
+    "eslint-config",
+    "eslint-rules",
+    "javascript",
+    "prettier",
+    "react",
+    "node"
+  ],
   "main": "targets/node.js",
   "files": [
     "/targets",
@@ -31,18 +41,10 @@
     "lint:md": "markdownlint *.md",
     "lint": "npm run lint:js && npm run lint:md",
     "----BUILD": "",
-    "prepublishOnly": "npm run lint"
+    "prepublishOnly": "npm run lint",
+    "----PUBLISH": "",
+    "publish": "semantic-release"
   },
-  "keywords": [
-    "config",
-    "eslint",
-    "eslint-config",
-    "eslint-rules",
-    "javascript",
-    "prettier",
-    "react",
-    "node"
-  ],
   "devDependencies": {
     "@babel/core": "^7.13.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
