@@ -39,15 +39,15 @@ Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the base pa
 It should be something like:
 
 ```javascript
-"eslint": "^7.20.0",
-"eslint-config-prettier": "^8.0.0",
+"eslint": "^7.22.0",
+"eslint-config-prettier": "^8.1.0",
 "eslint-plugin-import": "^2.22.1",
-"eslint-plugin-jsdoc": "^32.2.0",
+"eslint-plugin-jsdoc": "^32.3.0",
 "eslint-plugin-json": "^2.1.2",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-prettier": "^3.3.1",
 "eslint-plugin-promise": "^4.3.1",
-"eslint-plugin-unicorn": "^28.0.2",
+"eslint-plugin-unicorn": "^29.0.0",
 "prettier": "^2.2.1"
 ```
 
