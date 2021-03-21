@@ -38,7 +38,9 @@
     "----TEST": "",
     "lint:js": "eslint --quiet 'rules/*' 'targets/*'",
     "lint:md": "markdownlint *.md",
-    "lint": "npm run lint:js && npm run lint:md"
+    "lint": "npm run lint:js && npm run lint:md",
+    "----PUBLISH": "",
+    "publish": "semantic-release"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
