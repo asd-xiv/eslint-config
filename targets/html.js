@@ -36,7 +36,7 @@ module.exports = {
 
   settings: {
     /*
-     * A list of regex strings that, if matched by a path, will not report
+     * List of regex strings that, if matched by a path, will not report
      * the matching module if no exports are found.
      */
     "import/ignore": [".(sass|scss|less|css)$"],
