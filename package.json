@@ -31,10 +31,10 @@
   ],
   "scripts": {
     "----UTIL": "",
-    "setup:clean": "rm -rf ./node_modules",
-    "setup": "npm run setup:clean && npm ci --also=dev",
-    "update": "npm-check --update && npm audit fix",
-    "update:force": "npm-check --update-all && npm audit fix",
+    "presetup": "rm -rf ./node_modules",
+    "setup": "npm ci --also=dev",
+    "update": "npm-check --update",
+    "postupdate": "npm audit fix",
     "----TEST": "",
     "lint:js": "eslint --quiet 'rules/*' 'targets/*'",
     "lint:md": "markdownlint '*.md'",
@@ -43,10 +43,10 @@
     "publish": "semantic-release"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "eslint": "^7.22.0",
+    "@babel/core": "^7.13.15",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
@@ -54,15 +54,15 @@
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unicorn": "^29.0.0",
     "markdownlint-cli": "^0.27.1",
     "npm-check": "^5.9.2",
     "prettier": "^2.2.1",
     "semantic-release": "^17.4.2",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
     "eslint": "^7.22.0",
