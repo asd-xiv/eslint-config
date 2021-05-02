@@ -7,6 +7,22 @@ module.exports = {
      * referenced module
      */
     "import/named": "off",
+
+    // Typescript handles file resolving
+    "import/no-unresolved": "off",
+
+    /*
+     * A list of file extensions that will be parsed as modules and
+     * inspected for exports.
+     */
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        js: "never",
+        ts: "never",
+      },
+    ],
   },
 
   settings: {

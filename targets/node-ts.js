@@ -45,15 +45,6 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-var-requires": "off",
 
-    // disable, it gives false positives. let eslint/no-unused-vars
-    "@typescript-eslint/no-unused-vars": "off",
-
-    "no-unused-vars": [
-      "error",
-      {
-        args: "after-used",
-        varsIgnorePattern: "debug",
-      },
-    ],
+    "no-unused-vars": "off",
   },
 }
