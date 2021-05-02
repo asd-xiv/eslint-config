@@ -46,7 +46,7 @@
     "publish": "semantic-release"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.16",
+    "@babel/core": "^7.14.0",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@semantic-release/changelog": "^5.0.1",
@@ -57,7 +57,7 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsdoc": "32.3.1",
+    "eslint-plugin-jsdoc": "33.0.0",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-prettier": "3.4.0",
@@ -76,7 +76,7 @@
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsdoc": "^32.3.1",
+    "eslint-plugin-jsdoc": "^33.0.0",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
