@@ -1,7 +1,6 @@
 # A log of changes
 
-# [5.35.0](https://github.com/asd-xiv/eslint-config/compare/v5.34.0...v5.35.0) (2021-05-17)
-
+## [5.35.0](https://github.com/asd-xiv/eslint-config/compare/v5.34.0...v5.35.0) (2021-05-17)
 
 ### Features
 
