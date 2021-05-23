@@ -49,10 +49,15 @@ module.exports = {
       },
     ],
 
+    // Allow lines between tags
+    "jsdoc/tag-lines": "off",
+
     "jsdoc/check-tag-names": [
       "warn",
       {
         definedTags: [
+          "tag",
+          "signature",
           "api",
           "apiDefine",
           "apiDeprecated",
@@ -89,6 +94,12 @@ module.exports = {
       { excludeTags: ["example", "type", "typedef"] },
     ],
 
-    "jsdoc/check-line-alignment": ["error", "always"],
+    "jsdoc/check-line-alignment": [
+      "error",
+      "always",
+      {
+        tags: ["template", "param", "arg", "argument", "property", "prop"],
+      },
+    ],
   },
 }
