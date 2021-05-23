@@ -1,5 +1,12 @@
 # A log of changes
 
+# [5.37.0](https://github.com/asd-xiv/eslint-config/compare/v5.36.0...v5.37.0) (2021-05-23)
+
+
+### Features
+
+* **jsdoc:** only align param type tags ([26ff419](https://github.com/asd-xiv/eslint-config/commit/26ff419f1bf95a41650adfefdc1a288d619c9cf9))
+
 ## [5.36.0](https://github.com/asd-xiv/eslint-config/compare/v5.35.0...v5.36.0) (2021-05-23)
 
 ### Features

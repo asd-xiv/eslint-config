@@ -1,6 +1,6 @@
 {
   "name": "@asd14/eslint-config",
-  "version": "5.36.0",
+  "version": "5.37.0",
   "description": "JavaScript ESLint rules",
   "homepage": "https://github.com/asd-xiv/eslint-config",
   "repository": {
