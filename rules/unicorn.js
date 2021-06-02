@@ -12,6 +12,9 @@ module.exports = {
    * "unicorn/number-literal-case": "off"
    */
   rules: {
+    // Disable until node 16 is lts
+    "unicorn/prefer-node-protocol": "off",
+
     "unicorn/prevent-abbreviations": [
       "error",
       {
