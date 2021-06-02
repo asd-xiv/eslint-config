@@ -91,7 +91,7 @@ module.exports = {
 
     "jsdoc/check-indentation": [
       "error",
-      { excludeTags: ["example", "type", "typedef"] },
+      { excludeTags: ["example", "param", "returns", "type", "typedef"] },
     ],
 
     "jsdoc/check-line-alignment": [
