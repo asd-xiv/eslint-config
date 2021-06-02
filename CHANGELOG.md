@@ -1,5 +1,13 @@
 # A log of changes
 
+# [5.40.0](https://github.com/asd-xiv/eslint-config/compare/v5.39.0...v5.40.0) (2021-06-02)
+
+
+### Features
+
+* disable jsdoc/check-indentation for [@param](https://github.com/param) and [@returns](https://github.com/returns) ([8b3ff63](https://github.com/asd-xiv/eslint-config/commit/8b3ff6349042faabb3de8fd085dab2f49b3e43f1))
+* disable unicorn/prefer-node-protocol until node16 is lts ([124bd01](https://github.com/asd-xiv/eslint-config/commit/124bd0192a39b16e38ee86c8ff65903be8af73df))
+
 ## [5.39.0](https://github.com/asd-xiv/eslint-config/compare/v5.38.0...v5.39.0) (2021-06-02)
 
 ### Features
