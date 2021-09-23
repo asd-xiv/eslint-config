@@ -2,6 +2,11 @@
   "name": "tpl-node",
   "version": "0.0.1",
   "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/{}",
   "repository": {
@@ -15,51 +20,62 @@
     "name": "Andrei Dumitrescu",
     "url": "https://github.com/andreidmt"
   },
-  "main": "src/index.js",
   "keywords": [
     "node"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">= 14"
   },
   "scripts": {
     "----UTIL": "",
-    "setup": "rm -rf ./node_modules && npm i && npm audit fix",
-    "setup:ci": "npm ci && npm audit fix",
+    "prepare": "git config --local core.hooksPath .githook",
+    "presetup": "rm -rf ./node_modules",
+    "setup": "npm ci --also=dev",
+    "prefresh": "rm -rf ./node_modules && rm --force package-lock.json",
+    "fresh": "npm install",
     "update": "npm-check --update",
+    "postupdate": "npm audit fix",
     "----BUILD": "",
-    "prepublishOnly": "npm audit fix && npm test && npm run lint",
+    "build": "tsc",
     "----LINT": "",
-    "lint:md": "markdownlint *.md",
-    "lint:js": "eslint --ext .jsx,.js src",
-    "lint": "npm run lint:md && npm run lint:js",
+    "lint.js": "eslint --quiet 'src",
+    "lint.js-staged": "eslint --quiet",
+    "lint.md": "markdownlint *.md",
+    "lint.md-staged": "markdownlint",
+    "lint": "npm run lint.js && npm run lint.md",
     "----TEST": "",
-    "test": "node tests/index.js",
-    "tdd": "nodemon --watch src --watch tests --exec \"npm test\"",
-    "coverage:ci": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "test": "riteway 'src/**/*.test.js' | tap-nirvana",
+    "tdd": "nodemon --watch src --exec \"npm test\"",
+    "coverage:ci": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "----PUBLISH": "",
+    "publish": "semantic-release"
   },
   "dependencies": {
-    "m.xyz": "^2.13.0"
+    "@asd14/m": "^6.6.0"
   },
   "devDependencies": {
-    "coveralls": "^3.1.0",
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-config.xyz": "^5.13.0",
-    "eslint-plugin-html": "^6.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-json": "^2.1.2",
+    "@asd14/eslint-config": "^5.41.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "coveralls": "^3.1.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-unicorn": "^22.0.0",
-    "markdownlint-cli": "^0.23.2",
-    "nodemon": "^2.0.4",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-unicorn": "^36.0.0",
+    "lint-staged": "^11.1.1",
+    "markdownlint-cli": "^0.28.1",
+    "nodemon": "^2.0.12",
     "npm-check": "^5.9.2",
     "nyc": "^15.1.0",
-    "prettier": "^2.1.2",
-    "riteway": "^6.1.2",
-    "semantic-release": "^17.1.2",
+    "prettier": "^2.4.1",
+    "riteway": "^6.3.1",
+    "semantic-release": "^18.0.0",
     "tap-nirvana": "^1.1.0"
   }
 }

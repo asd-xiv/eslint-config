@@ -1,11 +1,8 @@
 {
   "root": true,
+  "extends": ["@asd14/eslint-config/targets/node"],
+  "ignorePatterns": ["dist/*.js"],
 
-  "extends": [
-    "./node_modules/eslint-config.xyz/targets/node",
-  ],
-
-  // app specific rules
   "rules": {
   },
 
