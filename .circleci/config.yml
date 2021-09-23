@@ -1,85 +1,76 @@
-version: 2
+version: 2.1
+
+executors:
+  node-lts:
+    docker:
+      - image: circleci/node:lts
 
 #
-# YAML variable templates
+# Jobs - https://circleci.com/docs/2.0/configuration-reference/#jobs
 #
-job_defaults: &job_defaults
-  working_directory: ~/eslint-config
-  docker:
-    - image: circleci/node:lts
+# Groups of comands used in one or more Workflows
+#
+# - Keep GLOBAL variable usage at a minimum
+# - Prioritize `parameters` usage
+#
+
+jobs:
+  setup:
+    executor: node-lts
+    working_directory: ~/eslint-config
+    steps:
+      - checkout
+      - run:
+          name: "[npm] Install packages"
+          command: "npm run setup"
+      - save_cache:
+          paths: [ node_modules ]
+          key: eslint-config-{{ checksum "package-lock.json" }}
+
+  test:
+    executor: node-lts
+    working_directory: ~/eslint-config
+    steps:
+      - checkout
+      - restore_cache:
+          key: eslint-config-{{ checksum "package-lock.json" }}
+      - run:
+          name: "[eslint,markdownlint]: Lint"
+          command: "npm run lint"
+
+  publish:
+    executor: node-lts
+    working_directory: ~/eslint-config
+    steps:
+      - checkout
+      - restore_cache:
+          key: eslint-config-{{ checksum "package-lock.json" }}
+      - run:
+          name: "[semantic-release]: Publish package to npm"
+          command: "npm run publish"
 
 #
-# Run all jobs in sequence
+# Workflows - https://circleci.com/docs/2.0/workflows/
 #
+# - Treat workflows as piping commands (cmd1 -p1 lorem | cmd2 | ... | cmdN) or
+#   function composition
+# - Use/set GLOBAL variables if they are used in more than 2 jobs
+#
+
 workflows:
-  version: 2
-  deploy_npm:
+  npm_publish:
     jobs:
       - setup:
           filters:
             branches:
-              only:
-                - master
+              only: [ master ]
       - test:
           filters:
             branches:
-              only:
-                - master
-          requires:
-            - setup
+              only: [ master ]
+          requires: [ setup ]
       - publish:
           filters:
             branches:
-              only:
-                - master
-          requires:
-            - test
-
-#
-# Define atomic jobs
-#
-jobs:
-  setup:
-    <<: *job_defaults
-
-    steps:
-      - checkout
-
-      - run:
-          name: "eslint-config: Install npm packages"
-          command: "npm run setup"
-
-      - save_cache:
-          paths:
-            - node_modules
-            - dist
-          key: eslint-config-{{ .Branch }}-{{ .Revision }}
-
-  test:
-    <<: *job_defaults
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - eslint-config-{{ .Branch }}-{{ .Revision }}
-
-      - run:
-          name: "eslint-config: Run linter"
-          command: "npm run lint"
-
-  publish:
-    <<: *job_defaults
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - eslint-config-{{ .Branch }}-{{ .Revision }}
-
-      - run:
-          name: "eslint-config: Release to npm with semantic-release"
-          command: "npm run publish"
-
+              only: [ master ]
+          requires: [ test ]
