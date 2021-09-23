@@ -3,8 +3,8 @@
 module.exports = {
   env: {
     browser: false,
-    es6: true,
     node: true,
+    es2021: true,
   },
 
   extends: [
@@ -26,29 +26,19 @@ module.exports = {
   ],
 
   parserOptions: {
-    ecmaFeatures: {
-      classes: true,
-      impliedStrict: true,
-    },
-    ecmaVersion: 7,
+    ecmaVersion: 12,
     sourceType: "module",
   },
 
   plugins: ["no-inferred-method-name"],
 
   settings: {
-    /*
-     * Can add a path segment here that will act like a source root, for
-     * in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
-     */
     "import/resolver": {
       node: {
         extensions: [".js"],
 
-        /*
-         * Can add a path segment here that will act like a source root, for
-         * in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
-         */
+        // Can add a path segment here that will act like a source root, for
+        // in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
         moduleDirectory: ["node_modules", "src"],
       },
     },
