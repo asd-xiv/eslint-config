@@ -39,16 +39,16 @@ Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the base pa
 It should be something like:
 
 ```javascript
-"eslint": "^7.29.0",
+"eslint": "^7.32.0",
 "eslint-config-prettier": "^8.3.0",
-"eslint-plugin-import": "^2.23.4",
-"eslint-plugin-jsdoc": "^35.4.1",
-"eslint-plugin-json": "^3.0.0",
+"eslint-plugin-import": "^2.24.2",
+"eslint-plugin-jsdoc": "^36.1.0",
+"eslint-plugin-json": "^3.1.0",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
-"eslint-plugin-prettier": "^3.4.0",
+"eslint-plugin-prettier": "^4.0.0",
 "eslint-plugin-promise": "^5.1.0",
-"eslint-plugin-unicorn": "^34.0.1",
-"prettier": "^2.3.2"
+"eslint-plugin-unicorn": "^36.0.0",
+"prettier": "^2.4.1"
 ```
 
 Add these packages to your `devDependencies` in `package.json`.
@@ -128,7 +128,7 @@ Link ESLint to `react` target.
 * [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Linting rules rules of React Hooks.
 * [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 * [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) - ESLint parser which leverages TypeScript ESTree to allow for ESLint to lint TypeScript source code.
-* [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) - ESLint plugin which provides lint rules for TypeScript codebases.
+* [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) - ESLint plugin which provides lint rules for TypeScript codebases.
 
 ## Example config
 
@@ -178,7 +178,7 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
   "singleQuote": false,
   "trailingComma": "es5",
   "bracketSpacing": true,
-  "jsxBracketSameLine": true,
+  "bracketSameLine": true,
   "arrowParens": "avoid"
 }
 ```
