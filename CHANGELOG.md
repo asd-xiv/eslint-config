@@ -1,5 +1,12 @@
 # A log of changes
 
+# [5.43.0](https://github.com/asd-xiv/eslint-config/compare/v5.42.0...v5.43.0) (2021-09-23)
+
+
+### Features
+
+* **target.node:** update "ecmaVersion" ([e3f5aac](https://github.com/asd-xiv/eslint-config/commit/e3f5aac77cab0bf1432190cb2d5acd931ec219f5))
+
 ## [5.42.0](https://github.com/asd-xiv/eslint-config/compare/v5.41.0...v5.42.0) (2021-09-23)
 
 ### Features
