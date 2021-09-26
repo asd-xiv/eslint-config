@@ -1,9 +1,10 @@
 {
   "root": true,
   "extends": ["@asd14/eslint-config/targets/node"],
-  "ignorePatterns": ["dist/*.js"],
 
   "rules": {
+    "import/extensions": "off",
+    "unicorn/import-index": "off"
   },
 
   "settings": {
