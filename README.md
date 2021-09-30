@@ -2,15 +2,10 @@
 
 # tpl-node
 
-<!-- vim-markdown-toc GFM -->
+Node.js ESM module template.
 
-* [Stack](#stack)
+<!-- vim-markdown-toc GFM -->
 
 <!-- vim-markdown-toc -->
 
 ## Stack
-
-* Functional: [m](https://github.com/andreidmt/m.xyz)
-* Testing: [tape](https://github.com/substack/tape), [riteway](https://github.com/ericelliott/riteway)
-* Linting: [ESLint](https://github.com/eslint/eslint), [eslint-config-xyz](https://github.com/andreidmt/eslint-config-xyz)
-* Code formatting: ESLint rules + [prettier](https://github.com/prettier/prettier)
