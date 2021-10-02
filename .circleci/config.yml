@@ -25,7 +25,7 @@ jobs:
           command: "npm run setup"
       - save_cache:
           paths: [ node_modules ]
-          key: eslint-config-{{ checksum "package-lock.json" }}
+          key: tpl-node-{{ checksum "package-lock.json" }}
 
   test:
     executor: node-lts
@@ -33,7 +33,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: eslint-config-{{ checksum "package-lock.json" }}
+          key: tpl-node-{{ checksum "package-lock.json" }}
       - run:
           name: "[eslint,markdownlint]: Lint"
           command: "npm run lint"
@@ -44,7 +44,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: eslint-config-{{ checksum "package-lock.json" }}
+          key: tpl-node-{{ checksum "package-lock.json" }}
       - run:
           name: "[semantic-release]: Publish package to npm"
           command: "npm run publish"
