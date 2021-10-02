@@ -1,11 +1,11 @@
 export const sum = (...params) => {
-  const nanItemIndex = params.findIndex(
+  const firstNaNItemIndex = params.findIndex(
     item => typeof item !== "number" || Number.isNaN(item)
   )
 
-  if (nanItemIndex !== -1) {
+  if (firstNaNItemIndex !== -1) {
     throw new TypeError(
-      `[sum] one of the provided parameters is not a number (index: ${nanItemIndex} value: "${params[nanItemIndex]}")`
+      `[sum] one of the provided parameters is not a number (index: ${firstNaNItemIndex} value: "${params[firstNaNItemIndex]}")`
     )
   }
 

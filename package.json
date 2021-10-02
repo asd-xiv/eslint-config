@@ -9,20 +9,30 @@
   "files": [
     "/src"
   ],
-  "homepage": "https://github.com/{}",
+  "homepage": "https://github.com/andreidmt/tpl-node",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{}.git"
+    "url": "git+https://github.com/andreidmt/tpl-node.git"
   },
   "bugs": {
-    "url": "https://github.com/{}/issues"
+    "url": "https://github.com/andreidmt/tpl-node/issues"
   },
   "author": {
     "name": "Andrei Dumitrescu",
     "url": "https://github.com/andreidmt"
   },
   "keywords": [
-    "node", "template", "esm"
+    "nodejs",
+    "esm",
+    "tape",
+    "eslint",
+    "prettier",
+    "lintstaged",
+    "commitlint",
+    "markdownlint",
+    "circleci",
+    "semantic-release",
+    "coveralls"
   ],
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
@@ -35,8 +45,6 @@
     "fresh": "npm install",
     "postfresh": "npm audit --fix",
     "update": "npm-check --update",
-    "----BUILD": "",
-    "build": "tsc",
     "----LINT": "",
     "lint.js": "eslint --quiet src",
     "lint.js-staged": "eslint --quiet",
@@ -44,14 +52,13 @@
     "lint.md-staged": "markdownlint",
     "lint": "npm run lint.js && npm run lint.md",
     "----TEST": "",
-    "test": "riteway 'src/**/*.test.js' 'src/*.test.js'",
+    "test": "tape 'src/**/*.test.js' 'src/*.test.js' | tap-nirvana",
     "tdd": "nodemon --watch src --exec \"npm test\"",
     "coverage:ci": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "----PUBLISH": "",
     "publish": "semantic-release"
   },
   "dependencies": {
-    "@asd14/m": "^6.6.0"
   },
   "devDependencies": {
     "@asd14/eslint-config": "^5.43.0",
@@ -74,8 +81,8 @@
     "npm-check": "^5.9.2",
     "nyc": "^15.1.0",
     "prettier": "^2.4.1",
-    "riteway": "^6.3.1",
     "semantic-release": "^18.0.0",
-    "tap-nirvana": "^1.1.0"
+    "tap-nirvana": "^1.1.0",
+    "tape": "^5.3.1"
   }
 }
