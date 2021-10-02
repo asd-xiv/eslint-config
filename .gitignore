@@ -107,3 +107,6 @@ dist
 tags
 
 .DS_Store
+
+# Coveralls
+.coveralls.yml
