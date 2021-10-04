@@ -1,5 +1,21 @@
 # A log of changes
 
+# [6.0.0](https://github.com/asd-xiv/eslint-config/compare/v5.43.0...v6.0.0) (2021-10-04)
+
+
+### Features
+
+* change "engines" to esm compatible node version ([6ddfe55](https://github.com/asd-xiv/eslint-config/commit/6ddfe55a4e7b3ae6e31d52d19afefcf3efae123e))
+* **targets:** remove "html", update "ecmaVersion" to "2021" ([00445e1](https://github.com/asd-xiv/eslint-config/commit/00445e158ac9589751f0b6277a9a753a4c3e48c8))
+* **unicorn:** change "unicorn/prevent-abbreviations" to prefer "input" ([2e5f586](https://github.com/asd-xiv/eslint-config/commit/2e5f58600b4b11a6ea7ae1097f573e99f75140e0))
+* update dependencies ([727be14](https://github.com/asd-xiv/eslint-config/commit/727be14515980bd626ce95e52eefbc7350a151c1))
+* use "import" recommended ([073766e](https://github.com/asd-xiv/eslint-config/commit/073766e08b53b9659d6d6b8f178945c983dc0280))
+
+
+### BREAKING CHANGES
+
+* **targets:** `html` target removed
+
 ## [5.43.0](https://github.com/asd-xiv/eslint-config/compare/v5.42.0...v5.43.0) (2021-09-23)
 
 ### Features
