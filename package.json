@@ -57,7 +57,7 @@
     "lint": "npm run lint.js && npm run lint.md",
     "----TEST": "",
     "pretest": "npm run build",
-    "test": "tape 'dist/**/*.test.js' 'src/*.test.js' | tap-nirvana",
+    "test": "tape 'dist/**/*.test.js' | tap-nirvana",
     "tdd": "nodemon --watch src --ext js,ts,json --exec \"npm test\"",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "----PUBLISH": "",
