@@ -17,32 +17,38 @@
 > containing libraries details - configuration file, npm scripts, commit hooks
 > etc.  
 >
-> This approach gives developers the freedom of configuration and choice over
-> their application core libraries, it's core focus being __zero lock-in__ and
+> The approach gives developers the freedom of configuration and choice over
+> their application core libraries, focusing more on __zero lock-in__ and
 > __experimentation with other libraries and workflows__.
 
----
+## Table of contents
 
 <!-- vim-markdown-toc GFM -->
 
-- [The Big 4](#the-big-4)
-  - [1. Compile](#1-compile)
-  - [2. Lint](#2-lint)
-  - [3. Test](#3-test)
-  - [4. Release](#4-release)
+- [Compile](#compile)
+  - [Libraries](#libraries)
+  - [Scripts](#scripts)
+- [Lint](#lint)
+  - [Libraries](#libraries-1)
+  - [Scripts](#scripts-1)
+- [Test](#test)
+  - [Libraries](#libraries-2)
+  - [Services](#services)
+  - [Scripts](#scripts-2)
+- [Release](#release)
+  - [Libraries](#libraries-3)
+  - [Services](#services-1)
 - [How to use](#how-to-use)
 
 <!-- vim-markdown-toc -->
 
-## The Big 4
+## Compile
 
-### 1. Compile
-
-#### Libraries
+### Libraries
 
 - [typescript](https://github.com/microsoft/TypeScript) - A superset of JavaScript that compiles to clean JavaScript output.
 
-#### Scripts
+### Scripts
 
 - Compile TypeScript files inside `src` folder into `dist`
 
@@ -52,9 +58,9 @@
 npm run build
 ```
 
-### 2. Lint
+## Lint
 
-#### Libraries
+### Libraries
 
 - [eslint](https://github.com/eslint/eslint) - Find and fix problems in your JavaScript code.
 - [prettier](https://github.com/prettier/prettier) - Opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
@@ -62,44 +68,44 @@ npm run build
 - [commitlint](https://github.com/conventional-changelog/commitlint) - commitlint checks if your commit messages meet the [conventional commit format](https://www.conventionalcommits.org).
 - [lint-staged](https://github.com/okonet/lint-staged) - Run linters against staged git files and don't let :hankey: slip into your codebase!
 
-#### Scripts
+### Scripts
 
-### 3. Test
+## Test
 
-#### Libraries
+### Libraries
 
 - [tape](https://github.com/substack/tape) - [TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol) producing test harness for node and browsers.
 - [tap-nirvana](https://github.com/inadarei/tap-nirvana) - A TAP reporter optimized for developer comfort above anything else.
 - [nyc](https://github.com/istanbuljs/nyc) - Wrap JavaScript code with line counters, so that you can track how well your unit-tests exercise your codebase.
 
-#### Services
+### Services
 
 - [Coveralls](https://coveralls.io/) - Test coverage reporting.
 
-#### Scripts
+### Scripts
 
 - Run all test files inside `src` folder
 
 ```bash
 # "pretest": "npm run build",
-# "test": "tape 'dist/**/*.test.js' 'dist/*.test.js' | tap-nirvana",
+# "test": "tape 'dist/**/*.test.js' | tap-nirvana",
 npm run test
 ```
 
 - Run `test` npm script every time a file changes in `src`
 
 ```bash
-# "tdd": "nodemon --watch src --exec \"npm test\"",
+# "tdd": "nodemon --watch src --exec 'npm test'",
 npm run tdd
 ```
 
-### 4. Release
+## Release
 
-#### Libraries
+### Libraries
 
 - [semantic-release](https://github.com/semantic-release/semantic-release)
 
-#### Services
+### Services
 
 - [CircleCI](https://circleci.com) - Continuous integration platform.
 
