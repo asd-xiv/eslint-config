@@ -1,11 +1,106 @@
-<!-- markdownlint-disable line-length -->
+<!-- markdownlint-disable first-line-h1 line-length -->
 
-# tpl-node
+[![Coverage Status](https://coveralls.io/repos/github/andreidmt/tpl-node/badge.svg)](https://coveralls.io/github/andreidmt/tpl-node)
 
-Node.js ESM module template.
+# Node.js library stack
+
+> **library stack**  
+> _noun_
+>
+> Set of libraries or services configured and composed together with the
+> purpose of automating common JavaScript development practices: __compiling__,
+> __linting__, __testing__ and __releasing__.
+>
+> While similar to a
+> [Framework](https://en.wikipedia.org/wiki/Software_framework), providing an
+> opinionated way of handling certain topics, it intentionally leaves visible the
+> containing libraries details - configuration file, npm scripts, commit hooks
+> etc.  
+>
+> This approach gives developers the freedom of configuration and choice over
+> their application core libraries, it's core focus being __zero lock-in__ and
+> __experimentation with other libraries and workflows__.
+
+---
 
 <!-- vim-markdown-toc GFM -->
 
+- [The Big 4](#the-big-4)
+  - [1. Compile](#1-compile)
+  - [2. Lint](#2-lint)
+  - [3. Test](#3-test)
+  - [4. Release](#4-release)
+- [How to use](#how-to-use)
+
 <!-- vim-markdown-toc -->
 
-## Stack
+## The Big 4
+
+### 1. Compile
+
+#### Libraries
+
+- [typescript](https://github.com/microsoft/TypeScript) - A superset of JavaScript that compiles to clean JavaScript output.
+
+#### Scripts
+
+- Compile TypeScript files inside `src` folder into `dist`
+
+```bash
+# "prebuild": "rm -rf ./dist",
+# "build": "tsc --project tsconfig.json",
+npm run build
+```
+
+### 2. Lint
+
+#### Libraries
+
+- [eslint](https://github.com/eslint/eslint) - Find and fix problems in your JavaScript code.
+- [prettier](https://github.com/prettier/prettier) - Opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+- [markdownlint](https://github.com/igorshubovych/markdownlint-cli) - A Node.js style checker and lint tool for Markdown/CommonMark files.
+- [commitlint](https://github.com/conventional-changelog/commitlint) - commitlint checks if your commit messages meet the [conventional commit format](https://www.conventionalcommits.org).
+- [lint-staged](https://github.com/okonet/lint-staged) - Run linters against staged git files and don't let :hankey: slip into your codebase!
+
+#### Scripts
+
+### 3. Test
+
+#### Libraries
+
+- [tape](https://github.com/substack/tape) - [TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol) producing test harness for node and browsers.
+- [tap-nirvana](https://github.com/inadarei/tap-nirvana) - A TAP reporter optimized for developer comfort above anything else.
+- [nyc](https://github.com/istanbuljs/nyc) - Wrap JavaScript code with line counters, so that you can track how well your unit-tests exercise your codebase.
+
+#### Services
+
+- [Coveralls](https://coveralls.io/) - Test coverage reporting.
+
+#### Scripts
+
+- Run all test files inside `src` folder
+
+```bash
+# "pretest": "npm run build",
+# "test": "tape 'dist/**/*.test.js' 'dist/*.test.js' | tap-nirvana",
+npm run test
+```
+
+- Run `test` npm script every time a file changes in `src`
+
+```bash
+# "tdd": "nodemon --watch src --exec \"npm test\"",
+npm run tdd
+```
+
+### 4. Release
+
+#### Libraries
+
+- [semantic-release](https://github.com/semantic-release/semantic-release)
+
+#### Services
+
+- [CircleCI](https://circleci.com) - Continuous integration platform.
+
+## How to use
