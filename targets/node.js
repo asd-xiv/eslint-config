@@ -1,10 +1,13 @@
 /* eslint-env node */
 
 module.exports = {
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+  },
+
   env: {
-    browser: false,
     node: true,
-    es2021: true,
   },
 
   extends: [
@@ -24,11 +27,6 @@ module.exports = {
       "../rules/prettier",
     ].map(require.resolve),
   ],
-
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: "module",
-  },
 
   plugins: ["no-inferred-method-name"],
 

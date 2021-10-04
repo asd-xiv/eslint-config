@@ -4,17 +4,12 @@ module.exports = {
   parser: "@typescript-eslint/parser",
 
   parserOptions: {
-    // Modern ECMAScript features
-    ecmaVersion: 2020,
-
-    // Use of imports
+    ecmaVersion: 2021,
     sourceType: "module",
   },
 
   env: {
-    browser: false,
     es6: true,
-    node: true,
   },
 
   extends: [
@@ -44,6 +39,8 @@ module.exports = {
 
   rules: {
     "@typescript-eslint/no-var-requires": "off",
+
+    "@typescript-eslint/ban-ts-comment": "warn",
 
     "no-unused-vars": "off",
   },

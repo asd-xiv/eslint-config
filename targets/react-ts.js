@@ -2,7 +2,7 @@
 
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
@@ -38,8 +38,6 @@ module.exports = {
   ],
 
   plugins: ["no-inferred-method-name"],
-
-  ignorePatterns: ["dist/*.js", "*.d.ts"],
 
   rules: {
     "react/prop-types": "off",

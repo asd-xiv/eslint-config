@@ -1,6 +1,16 @@
 /* eslint-env node */
 
 module.exports = {
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+    ecmaFeatures: {
+      classes: true,
+      impliedStrict: true,
+      jsx: true,
+    },
+  },
+
   env: {
     browser: true,
     es6: true,
@@ -25,16 +35,6 @@ module.exports = {
       "../rules/prettier",
     ].map(require.resolve),
   ],
-
-  parserOptions: {
-    ecmaFeatures: {
-      classes: true,
-      impliedStrict: true,
-      jsx: true,
-    },
-    ecmaVersion: 7,
-    sourceType: "module",
-  },
 
   plugins: ["no-inferred-method-name"],
 
