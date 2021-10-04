@@ -6,6 +6,10 @@
     // Search under node_modules for non-relative imports
     "moduleResolution": "node",
 
+    // Allows importing modules with a ".json" extension. This includes
+    // generating a type for the import based on the static JSON shape.
+    "resolveJsonModule": true,
+
     // Process & infer types from .js files
     "allowJs": true,
 
