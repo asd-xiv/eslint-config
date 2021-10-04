@@ -14,15 +14,14 @@ Other similar bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-ai
 
 <!-- vim-markdown-toc GFM -->
 
-* [Install](#install)
-* [Targets](#targets)
-  * [Node.js](#nodejs)
-  * [Node.js with Typescript](#nodejs-with-typescript)
-  * [HTML](#html)
-  * [React](#react)
-* [Inside](#inside)
-* [Example config](#example-config)
-* [Changelog](#changelog)
+- [Install](#install)
+- [Targets](#targets)
+  - [Node.js](#nodejs)
+  - [Node.js with Typescript](#nodejs-with-typescript)
+  - [React](#react)
+- [Inside](#inside)
+- [Example config](#example-config)
+- [Changelog](#changelog)
 
 <!-- vim-markdown-toc -->
 
@@ -85,19 +84,6 @@ Link ESLint to `node-ts` target.
 }
 ```
 
-### HTML
-
-Link ESLint to `html` target.
-
-```javascript
-// .eslintrc
-{
-  "extends": [
-    "@asd14/eslint-config/targets/html",
-  ]
-}
-```
-
 ### React
 
 Install additional packages:
@@ -119,16 +105,16 @@ Link ESLint to `react` target.
 
 ## Inside
 
-* [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) -  JSDoc specific linting rules
-* [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
-* [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
-* [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
-* [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
-* [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
-* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Linting rules rules of React Hooks.
-* [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
-* [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) - ESLint parser which leverages TypeScript ESTree to allow for ESLint to lint TypeScript source code.
-* [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) - ESLint plugin which provides lint rules for TypeScript codebases.
+- [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc) -  JSDoc specific linting rules
+- [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
+- [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
+- [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
+- [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
+- [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
+- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Linting rules rules of React Hooks.
+- [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+- [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) - ESLint parser which leverages TypeScript ESTree to allow for ESLint to lint TypeScript source code.
+- [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) - ESLint plugin which provides lint rules for TypeScript codebases.
 
 ## Example config
 
