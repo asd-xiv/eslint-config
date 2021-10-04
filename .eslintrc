@@ -1,25 +1,19 @@
 {
   "root": true,
-  "extends": ["@asd14/eslint-config/targets/node"],
+  "extends": ["@asd14/eslint-config/targets/node-ts"],
 
   "rules": {
-    "import/extensions": "off",
-    "unicorn/import-index": "off"
   },
 
   "settings": {
     // Recommended if you use eslint_d
     "import/cache": {
-      "lifetime": 5,
+      "lifetime": 5
     },
 
     "import/resolver": {
       "node": {
-        "extensions": [".js"],
-
-        // Can add a path segment here that will act like a source root, for
-        // in-project aliasing (i.e. `import MyStore from 'stores/my-store'`)
-        "moduleDirectory": ["node_modules", "src"]
+        "extensions": [".js"]
       }
     }
   }
