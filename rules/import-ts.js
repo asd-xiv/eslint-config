@@ -1,6 +1,8 @@
 /* eslint-env node */
 
 module.exports = {
+  extends: ["plugin:import/typescript"],
+
   rules: {
     /*
      * TypeScript compilation already ensures that named imports exist in the
@@ -19,7 +21,7 @@ module.exports = {
       "error",
       "always",
       {
-        js: "never",
+        js: "always",
         ts: "never",
       },
     ],

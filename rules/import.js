@@ -2,6 +2,9 @@
 
 module.exports = {
   plugins: ["import"],
+
+  extends: ["plugin:import/recommended"],
+
   rules: {
     /*
      * If a default import is requested, this rule will report if there is
@@ -71,7 +74,7 @@ module.exports = {
       "error",
       "always",
       {
-        js: "never",
+        js: "always",
       },
     ],
 
