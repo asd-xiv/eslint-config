@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig",
+	"compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "checkJs": false,
+    "allowJs": false
+	},
+	"exclude": [
+		"src/**/*.test.ts"
+	]
+}
