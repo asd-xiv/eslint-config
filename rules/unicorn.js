@@ -28,8 +28,8 @@ module.exports = {
           opts: {
             props: true,
           },
-          input: {
-            source: true,
+          source: {
+            input: true,
           },
           fn: false,
           acc: false,
@@ -68,7 +68,7 @@ module.exports = {
      * Enforces importing index file with . instead of ./, ./index or
      * ./index.js.
      */
-    "unicorn/import-index": "error",
+    "unicorn/import-index": "off",
 
     // Enforce specific import styles per module
 
