@@ -4,17 +4,80 @@ All teams work differently, a _team's style_ should represent the deliberation
 and negotiation of each coding aspect by the members of that team.
 
 - These are not immutable rules, things change, evolve and serve different
-purposes in different stages of development and experience.
+  purposes in different stages of development and experience.
 - All conventions are right as long as people using them agree on their meaning
-and form.
-- If there's a linting rule that can verify or enforce a conventions, use it.
+  and form.
 
-The following is based on:
+The following is inspired from:
 
-- [Elements of JavaScript Style](https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f)
-- [add others]
+- [Elements of JavaScript
+  Style](https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f)
+- [Thinking on
+  Paper](https://www.amazon.com/Thinking-Paper-V-Howard/dp/0688048730)
 
-and our own experience.
+---
+
+## Table of contents
+
+<!-- vim-markdown-toc GFM -->
+
+- [Thoughts on how to approach coding](#thoughts-on-how-to-approach-coding)
+- [Line length](#line-length)
+- [Folder structure and imports](#folder-structure-and-imports)
+- [Naming](#naming)
+  - [Functions](#functions)
+  - [Booleans](#booleans)
+  - [Constants](#constants)
+  - [Handlers and Props](#handlers-and-props)
+  - [Typescript types](#typescript-types)
+- [Generic names](#generic-names)
+
+<!-- vim-markdown-toc -->
+
+## Thoughts on how to approach coding
+
+1. _Continuous refactoring_: Developers _read_ much more code than they
+   _write_. Don't stop at your fist draft while also not obsessing on getting
+   it 100% right.
+
+1. _Read the room_: Functional programming, or any one paradigm, is a not a
+   magic bullet. Figure out when to use what. When building primitives for
+   example, it makes sense to be more conscious about performance and adopt a
+   more imperative style - still being aware of immutability but not [spreading
+   all the object all the
+   time](https://www.richsnapp.com/article/2019/06-09-reduce-spread-anti-pattern).
+
+1. _One way execution flow_: Make code execution flow _top -> down_ and _left
+   -> right_. The more you go back, inside or outside the more you switch
+   context and zoom level. These switches reset the readers mental parsing
+   "state" making the code's meaning harder to transmit and more prone to
+   mistakes.
+
+1. _Let the machines do their thing_: If there's a linting rule that can
+   verify or enforce a conventions, use it.
+
+## Line length
+
+80 characters, yes, just like our grand parents with [punch
+cards](https://www.ibm.com/ibm/history/history/year_1928.html).
+
+It turns out that there is an optimal [line size for
+legibility](https://en.wikipedia.org/wiki/Line_length), between 40 and 80 -
+taking into account eye/head movement, focus etc. This is true for printed
+books and also code.
+
+> At the beginning of every new line the reader is focused, but this focus
+> gradually **wears off** over the duration of the line.
+>
+> "Typographie", E. Ruder
+
+[80-characters line length limit in 2017 (and
+later)](https://www.katafrakt.me/2017/09/16/80-characters-line-length-limit/)
+and [Readability: the Optimal Line
+Length](https://baymard.com/blog/line-length-readability) are good intros on
+the topic.
+
+PS: Linus Torvalds has a guest appearance :)
 
 ## Folder structure and imports
 
@@ -67,13 +130,13 @@ can also be applied to component imports/dependencies.
 ### Functions
 
 A functions is a thing that does something, performs an action, if it does
-something, **it's a verb**. The stronger and less noise around the verb, the
+something, it's a **verb**. The stronger and less noise around the verb, the
 better. `renameFile` better than `fileRename` or `doRenameFile`.
 
-Functions start with a **verb**, optionally followed by the **noun** and/or a
+Functions start with a **verb**, optionally followed by the **noun** and/or an
 **adjective**:
 
-```js
+```ts
 const rename = () => { ... }
 const renameFile = () => { ... }
 const renameMarkdownFiles = () => { ... }
@@ -94,7 +157,7 @@ Use the verb in it's basic form
 Use a name intentionally and strengthen it's meaning by constantly implementing
 it with the same behavior, for ex:
 
-- `findTodo` throws if not found, `getTodo` returns null
+- `getTodo` throws if not found, `findTodo` returns null
 - `updateComment` implies persistence (API or DB interaction),
   `changeCommentText` refers to local state changes
 - `sum` adds items of an array, `sumBy` adds the field of an object array by
@@ -110,7 +173,8 @@ const isToday = checkIsToday(new Date())
 
 ### Booleans
 
-Boolean variables, including React props, are prefixed with one of the following: `can`, `should`, `is`, `has`, `was`
+Boolean variables, including React props, are prefixed with one of the
+following: `can`, `should`, `is`, `has`, `was`
 
 ```js
 const isAllowed = false
@@ -152,7 +216,7 @@ const handleUpdateUserLocale = useCallback(
 
 ### Typescript types
 
-Append `Type` to the name of the thing it's typing and CamelCase it.
+- Append `Type` to the name of the thing it's typing and CamelCase it.
 
 ```jsx
 type InputUIPropsType = {
@@ -165,7 +229,8 @@ type InputUIPropsType = {
 }
 ```
 
-Separate types from the "actual" code.
+- Separate types from the "actual" code. Writing them inline makes it harder to
+  distinguish actionable code from what fundamentally is compiler oriented code
 
 ```tsx
 // separate
@@ -173,7 +238,7 @@ const InputUI: FC<InputUIPropsType> = ({ value, type, hasShowUnmasked }) => {
 ...
 }
 
-// inlined, harder to distinguish actionable code from compiler oriented code
+// inlined
 const InputUI = (
   props:
     | {
