@@ -1,15 +1,15 @@
 import test from "tape"
 import { sum } from "./sum.js"
 
-test("sum: add any number of parameters", t => {
+test("sum: add together all items inside an array", t => {
   t.plan(3)
 
-  t.equal(sum(), 0, "given [no parameter] should [return 0]")
+  t.equal(sum(), 0, "given [empty input array] should [return 0]")
 
   t.equal(
     sum([2, 0 - 1]),
     1,
-    "given [multiple parameter] should [return the correct sum]"
+    "given [multiple items] should [return the correct sum]"
   )
 
   t.throws(
@@ -19,8 +19,8 @@ test("sum: add any number of parameters", t => {
     },
     {
       // @ts-ignore-next
-      message: `[sum] one of the provided parameters is not a number (index: 1 value: "3")`,
+      message: `[sum] item not a number (index: 1 value: "3")`,
     },
-    "given [a parameter is not a number] should [trow]"
+    "given [an item is not a number] should [trow]"
   )
 })

@@ -11,15 +11,19 @@
 type SumType = (input?: number[]) => number
 
 export const sum: SumType = (input = []) => {
-  const firstNaNItemIndex = input.findIndex(
-    item => typeof item !== "number" || Number.isNaN(item)
-  )
+  let output = 0
 
-  if (firstNaNItemIndex !== -1) {
-    throw new TypeError(
-      `[sum] one of the provided parameters is not a number (index: ${firstNaNItemIndex} value: "${input[firstNaNItemIndex]}")`
-    )
+  for (const [index, item] of input.entries()) {
+    const isItemNaN = typeof item !== "number" || Number.isNaN(item)
+
+    if (isItemNaN) {
+      throw new TypeError(
+        `[sum] item not a number (index: ${index} value: "${item}")`
+      )
+    }
+
+    output = output + item
   }
 
-  return input.reduce((acc, item) => acc + item, 0)
+  return output
 }
