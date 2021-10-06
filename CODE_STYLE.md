@@ -29,8 +29,8 @@ The following is inspired from:
   - [Booleans](#booleans)
   - [Constants](#constants)
   - [Handlers and Props](#handlers-and-props)
-  - [Typescript types](#typescript-types)
-- [Generic names](#generic-names)
+  - [Types](#types)
+  - [Generic names](#generic-names)
 
 <!-- vim-markdown-toc -->
 
@@ -40,11 +40,11 @@ The following is inspired from:
    _write_. Don't stop at your fist draft while also not obsessing on getting
    it 100% right.
 
-1. _Read the room_: Functional programming, or any one paradigm, is a not a
-   magic bullet. Figure out when to use what. When building primitives for
-   example, it makes sense to be more conscious about performance and adopt a
-   more imperative style - still being aware of immutability but not [spreading
-   all the object all the
+1. _Read the room_: Functional programming, or any one paradigm, are not magic
+   bullets. Figure out when to use what. When building primitives for example,
+   it makes sense to be more conscious about performance and adopt a more
+   imperative style - still being aware of immutability but not [spreading all
+   the object all the
    time](https://www.richsnapp.com/article/2019/06-09-reduce-spread-anti-pattern).
 
 1. _One way execution flow_: Make code execution flow _top -> down_ and _left
@@ -94,29 +94,26 @@ can also be applied to component imports/dependencies.
   model–view–controller](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)
   when creating pages, containers or multi part entities
 
-  ```js
-  // MVC
-  {
-    "models": [
-      "entity1.model", "entity2.model"
-    ],
-    "views": [
-      "entity1.view", "entity2.view"
-    ],
-    "controllers": [
-      "entity1.ctrl", "entity2.ctrl"
-    ]
-  }
-
-  // HMVC
-  {
-    "entity1": [
-      "model", "view", "ctrl"
-    ],
-    "entity2": [
-      "model", "view", "ctrl"
-    ]
-  }
+  ```text
+  ▾ HMVC/
+    ▾ entity1/
+        controller
+        model
+        view
+    ▾ entity2/
+        controller
+        model
+        view
+  ▾ MVC/
+    ▾ controllers/
+        entity1
+        entity2
+    ▾ models/
+        entity1
+        entity2
+    ▾ views/
+        entity1
+        entity2
   ```
 
 - A child should never import something from it's parents or it's siblings, _it
@@ -214,7 +211,7 @@ const handleUpdateUserLocale = useCallback(
 <Sidebar onLocaleChange={handleUpdateUserLocale} />
 ```
 
-### Typescript types
+### Types
 
 - Append `Type` to the name of the thing it's typing and CamelCase it.
 
@@ -255,7 +252,7 @@ const InputUI = (
 };
 ```
 
-## Generic names
+### Generic names
 
 1. `input`, `item` and `accumulator`
 
