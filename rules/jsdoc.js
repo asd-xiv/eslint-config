@@ -1,16 +1,17 @@
 /* eslint-env node */
 
+/*
+ * JSDoc is a JavaScript API documentation generator. It uses
+ * specially-formatted comments inside of code to generate API
+ * documentation automatically.
+ */
+
 module.exports = {
   plugins: ["jsdoc"],
 
   extends: ["plugin:eslint-plugin-jsdoc/recommended"],
 
   rules: {
-    /*
-     * JSDoc is a JavaScript API documentation generator. It uses
-     * specially-formatted comments inside of code to generate API
-     * documentation automatically.
-     */
     "require-jsdoc": [
       "error",
       {
@@ -23,13 +24,12 @@ module.exports = {
       },
     ],
 
-    // Leave it up to jsdoc plugin
     "valid-jsdoc": [
       "error",
       {
-        requireParamType: true,
+        requireParamType: false,
         requireParamDescription: false,
-        requireReturnType: true,
+        requireReturnType: false,
         requireReturnDescription: false,
 
         prefer: {
@@ -43,7 +43,7 @@ module.exports = {
         preferType: {
           Boolean: "boolean",
           Number: "number",
-          object: "Object",
+          object: "object",
           String: "string",
         },
       },

@@ -26,6 +26,7 @@ module.exports = {
       "../rules/import",
       "../rules/import-ts",
       "../rules/jsdoc",
+      "../rules/jsdoc-ts",
       "../rules/promise",
       "../rules/react",
       "../rules/style",
@@ -41,16 +42,6 @@ module.exports = {
 
   rules: {
     "react/prop-types": "off",
-
-    // Ensure JSDoc comments are valid
-    "valid-jsdoc": [
-      "error",
-      {
-        requireReturn: false,
-        requireReturnDescription: false,
-        requireReturnType: true,
-      },
-    ],
 
     "@typescript-eslint/no-var-requires": "off",
 

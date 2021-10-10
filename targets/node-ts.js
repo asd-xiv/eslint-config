@@ -22,6 +22,7 @@ module.exports = {
       "../rules/import",
       "../rules/import-ts",
       "../rules/jsdoc",
+      "../rules/jsdoc-ts",
       "../rules/node",
       "../rules/promise",
       "../rules/style",
@@ -35,13 +36,9 @@ module.exports = {
 
   plugins: ["no-inferred-method-name"],
 
-  ignorePatterns: ["dist/*.js", "*.d.ts"],
-
   rules: {
     "@typescript-eslint/no-var-requires": "off",
-
     "@typescript-eslint/ban-ts-comment": "warn",
-
     "no-unused-vars": "off",
   },
 }
