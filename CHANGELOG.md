@@ -1,5 +1,12 @@
 # A log of changes
 
+# [6.1.0](https://github.com/asd-xiv/eslint-config/compare/v6.0.0...v6.1.0) (2021-10-10)
+
+
+### Features
+
+* disable jsdoc "param" and "returns" for Typescript ([0814d59](https://github.com/asd-xiv/eslint-config/commit/0814d59dc15acce8f8be189c9bea7c82e269c669))
+
 ## [6.0.0](https://github.com/asd-xiv/eslint-config/compare/v5.43.0...v6.0.0) (2021-10-04)
 
 ### Features
