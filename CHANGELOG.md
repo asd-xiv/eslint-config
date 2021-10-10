@@ -1,7 +1,6 @@
 # A log of changes
 
-# [6.0.0](https://github.com/asd-xiv/eslint-config/compare/v5.43.0...v6.0.0) (2021-10-04)
-
+## [6.0.0](https://github.com/asd-xiv/eslint-config/compare/v5.43.0...v6.0.0) (2021-10-04)
 
 ### Features
 
@@ -10,7 +9,6 @@
 * **unicorn:** change "unicorn/prevent-abbreviations" to prefer "input" ([2e5f586](https://github.com/asd-xiv/eslint-config/commit/2e5f58600b4b11a6ea7ae1097f573e99f75140e0))
 * update dependencies ([727be14](https://github.com/asd-xiv/eslint-config/commit/727be14515980bd626ce95e52eefbc7350a151c1))
 * use "import" recommended ([073766e](https://github.com/asd-xiv/eslint-config/commit/073766e08b53b9659d6d6b8f178945c983dc0280))
-
 
 ### BREAKING CHANGES
 
