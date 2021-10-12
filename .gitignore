@@ -110,3 +110,6 @@ tags
 
 # Coveralls
 .coveralls.yml
+
+# Benny
+benchmark

@@ -13,7 +13,8 @@ type SumType = (input?: number[]) => number
 export const sum: SumType = (input = []) => {
   let output = 0
 
-  for (const [index, item] of input.entries()) {
+  for (let index = 0, length = input.length; index < length; index++) {
+    const item = input[index]
     const isItemNaN = typeof item !== "number" || Number.isNaN(item)
 
     if (isItemNaN) {
