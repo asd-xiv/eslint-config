@@ -21,7 +21,7 @@ The following is inspired from:
 
 <!-- vim-markdown-toc GFM -->
 
-- [Thoughts on how to approach coding](#thoughts-on-how-to-approach-coding)
+- [Thoughts on coding](#thoughts-on-coding)
 - [Line length](#line-length)
 - [Folder structure and imports](#folder-structure-and-imports)
 - [Naming](#naming)
@@ -34,7 +34,7 @@ The following is inspired from:
 
 <!-- vim-markdown-toc -->
 
-## Thoughts on how to approach coding
+## Thoughts on coding
 
 1. _Continuous refactoring_: Developers _read_ much more code than they
    _write_. Don't stop at your fist draft while also not obsessing on getting
@@ -53,7 +53,7 @@ The following is inspired from:
    "state" making the code's meaning harder to transmit and more prone to
    mistakes.
 
-1. _Let the machines do their thing_: If there's a linting rule that can
+1. _Let machines do their job_: If there's a linting rule that can
    verify or enforce a conventions, use it.
 
 ## Line length
@@ -253,6 +253,20 @@ const InputUI = (
 ```
 
 ### Generic names
+
+1. `input` and `output`
+
+    ```js
+    const sum = (input = []) => {
+      let output = 0
+
+      for (let index = 0, length = input.length; index < length; index++) {
+        output = output + input[index]
+      }
+
+      return output
+    }
+    ```
 
 1. `input`, `item` and `accumulator`
 
