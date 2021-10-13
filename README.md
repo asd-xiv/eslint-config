@@ -40,13 +40,13 @@ It should be something like:
 ```javascript
 "eslint": "^7.32.0",
 "eslint-config-prettier": "^8.3.0",
-"eslint-plugin-import": "^2.24.2",
-"eslint-plugin-jsdoc": "^36.1.0",
+"eslint-plugin-import": "^2.25.2",
+"eslint-plugin-jsdoc": "^36.1.1",
 "eslint-plugin-json": "^3.1.0",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-prettier": "^4.0.0",
 "eslint-plugin-promise": "^5.1.0",
-"eslint-plugin-unicorn": "^36.0.0",
+"eslint-plugin-unicorn": "^37.0.1",
 "prettier": "^2.4.1"
 ```
 
