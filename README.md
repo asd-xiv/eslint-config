@@ -2,7 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/andreidmt/tpl-node/badge.svg)](https://coveralls.io/github/andreidmt/tpl-node)
 
-# Node.js library stack
+# Node.js library starter template
 
 > **library stack**  
 > _noun_
@@ -26,14 +26,15 @@
 <!-- vim-markdown-toc GFM -->
 
 - [Compile](#compile)
-  - [Scripts](#scripts)
+  - [Fresh build](#fresh-build)
+  - [Fast incremental builds](#fast-incremental-builds)
 - [Lint](#lint)
-  - [Scripts](#scripts-1)
+  - [Scripts](#scripts)
 - [Test](#test)
   - [Services](#services)
-  - [Scripts](#scripts-2)
+  - [Scripts](#scripts-1)
 - [Benchmark](#benchmark)
-  - [Scripts](#scripts-3)
+  - [Scripts](#scripts-2)
 - [Release](#release)
   - [Services](#services-1)
 - [How to use](#how-to-use)
@@ -42,17 +43,31 @@
 
 ## Compile
 
-- [typescript](https://github.com/microsoft/TypeScript) - A superset of JavaScript that compiles to clean JavaScript output.
+1. [**typescript**](https://github.com/microsoft/TypeScript) - A superset of JavaScript that compiles to clean JavaScript output.
+    - related files: [`.tsconfig.json`](.tsconfig.json)
 
-### Scripts
+### Fresh build
 
-- Compile TypeScript files inside `src` folder into `dist`
+Compile TypeScript files inside `src` folder into `dist`.
 
 ```bash
-# "prebuild": "rm -rf ./dist",
-# "build": "tsc --project tsconfig.json",
+# "prebuild.fresh": "rm -rf ./dist",
+# "build.fresh": "tsc",
+npm run build.fresh
+```
+
+### Fast incremental builds
+
+Useful for supporting other scripts that would otherwise require `ts-node` or
+`-r @babel/register`.
+
+```bash
+# "build": "tsc --build --incremental",
 npm run build
 ```
+
+[`--build`](https://www.typescriptlang.org/docs/handbook/compiler-options.html) - Build one or more projects and their dependencies, if out of date  
+[`--incremental`](https://www.typescriptlang.org/tsconfig/#incremental) - Save `.tsbuildinfo` files to allow for incremental compilation of projects
 
 ## Lint
 
