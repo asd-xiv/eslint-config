@@ -1,7 +1,6 @@
 # A log of changes
 
-# [6.2.0](https://github.com/asd-xiv/eslint-config/compare/v6.1.0...v6.2.0) (2021-10-13)
-
+## [6.2.0](https://github.com/asd-xiv/eslint-config/compare/v6.1.0...v6.2.0) (2021-10-13)
 
 ### Features
 
