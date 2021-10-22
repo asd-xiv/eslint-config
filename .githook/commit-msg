@@ -1,3 +1,13 @@
 #!/bin/sh
 
+<<<<<<< HEAD
 npx --no-install commitlint < "$1"
+=======
+# Dont run when in CI environment.
+# For ex. when pushing changelogs via "semantic-release".
+if [ -n "$CI" ]; then
+  exit 0
+fi
+
+cat "$1" | npx --no-install commitlint
+>>>>>>> 2931907 (feat(githook): disable githooks when in CI)
