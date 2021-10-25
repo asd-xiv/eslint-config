@@ -4,40 +4,44 @@
 
 # Node.js library starter template
 
-> **library stack**  
+> ~framework~ **library stack**  
 > _noun_
 >
 > Set of libraries or services configured and composed together with the
 > purpose of automating common development practices: __compiling__,
 > __linting__, __testing__, __benchmarking__ and __releasing__.
->
-> While similar to a
-> [Framework](https://en.wikipedia.org/wiki/Software_framework), providing an
-> opinionated way of handling certain topics, it intentionally leaves visible the
-> containing libraries details - configuration file, npm scripts, commit hooks
-> etc.  
->
-> The approach gives developers the freedom of configuration and choice over
-> their application core libraries, focusing on __zero lock-in__ and
-> __experimentation__ with other libraries and workflows.
+
+<details>
+  <summary>Read more ></summary>
+  
+  > While similar to a
+  > [Framework](https://en.wikipedia.org/wiki/Software_framework), providing an
+  > opinionated way of handling certain topics, it intentionally leaves visible the
+  > containing libraries details - configuration file, npm scripts, commit hooks
+  > etc.  
+  >
+  > The approach gives developers the freedom of configuration and choice over
+  > their application core libraries, focusing on __zero lock-in__ and
+  > __experimentation__ with other libraries and workflows.
+</details>
 
 ## Table of contents
 
 <!-- vim-markdown-toc GFM -->
 
-- [Compile](#compile)
-  - [Fresh build](#fresh-build)
-  - [Fast incremental builds](#fast-incremental-builds)
-- [Lint](#lint)
-  - [Scripts](#scripts)
-- [Test](#test)
-  - [Services](#services)
-  - [Scripts](#scripts-1)
-- [Benchmark](#benchmark)
-  - [Scripts](#scripts-2)
-- [Release](#release)
-  - [Services](#services-1)
-- [How to use](#how-to-use)
+* [Compile](#compile)
+  * [Fresh build](#fresh-build)
+  * [Fast incremental builds](#fast-incremental-builds)
+* [Lint](#lint)
+  * [Scripts](#scripts)
+* [Test](#test)
+  * [Services](#services)
+  * [Scripts](#scripts-1)
+* [Benchmark](#benchmark)
+  * [Scripts](#scripts-2)
+* [Release](#release)
+  * [Services](#services-1)
+* [How to use](#how-to-use)
 
 <!-- vim-markdown-toc -->
 
