@@ -1,3 +1,25 @@
+# [6.3.0](https://github.com/asd-xiv/eslint-config/compare/v6.2.1...v6.3.0) (2021-10-30)
+
+
+### Features
+
+* "tape" FTW with "riteway" message wording ([3c123c0](https://github.com/asd-xiv/eslint-config/commit/3c123c0a6d88d531f1515821bf8fa159fdbd08c2))
+* add benchmarking ([74c9f18](https://github.com/asd-xiv/eslint-config/commit/74c9f18163fd0b736c0e54eca1bd38a28a14fcf6))
+* add githook for linting staged files ([4d20182](https://github.com/asd-xiv/eslint-config/commit/4d201820a59290871df1ac805e95a18c3faef9fe))
+* add incremental tsc builds for simpler test and benchmark scripts ([2580fff](https://github.com/asd-xiv/eslint-config/commit/2580fffb0c3ce2be173d3287301f5f337b45e681))
+* add TypeScript ([39e6d45](https://github.com/asd-xiv/eslint-config/commit/39e6d45e9833326734e0f0c2e46674c85f347f49))
+* eslint and prettier ignore based on gitignore ([21bf4f4](https://github.com/asd-xiv/eslint-config/commit/21bf4f4c1425c1bf7d3db31c5dc3809577b155b6))
+* **eslint:** cleanup ([bc9c521](https://github.com/asd-xiv/eslint-config/commit/bc9c521af399373c465eec26ab538640d7b36dcf))
+* esm ([97cfe4f](https://github.com/asd-xiv/eslint-config/commit/97cfe4ff7bb0ac857fb856bc25467503b94df2f6))
+* extra settings in prettier and editorconfig ([bd73dca](https://github.com/asd-xiv/eslint-config/commit/bd73dca04ab66bf4d2f880cbaebbac87998cca05))
+* **githook:** add "typecheck" to pre-push ([0fd751b](https://github.com/asd-xiv/eslint-config/commit/0fd751ba48e94034b20f4adba107b4e2a2861a37))
+* **githook:** disable githooks when in CI ([dd525a9](https://github.com/asd-xiv/eslint-config/commit/dd525a9e720f04196b8fb5b0abe3e21bdf63b0dc))
+* refactor CircleCI config ([fffb6dc](https://github.com/asd-xiv/eslint-config/commit/fffb6dc6476c5cb0b2ed3daa1e0c3384297dc470))
+* run "test" in "pre-push" git hook ([c6b0875](https://github.com/asd-xiv/eslint-config/commit/c6b0875a11b235ed80ee24989decb368351d1b95))
+* **typescript:** allow import json files ([275d49b](https://github.com/asd-xiv/eslint-config/commit/275d49b066e369107aeea941064fe8b0a3950ec8))
+* update dependencies ([58edeaa](https://github.com/asd-xiv/eslint-config/commit/58edeaad7cd848f7f7d8d2f44e36c5f11228e362))
+* update packages ([35f22f8](https://github.com/asd-xiv/eslint-config/commit/35f22f86b954fb26298e15bef145131560f9e38e))
+
 # A log of changes
 
 ## [6.2.1](https://github.com/asd-xiv/eslint-config/compare/v6.2.0...v6.2.1) (2021-10-13)
