@@ -10,18 +10,12 @@
     "@semantic-release/npm",
     [
       "@semantic-release/changelog",
-      {
-        "changelogFile": "CHANGELOG.md",
-        "changelogTitle": "# A log of changes"
-      }
+      { "changelogFile": "CHANGELOG.md" }
     ],
     [
       "@semantic-release/git",
       {
-        "assets": [
-          "CHANGELOG.md",
-          "package.json"
-        ]
+        "assets": [ "CHANGELOG.md", "package.json" ]
       }
     ],
     "@semantic-release/github"

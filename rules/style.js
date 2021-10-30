@@ -98,7 +98,7 @@ module.exports = {
      * import statements, this rule only targets the name of the variable
      * that will be imported into the local module scope.
      */
-    camelcase: ["error", { properties: "never" }],
+    "camelcase": ["error", { properties: "never" }],
 
     /*
      * Enforces two things about variables with the designated alias names

@@ -51,7 +51,7 @@ module.exports = {
     "no-use-before-define": "error",
 
     // Require that all functions are run in strict mode
-    strict: ["error", "never"],
+    "strict": ["error", "never"],
 
     /*
      * Prefer destructuring from arrays and objects

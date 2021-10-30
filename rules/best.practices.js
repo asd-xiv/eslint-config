@@ -9,7 +9,7 @@ module.exports = {
     "block-scoped-var": "error",
 
     // Specify the maximum cyclomatic complexity allowed in a program
-    complexity: [0, 5],
+    "complexity": [0, 5],
 
     // Require return statements to either always or never specify values
     "consistent-return": "warn",
@@ -26,7 +26,7 @@ module.exports = {
     ],
 
     // Require the use of === and !==
-    eqeqeq: "error",
+    "eqeqeq": "error",
 
     // Make sure for-in loops have an if statement
     "guard-for-in": "error",
@@ -189,12 +189,12 @@ module.exports = {
     "no-with": "error",
 
     // Require use of the second argument for parseInt()
-    radix: "error",
+    "radix": "error",
 
     // Requires to declare all vars on top of their containing scope
     "vars-on-top": "error",
 
     // Require or disallow Yoda conditions
-    yoda: 0,
+    "yoda": 0,
   },
 }

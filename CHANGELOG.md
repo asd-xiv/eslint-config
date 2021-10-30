@@ -2,7 +2,6 @@
 
 ## [6.2.1](https://github.com/asd-xiv/eslint-config/compare/v6.2.0...v6.2.1) (2021-10-13)
 
-
 ### Bug Fixes
 
 * sync peer dependencies versions ([d412014](https://github.com/asd-xiv/eslint-config/commit/d41201461caee1423a2619a36ed36ef34cf1c18f))
