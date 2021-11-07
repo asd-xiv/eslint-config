@@ -1,5 +1,6 @@
-# [6.3.0](https://github.com/asd-xiv/eslint-config/compare/v6.2.1...v6.3.0) (2021-10-30)
+# A log of changes
 
+## [6.3.0](https://github.com/asd-xiv/eslint-config/compare/v6.2.1...v6.3.0) (2021-10-30)
 
 ### Features
 
@@ -19,8 +20,6 @@
 * **typescript:** allow import json files ([275d49b](https://github.com/asd-xiv/eslint-config/commit/275d49b066e369107aeea941064fe8b0a3950ec8))
 * update dependencies ([58edeaa](https://github.com/asd-xiv/eslint-config/commit/58edeaad7cd848f7f7d8d2f44e36c5f11228e362))
 * update packages ([35f22f8](https://github.com/asd-xiv/eslint-config/commit/35f22f86b954fb26298e15bef145131560f9e38e))
-
-# A log of changes
 
 ## [6.2.1](https://github.com/asd-xiv/eslint-config/compare/v6.2.0...v6.2.1) (2021-10-13)
 
