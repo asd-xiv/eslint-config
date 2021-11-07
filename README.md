@@ -46,7 +46,7 @@ It should be something like:
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-prettier": "^4.0.0",
 "eslint-plugin-promise": "^5.0.0",
-"eslint-plugin-unicorn": "^37.0.0",
+"eslint-plugin-unicorn": "^38.0.0",
 "prettier": "^2.0.0"
 ```
 
