@@ -34,9 +34,7 @@
   "scripts": {
     "----UTIL": "",
     "prepare": "git config --local core.hooksPath .githook",
-    "setup": "npm install",
-    "prefresh": "rm -rf ./node_modules && rm --force package-lock.json",
-    "fresh": "npm install",
+    "setup": "npm ci",
     "update": "npm-check --update",
     "postupdate": "npm audit fix",
     "----TEST": "",
