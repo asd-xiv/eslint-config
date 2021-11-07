@@ -10,7 +10,10 @@
     "@semantic-release/npm",
     [
       "@semantic-release/changelog",
-      { "changelogFile": "CHANGELOG.md" }
+      {
+        "changelogTitle": "# Changelog",
+        "changelogFile": "CHANGELOG.md"
+      }
     ],
     [
       "@semantic-release/git",
