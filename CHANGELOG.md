@@ -2,13 +2,10 @@
 
 ## [6.4.1](https://github.com/asd-xiv/eslint-config/compare/v6.4.0...v6.4.1) (2021-11-07)
 
-
 ### Bug Fixes
 
 * issue with peerDepenencies not updated to latest major ([aa156ac](https://github.com/asd-xiv/eslint-config/commit/aa156ace36ee089320b79c19ec695fd65d2d3b9a))
 * regenerate package-lock ([c7e683f](https://github.com/asd-xiv/eslint-config/commit/c7e683f5099fd891e6f9919afbbebc914d6b6c89))
-
-# A log of changes
 
 ## [6.4.0](https://github.com/asd-xiv/eslint-config/compare/v6.3.0...v6.4.0) (2021-11-07)
 
