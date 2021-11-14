@@ -1,5 +1,12 @@
 # Changelog
 
+# [6.6.0](https://github.com/asd-xiv/eslint-config/compare/v6.5.0...v6.6.0) (2021-11-14)
+
+
+### Features
+
+* update dependencies ([7fdd7ba](https://github.com/asd-xiv/eslint-config/commit/7fdd7ba06674e50127a01e46b73779a0bdf7c132))
+
 ## [6.5.0](https://github.com/asd-xiv/eslint-config/compare/v6.4.1...v6.5.0) (2021-11-09)
 
 ### Features
