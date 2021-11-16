@@ -21,6 +21,7 @@ module.exports = {
         replacements: {
           i: false,
           params: false,
+          lib: false,
           args: {
             params: true,
           },
