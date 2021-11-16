@@ -1,5 +1,12 @@
 # Changelog
 
+# [6.8.0](https://github.com/asd-xiv/eslint-config/compare/v6.7.0...v6.8.0) (2021-11-16)
+
+
+### Features
+
+* **unicorn:** allow "lib" ([3cc95c1](https://github.com/asd-xiv/eslint-config/commit/3cc95c1ae3de6a8091750f6c7c9cc4ffcc8cf85f))
+
 ## [6.7.0](https://github.com/asd-xiv/eslint-config/compare/v6.6.0...v6.7.0) (2021-11-16)
 
 ### Features
