@@ -1,5 +1,12 @@
 # Changelog
 
+# [6.10.0](https://github.com/asd-xiv/eslint-config/compare/v6.9.0...v6.10.0) (2021-11-27)
+
+
+### Features
+
+* sync peerdependencies ([2c6a116](https://github.com/asd-xiv/eslint-config/commit/2c6a11670753aac8ba37e6f24a635e2d311c5519))
+
 # [6.9.0](https://github.com/asd-xiv/eslint-config/compare/v6.8.0...v6.9.0) (2021-11-27)
 
 
