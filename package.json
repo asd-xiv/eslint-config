@@ -40,8 +40,8 @@
     "----TEST": "",
     "lint.js": "eslint --quiet 'rules/*' 'targets/*'",
     "lint.js-staged": "eslint --quiet",
-    "lint.md": "markdownlint '*.md'",
-    "lint.md-staged": "markdownlint",
+    "lint.md": "markdownlint '*.md' --ignore CHANGELOG.md",
+    "lint.md-staged": "markdownlint --ignore CHANGELOG.md",
     "lint": "npm run lint.js && npm run lint.md",
     "----PUBLISH": "",
     "publish": "semantic-release"
