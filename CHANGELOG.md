@@ -1,21 +1,18 @@
 # Changelog
 
-# [6.11.0](https://github.com/asd-xiv/eslint-config/compare/v6.10.0...v6.11.0) (2021-12-04)
-
+## [6.11.0](https://github.com/asd-xiv/eslint-config/compare/v6.10.0...v6.11.0) (2021-12-04)
 
 ### Features
 
 * update dependencies ([2f73bb1](https://github.com/asd-xiv/eslint-config/commit/2f73bb15f90016c99fb2128e8c0889120a21ebd4))
 
-# [6.10.0](https://github.com/asd-xiv/eslint-config/compare/v6.9.0...v6.10.0) (2021-11-27)
-
+## [6.10.0](https://github.com/asd-xiv/eslint-config/compare/v6.9.0...v6.10.0) (2021-11-27)
 
 ### Features
 
 * sync peerdependencies ([2c6a116](https://github.com/asd-xiv/eslint-config/commit/2c6a11670753aac8ba37e6f24a635e2d311c5519))
 
-# [6.9.0](https://github.com/asd-xiv/eslint-config/compare/v6.8.0...v6.9.0) (2021-11-27)
-
+## [6.9.0](https://github.com/asd-xiv/eslint-config/compare/v6.8.0...v6.9.0) (2021-11-27)
 
 ### Features
 
