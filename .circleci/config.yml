@@ -24,7 +24,7 @@ jobs:
           name: "[npm] Install packages"
           command: "npm run setup"
       - save_cache:
-          paths: [ node_modules ]
+          paths: [node_modules]
           key: eslint-config-{{ checksum "package-lock.json" }}
 
   test:
@@ -63,14 +63,14 @@ workflows:
       - setup:
           filters:
             branches:
-              only: [ master ]
+              only: [master]
       - test:
           filters:
             branches:
-              only: [ master ]
-          requires: [ setup ]
+              only: [master]
+          requires: [setup]
       - publish:
           filters:
             branches:
-              only: [ master ]
-          requires: [ test ]
+              only: [master]
+          requires: [test]

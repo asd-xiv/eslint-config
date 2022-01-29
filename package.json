@@ -37,6 +37,7 @@
     "setup": "npm ci --also=dev",
     "update": "npm-check --update",
     "postupdate": "npm audit fix",
+    "format": "prettier --write --prose-wrap=always . && eslint --fix .",
     "----CHECK": "",
     "lint.js": "eslint --quiet 'rules/*' 'targets/*'",
     "lint.md": "markdownlint '*.md' --ignore CHANGELOG.md",

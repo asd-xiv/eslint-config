@@ -1,7 +1,8 @@
 {
   "root": true,
-  "extends": ["./targets/node.js"],
-
+  "extends": [
+    "./targets/node.js"
+  ],
   "rules": {
     "unicorn/prefer-module": "off"
   }
