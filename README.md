@@ -2,11 +2,12 @@
 
 [![CircleCI](https://circleci.com/gh/asd-xiv/eslint-config.svg?style=svg)](https://circleci.com/gh/asd-xiv/eslint-config)
 [![npm version](https://badge.fury.io/js/%40asd14%2Feslint-config.svg)](https://badge.fury.io/js/%40asd14%2Feslint-config)
-[![peer-badge](https://david-dm.org/asd14-xyz/eslint-config/peer-status.svg)](https://david-dm.org/asd14-xyz/eslint-config?type=peer)
 
 # JavaScript ESLint rules
 
 JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
+
+[`"semi": [ "error", "never" ]`](http://eslint.org/docs/rules/semi) :godmode: ... [the horror](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding) :goberserk:
 
 Other similar bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb), [eslint-config-google](https://github.com/google/eslint-config-google), [more](https://www.npmjs.com/search?q=+eslint-config-)
 
@@ -38,16 +39,16 @@ Run `npm info "@asd14/eslint-config@latest" peerDependencies` to get the base pa
 It should be something like:
 
 ```javascript
-"eslint": "^8.6.0",
+"eslint": "^8.8.0",
 "eslint-config-prettier": "^8.3.0",
-"eslint-plugin-import": "^2.25.0",
-"eslint-plugin-jsdoc": "^37.5.0",
+"eslint-plugin-import": "^2.25.4",
+"eslint-plugin-jsdoc": "^37.7.0",
 "eslint-plugin-json": "^3.1.0",
 "eslint-plugin-no-inferred-method-name": "^2.0.0",
 "eslint-plugin-prettier": "^4.0.0",
 "eslint-plugin-promise": "^6.0.0",
-"eslint-plugin-unicorn": "^40.0.0",
-"prettier": "^2.5.0"
+"eslint-plugin-unicorn": "^40.1.0",
+"prettier": "^2.5.1"
 ```
 
 Add these packages to your `devDependencies` in `package.json`.

@@ -37,53 +37,47 @@
     "setup": "npm ci --also=dev",
     "update": "npm-check --update",
     "postupdate": "npm audit fix",
-    "----TEST": "",
+    "----CHECK": "",
     "lint.js": "eslint --quiet 'rules/*' 'targets/*'",
-    "lint.js-staged": "eslint --quiet",
     "lint.md": "markdownlint '*.md' --ignore CHANGELOG.md",
-    "lint.md-staged": "markdownlint --ignore CHANGELOG.md",
     "lint": "npm run lint.js && npm run lint.md",
     "----PUBLISH": "",
     "publish": "semantic-release"
   },
+  "lint-staged": {
+    "*.{js,json}": "eslint --quiet",
+    "*.md": "markdownlint --ignore CHANGELOG.md",
+    ".circleci/config.yml": "circleci config validate"
+  },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
+    "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
-    "eslint": "^8.6.0",
-    "eslint-config-prettier": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
     "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsdoc": "^37.5.0",
-    "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-no-inferred-method-name": "^2.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-unicorn": "^40.0.0",
-    "lint-staged": "^12.1.4",
+    "lint-staged": "^12.3.2",
     "markdownlint-cli": "^0.30.0",
     "npm-check": "^5.9.2",
-    "prettier": "^2.5.1",
-    "semantic-release": "^18.0.1"
+    "semantic-release": "^19.0.2"
   },
   "peerDependencies": {
-    "eslint": "^8.6.0",
+    "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.0",
-    "eslint-plugin-jsdoc": "^37.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^37.7.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^40.0.0",
-    "prettier": "^2.5.0"
+    "eslint-plugin-unicorn": "^40.1.0",
+    "prettier": "^2.5.1"
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
+    "npm": ">=7"
   }
 }
