@@ -1,5 +1,17 @@
 # Changelog
 
+# [7.0.0](https://github.com/asd-xiv/eslint-config/compare/v6.15.0...v7.0.0) (2022-04-16)
+
+
+### Features
+
+* empty commit to trigger major version bump ([e793d3e](https://github.com/asd-xiv/eslint-config/commit/e793d3e68b066f4dcc41dd21d6fb0d481943f145))
+
+
+### BREAKING CHANGES
+
+* Update dependencies major version in prev commit
+
 # [6.15.0](https://github.com/asd-xiv/eslint-config/compare/v6.14.0...v6.15.0) (2022-04-16)
 
 
