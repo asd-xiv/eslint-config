@@ -1,9 +1,12 @@
 version: 2.1
 
 executors:
-  node-lts:
+  gitleaks:
     docker:
-      - image: circleci/node:lts
+      - image: zricethezav/gitleaks:latest
+  node:
+    docker:
+      - image: cimg/node:lts
 
 #
 # Jobs - https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -15,36 +18,51 @@ executors:
 #
 
 jobs:
-  setup:
-    executor: node-lts
-    working_directory: ~/eslint-config
+  detect-secrets:
+    executor: gitleaks
+    working_directory: &JOB_WORKING_DIR "~/eslint-config"
     steps:
       - checkout
+      - run:
+          name: "[gitleaks] Detect secrets in repository history"
+          command: |
+            gitleaks detect --redact --verbose
+
+  setup:
+    executor: node
+    working_directory: *JOB_WORKING_DIR
+    steps:
+      - checkout
+      - restore_cache:
+          name: '[circleci] Restore cached "node_modules" folder'
+          key: &CACHE_KEY_NODE_MODULES 'eslint-config-{{ checksum "package-lock.json" }}'
       - run:
           name: "[npm] Install packages"
           command: "npm run setup"
       - save_cache:
           paths: [node_modules]
-          key: eslint-config-{{ checksum "package-lock.json" }}
+          key: *CACHE_KEY_NODE_MODULES
+      - persist_to_workspace:
+          root: &WORKSPACE_ROOT "~/"
+          paths:
+            - eslint-config
 
   test:
-    executor: node-lts
-    working_directory: ~/eslint-config
+    executor: node
+    working_directory: *JOB_WORKING_DIR
     steps:
-      - checkout
-      - restore_cache:
-          key: eslint-config-{{ checksum "package-lock.json" }}
+      - attach_workspace:
+          at: *WORKSPACE_ROOT
       - run:
           name: "[eslint,markdownlint]: Lint"
           command: "npm run lint"
 
   publish:
-    executor: node-lts
-    working_directory: ~/eslint-config
+    executor: node
+    working_directory: *JOB_WORKING_DIR
     steps:
-      - checkout
-      - restore_cache:
-          key: eslint-config-{{ checksum "package-lock.json" }}
+      - attach_workspace:
+          at: *WORKSPACE_ROOT
       - run:
           name: "[semantic-release]: Publish package to npm"
           command: "npm run publish"
@@ -60,17 +78,13 @@ jobs:
 workflows:
   npm_publish:
     jobs:
+      - detect-secrets:
+          filters:
+            branches:
+              only: [master]
       - setup:
-          filters:
-            branches:
-              only: [master]
+          requires: [detect-secrets]
       - test:
-          filters:
-            branches:
-              only: [master]
           requires: [setup]
       - publish:
-          filters:
-            branches:
-              only: [master]
           requires: [test]
