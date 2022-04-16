@@ -35,7 +35,7 @@
     "----UTIL": "",
     "prepare": "git config --local core.hooksPath .githook",
     "setup": "npm ci --also=dev",
-    "update": "ncu --interactive --peer",
+    "update": "ncu --interactive",
     "postupdate": "npm audit fix",
     "format": "prettier --write --prose-wrap=always . && eslint --fix .",
     "----CHECK": "",
