@@ -35,7 +35,7 @@
     "----UTIL": "",
     "prepare": "git config --local core.hooksPath .githook",
     "setup": "npm ci --also=dev",
-    "update": "ncu --interactive",
+    "update": "ncu --interactive --peer",
     "postupdate": "npm audit fix",
     "format": "prettier --write --prose-wrap=always . && eslint --fix .",
     "----CHECK": "",
@@ -66,19 +66,19 @@
     "semantic-release": "^19.0.2"
   },
   "peerDependencies": {
-    "eslint": "^8.8.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsdoc": "^37.7.0",
-    "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-no-inferred-method-name": "^2.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^40.1.0",
-    "prettier": "^2.5.1"
+    "eslint": "~8.13.0",
+    "eslint-config-prettier": "~8.5.0",
+    "eslint-plugin-import": "~2.26.0",
+    "eslint-plugin-jsdoc": "~39.2.0",
+    "eslint-plugin-json": "~3.1.0",
+    "eslint-plugin-no-inferred-method-name": "~2.0.0",
+    "eslint-plugin-prettier": "~4.0.0",
+    "eslint-plugin-promise": "~6.0.0",
+    "eslint-plugin-unicorn": "~42.0.0",
+    "prettier": "~2.6.0"
   },
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-    "npm": ">=7"
+    "npm": ">=8"
   }
 }
