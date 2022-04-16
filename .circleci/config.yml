@@ -35,7 +35,9 @@ jobs:
       - checkout
       - restore_cache:
           name: '[circleci] Restore cached "node_modules" folder'
-          key: &CACHE_KEY_NODE_MODULES 'eslint-config-{{ checksum "package-lock.json" }}'
+          key:
+            &CACHE_KEY_NODE_MODULES 'eslint-config-{{ checksum
+            "package-lock.json" }}'
       - run:
           name: "[npm] Install packages"
           command: "npm run setup"
