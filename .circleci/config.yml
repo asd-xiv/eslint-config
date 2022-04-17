@@ -67,7 +67,7 @@ jobs:
           at: *WORKSPACE_ROOT
       - run:
           name: "[semantic-release]: Publish package to npm"
-          command: "npm run publish"
+          command: "npm run release"
 
 #
 # Workflows - https://circleci.com/docs/2.0/workflows/

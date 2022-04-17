@@ -43,7 +43,7 @@
     "lint.md": "markdownlint '*.md' --ignore CHANGELOG.md",
     "lint": "npm run lint.js && npm run lint.md",
     "----PUBLISH": "",
-    "publish": "semantic-release"
+    "release": "semantic-release"
   },
   "lint-staged": {
     "*.{js,json}": "eslint --quiet",
