@@ -68,12 +68,6 @@ Link ESLint to `node` target.
 
 ### Node.js with Typescript
 
-Install additional packages:
-
-```bash
-npm install -D @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
-```
-
 Link ESLint to `node-ts` target.
 
 ```javascript
@@ -86,12 +80,6 @@ Link ESLint to `node-ts` target.
 ```
 
 ### React
-
-Install additional packages:
-
-```bash
-npm install -D eslint-plugin-html eslint-plugin-react eslint-plugin-react-hooks
-```
 
 Link ESLint to `react` target.
 
