@@ -59,7 +59,7 @@ jobs:
           name: "[eslint,markdownlint]: Lint"
           command: "npm run lint"
 
-  publish:
+  release-npm:
     executor: node
     working_directory: *JOB_WORKING_DIR
     steps:
@@ -88,5 +88,5 @@ workflows:
           requires: [detect-secrets]
       - test:
           requires: [setup]
-      - publish:
+      - release-npm:
           requires: [test]
