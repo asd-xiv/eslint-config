@@ -47,16 +47,8 @@ packages needed.
 It should be something like:
 
 ```javascript
-"eslint": "^8.8.0",
-"eslint-config-prettier": "^8.3.0",
-"eslint-plugin-import": "^2.25.4",
-"eslint-plugin-jsdoc": "^37.7.0",
-"eslint-plugin-json": "^3.1.0",
-"eslint-plugin-no-inferred-method-name": "^2.0.0",
-"eslint-plugin-prettier": "^4.0.0",
-"eslint-plugin-promise": "^6.0.0",
-"eslint-plugin-unicorn": "^40.1.0",
-"prettier": "^2.5.1"
+"eslint": "^8.13.0",
+"prettier": "^2.6.0"
 ```
 
 Add these packages to your `devDependencies` in `package.json`.
