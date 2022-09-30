@@ -51,8 +51,8 @@
     ".circleci/config.yml": "circleci config validate"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
-    "@typescript-eslint/parser": "^5.36.2",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.6",
@@ -71,13 +71,13 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "lint-staged": "^13.0.3",
-    "npm-check-updates": "^16.1.1",
+    "npm-check-updates": "^16.3.4",
     "markdownlint-cli": "^0.32.2",
     "semantic-release": "^19.0.5"
   },
   "peerDependencies": {
-    "eslint": "^8.23.0",
-    "prettier": "^2.7.0"
+    "eslint": "^8.24.0",
+    "prettier": "^2.7.1"
   },
   "engines": {
     "node": ">=16.0.0"
