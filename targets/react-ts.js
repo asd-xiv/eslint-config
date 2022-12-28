@@ -45,9 +45,6 @@ module.exports = {
 
     "@typescript-eslint/no-var-requires": "off",
 
-    // Disable, it gives false positives. let eslint/no-unused-vars
-    "@typescript-eslint/no-unused-vars": "off",
-
     // Restrict file extensions that may contain JSX
     "react/jsx-filename-extension": [
       "error",
@@ -70,14 +67,6 @@ module.exports = {
         ts: "never",
         jsx: "never",
         tsx: "never",
-      },
-    ],
-
-    "no-unused-vars": [
-      "error",
-      {
-        args: "after-used",
-        varsIgnorePattern: "debug",
       },
     ],
   },
@@ -105,14 +94,6 @@ module.exports = {
         ts: "never",
         jsx: "never",
         tsx: "never",
-      },
-    ],
-
-    "no-unused-vars": [
-      "error",
-      {
-        args: "after-used",
-        varsIgnorePattern: "debug",
       },
     ],
   },
