@@ -98,7 +98,7 @@ module.exports = {
       "error",
       "always",
       {
-        tags: ["template", "param", "arg", "argument", "property", "prop"],
+        tags: ["param", "arg", "argument", "property", "prop"],
       },
     ],
   },
