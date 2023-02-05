@@ -33,17 +33,9 @@ jobs:
     working_directory: *JOB_WORKING_DIR
     steps:
       - checkout
-      - restore_cache:
-          name: '[circleci] Restore cached "node_modules" folder'
-          key:
-            &CACHE_KEY_NODE_MODULES 'eslint-config-{{ checksum
-            "package-lock.json" }}'
       - run:
           name: "[npm] Install packages"
           command: "npm run setup"
-      - save_cache:
-          paths: [node_modules]
-          key: *CACHE_KEY_NODE_MODULES
       - persist_to_workspace:
           root: &WORKSPACE_ROOT "~/"
           paths:
@@ -90,3 +82,4 @@ workflows:
           requires: [setup]
       - release-npm:
           requires: [test]
+          context: ["GitHub Auth", "NPM Auth"]
