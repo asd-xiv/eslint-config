@@ -1,6 +1,5 @@
-/* eslint-env node */
-
 module.exports = {
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: "module",
@@ -8,17 +7,15 @@ module.exports = {
       jsx: true,
     },
   },
-
   env: {
     browser: true,
     es6: true,
     node: false,
   },
-
   extends: [
     ...[
       "../rules/json",
-      "../rules/best.practices",
+      "../rules/best-practices",
       "../rules/comments",
       "../rules/errors",
       "../rules/es6",
@@ -37,9 +34,7 @@ module.exports = {
 
     "plugin:@typescript-eslint/recommended",
   ],
-
   plugins: ["no-inferred-method-name"],
-
   rules: {
     "react/prop-types": "off",
 
@@ -70,7 +65,6 @@ module.exports = {
       },
     ],
   },
-
   settings: {
     "react": {
       version: "detect",

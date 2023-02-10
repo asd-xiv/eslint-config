@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 /*
  * JSDoc is a JavaScript API documentation generator. It uses
  * specially-formatted comments inside of code to generate API

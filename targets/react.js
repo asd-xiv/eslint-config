@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 module.exports = {
   parserOptions: {
     ecmaVersion: 2021,
@@ -19,7 +17,7 @@ module.exports = {
 
   extends: [
     "../rules/json",
-    "../rules/best.practices",
+    "../rules/best-practices",
     "../rules/comments",
     "../rules/errors",
     "../rules/es6",

@@ -1,18 +1,14 @@
-/* eslint-env node */
-
 module.exports = {
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: "module",
   },
-
   env: {
     node: true,
   },
-
   extends: [
     "../rules/json",
-    "../rules/best.practices",
+    "../rules/best-practices",
     "../rules/comments",
     "../rules/errors",
     "../rules/es6",
@@ -25,9 +21,7 @@ module.exports = {
     "../rules/variables",
     "../rules/prettier",
   ].map(require.resolve),
-
   plugins: ["no-inferred-method-name"],
-
   settings: {
     "import/resolver": {
       node: {

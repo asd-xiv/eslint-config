@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 module.exports = {
   plugins: ["import", "no-relative-import-paths"],
   extends: ["plugin:import/recommended"],
