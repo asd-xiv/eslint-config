@@ -1,11 +1,14 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins: ["import"],
-
+  plugins: ["import", "no-relative-import-paths"],
   extends: ["plugin:import/recommended"],
-
   rules: {
+    "no-relative-import-paths/no-relative-import-paths": [
+      "error",
+      { allowSameFolder: true },
+    ],
+
     /*
      * If a default import is requested, this rule will report if there is
      * no default export in the imported module.
