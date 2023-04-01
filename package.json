@@ -34,7 +34,7 @@
   "scripts": {
     "----UTIL": "",
     "prepare": "git config --local core.hooksPath .githook",
-    "setup": "npm ci --also=dev --prefer-offline --no-audit",
+    "setup": "npm ci --also=dev --cache .npm --prefer-offline --no-audit",
     "update": "ncu --interactive",
     "postupdate": "npm audit fix",
     "format": "npm run lint.js -- --fix",
@@ -46,17 +46,18 @@
     "release": "semantic-release"
   },
   "lint-staged": {
-    "*.{js,json}": "eslint --quiet",
+    "*.{js}": "eslint --quiet",
+    "*.{json}": "prettier",
     "*.md": "markdownlint --ignore CHANGELOG.md",
     ".circleci/config.yml": "circleci config validate"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "eslint-config-prettier": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^39.8.0",
+    "eslint-plugin-jsdoc": "^40.1.1",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-no-relative-import-paths": "^1.5.2",
@@ -64,23 +65,23 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-unicorn": "^45.0.2"
+    "eslint-plugin-unicorn": "^46.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
-    "@semantic-release/changelog": "^6.0.2",
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "lint-staged": "^13.1.1",
+    "lint-staged": "^13.2.0",
     "markdownlint-cli": "^0.33.0",
-    "npm-check-updates": "^16.7.4",
-    "semantic-release": "^20.1.0"
+    "npm-check-updates": "^16.9.0",
+    "semantic-release": "^21.0.0"
   },
   "peerDependencies": {
-    "eslint": "^8.33.0",
-    "prettier": "^2.8.3"
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18"
   }
 }
