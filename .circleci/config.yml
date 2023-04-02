@@ -40,7 +40,7 @@ commands:
   save-cache-npm:
     steps:
       - save_cache:
-          name: "[cache] Save \".npm\" cache"
+          name: "[cache] Save \".npm\""
           key: *CACHE-KEY-NPM
           paths:
             - .npm
