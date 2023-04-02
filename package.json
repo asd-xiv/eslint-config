@@ -34,7 +34,7 @@
   "scripts": {
     "----UTIL": "",
     "prepare": "git config --local core.hooksPath .githook",
-    "setup": "npm ci --also=dev --cache .npm --prefer-offline --no-audit",
+    "setup": "npm ci --include=dev --cache .npm --prefer-offline --no-audit",
     "update": "ncu --interactive",
     "postupdate": "npm audit fix",
     "format": "npm run lint.js -- --fix",
