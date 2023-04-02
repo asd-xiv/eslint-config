@@ -19,28 +19,28 @@ commands:
   restore-cache-node_modules:
     steps:
       - restore_cache:
-          name: "node_modules"
+          name: "Restore \"node_modules\" cache"
           keys:
             - v1-node_modules-{{ checksum "package-lock.json" }}
             - v1-node_modules-
   save-cache-node_modules:
     steps:
       - save_cache:
-          name: "node_modules"
+          name: "Save \"node_modules\" cache"
           key: v1-node_modules-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
   restore-cache-npm:
     steps:
       - restore_cache:
-          name: ".npm"
+          name: "Restor \".npm\" cache"
           keys:
             - v1-npm-{{ checksum "package-lock.json" }}
             - v1-npm-
   save-cache-npm:
     steps:
       - save_cache:
-          name: ".npm"
+          name: "Save \".npm\" cache"
           key: v1-npm-{{ checksum "package-lock.json" }}
           paths:
             - .npm
