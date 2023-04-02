@@ -17,30 +17,30 @@ executors:
 
 commands:
   restore-cache-node_modules:
-    description: "Restore cache - node_modules"
     steps:
       - restore_cache:
+          name: "node_modules"
           keys:
             - v1-node_modules-{{ checksum "package-lock.json" }}
             - v1-node_modules-
   save-cache-node_modules:
-    description: "Update cache - node_modules"
     steps:
       - save_cache:
+          name: "node_modules"
           key: v1-node_modules-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
   restore-cache-npm:
-    description: "Restore cache - .npm"
     steps:
       - restore_cache:
+          name: ".npm"
           keys:
             - v1-npm-{{ checksum "package-lock.json" }}
             - v1-npm-
   save-cache-npm:
-    description: "Update cache - .npm"
     steps:
       - save_cache:
+          name: ".npm"
           key: v1-npm-{{ checksum "package-lock.json" }}
           paths:
             - .npm
