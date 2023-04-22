@@ -2,9 +2,21 @@ module.exports = {
   plugins: ["import", "no-relative-import-paths"],
   extends: ["plugin:import/recommended"],
   rules: {
-    "no-relative-import-paths/no-relative-import-paths": [
+    "no-relative-import-paths/no-relative-import-paths": "off",
+
+    /*
+     * Sort alphabetically, and enforce that all imports are at the top
+     * of the file.
+     */
+    "import/order": [
       "error",
-      { allowSameFolder: true },
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
     ],
 
     /*
