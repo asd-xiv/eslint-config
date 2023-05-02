@@ -46,8 +46,8 @@
     "release": "semantic-release"
   },
   "lint-staged": {
-    "*.{js}": "eslint --quiet",
-    "*.{json}": "prettier",
+    "*.js": "eslint --quiet",
+    "*.json": "prettier",
     "*.md": "markdownlint --ignore CHANGELOG.md",
     ".circleci/config.yml": "circleci config validate"
   },
