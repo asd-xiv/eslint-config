@@ -4,4 +4,4 @@
 # For ex. when pushing changelogs via "semantic-release".
 [ -n "$CI" ] && exit 0
 
-npx --no-install commitlint < "$1"
+grep -v "^#" "$1" | npx --no-install commitlint
