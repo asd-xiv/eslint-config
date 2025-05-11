@@ -1,31 +1,29 @@
-module.exports = {
-  plugins: ["react", "react-hooks"],
+import reactPlugin from "eslint-plugin-react"
+import reactHooksPlugin from "eslint-plugin-react-hooks"
+import reactRefresh from "eslint-plugin-react-refresh"
 
-  /*
-   * Disabled by prettier
-   * https://github.com/prettier/eslint-config-prettier/blob/master/react.js
-   *
-   * "react/jsx-child-element-spacing": "off",
-   * "react/jsx-closing-bracket-location": "off",
-   * "react/jsx-closing-tag-location": "off",
-   * "react/jsx-curly-spacing": "off",
-   * "react/jsx-equals-spacing": "off",
-   * "react/jsx-first-prop-new-line": "off",
-   * "react/jsx-indent": "off",
-   * "react/jsx-indent-props": "off",
-   * "react/jsx-max-props-per-line": "off",
-   * "react/jsx-one-expression-per-line": "off",
-   * "react/jsx-props-no-multi-spaces": "off",
-   * "react/jsx-space-before-closing": "off",
-   * "react/jsx-tag-spacing": "off",
-   * "react/jsx-wrap-multilines": "off"
-   */
+const reactRecommendedConfig = /** @type {import("eslint").Linter.Config} */ (
+  reactPlugin.configs.flat?.["recommended"]
+)
+
+/** @satisfies {import("eslint").Linter.Config} */
+export default /** @type {const} */ ({
+  plugins: {
+    ...reactRecommendedConfig.plugins,
+    "react-hooks": reactHooksPlugin,
+    "react-refresh": reactRefresh,
+  },
   rules: {
+    ...reactRecommendedConfig.rules,
+
+    // Validate that your components can safely be updated with Fast Refresh.
+    "react-refresh/only-export-components": "error",
+
     // Checks rules of Hooks
     "react-hooks/rules-of-hooks": "error",
 
     // Checks effect dependencies
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "error",
 
     // Prevent missing displayName in a React component definition
     "react/display-name": "off",
@@ -144,11 +142,19 @@ module.exports = {
     // Prevent invalid characters from appearing in markup
     "react/no-unknown-property": "error",
 
+    "react/function-component-definition": [
+      "error",
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
+
     // Prevent missing props validation in a React component definition
-    "react/prop-types": "error",
+    "react/prop-types": "off",
 
     // Prevent missing React when using JSX
-    "react/react-in-jsx-scope": "error",
+    "react/react-in-jsx-scope": "off",
 
     // Enforce ES5 or ES6 class for returning value in render function
     "react/require-render-return": "error",
@@ -183,7 +189,7 @@ module.exports = {
      * Declaring only one component per file improves readability and
      * reusability of components.
      */
-    "react/no-multi-comp": "error",
+    "react/no-multi-comp": "off",
 
     /*
      * Updating the state after a component update will trigger a second
@@ -234,6 +240,7 @@ module.exports = {
     "react/require-default-props": [
       "error",
       {
+        functions: "defaultArguments",
         forbidDefaultForRequired: true,
       },
     ],
@@ -328,5 +335,12 @@ module.exports = {
 
     // Prevent usage of button elements without an explicit type attribute
     "react/button-has-type": "error",
+
+    "react/jsx-props-no-spreading": "off",
   },
-}
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
+})

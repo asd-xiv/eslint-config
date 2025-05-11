@@ -1,87 +1,68 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@asd14/eslint-config",
   "version": "10.3.0",
-  "description": "JavaScript ESLint rules",
-  "homepage": "https://github.com/asd-xiv/eslint-config",
-  "main": "targets/node.js",
-  "license": "MIT",
-  "files": [
-    "/targets",
-    "/rules"
-  ],
+  "description": "ASD14's reusable ESLint config",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/asd-xiv/eslint-config.git"
   },
-  "bugs": {
-    "url": "https://github.com/asd-xiv/eslint-config/issues"
-  },
-  "author": {
-    "name": "Andrei Dumitrescu",
-    "url": "https://github.com/andreidmt"
-  },
-  "keywords": [
-    "config",
-    "eslint",
-    "eslint-config",
-    "eslint-rules",
-    "javascript",
-    "typescript",
-    "prettier",
-    "react",
-    "node"
+  "files": [
+    "dist",
+    "src"
   ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./dist/types/src/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "----UTIL": "",
     "prepare": "git config --local core.hooksPath .githook",
-    "setup": "npm ci --include=dev --cache .npm --prefer-offline --no-audit",
-    "update": "ncu --interactive",
-    "postupdate": "npm audit fix",
-    "format": "npm run lint.js -- --fix",
-    "----CHECK": "",
-    "lint.js": "eslint --quiet .",
-    "lint.md": "markdownlint '*.md'",
-    "lint": "npm run lint.js && npm run lint.md",
-    "----PUBLISH": "",
-    "release": "semantic-release"
-  },
-  "lint-staged": {
-    "*.js": "eslint --quiet",
-    "*.json": "prettier",
-    "*.md": "markdownlint --ignore CHANGELOG.md",
-    ".circleci/config.yml": "circleci config validate"
+    "format": "eslint --fix .",
+    "---BUILD": "",
+    "build:types": "tsc --declaration --emitDeclarationOnly",
+    "build": "npm run build:types",
+    "----CODE-ANALYSIS": "",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "@typescript-eslint/parser": "^5.60.1",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-html": "^7.1.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^46.4.3",
-    "eslint-plugin-json": "^3.1.0",
+    "@nx/eslint-plugin": "^21.0.3",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-jsdoc": "^50.6.14",
+    "eslint-plugin-json": "^4.0.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
-    "eslint-plugin-no-relative-import-paths": "^1.5.2",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-unicorn": "^47.0.0"
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-testing-library": "^7.1.1",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "globals": "^16.1.0",
+    "typescript-eslint": "^8.32.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-conventional": "^17.6.6",
-    "@semantic-release/changelog": "^6.0.3",
+    "@asd14/prettier-config": "^1.0.2",
+    "@asd14/ts-config": "^1.0.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@semantic-release/git": "^10.0.1",
-    "lint-staged": "^13.2.3",
-    "markdownlint-cli": "^0.35.0",
-    "npm-check-updates": "^16.10.13",
-    "semantic-release": "^21.0.6"
+    "semantic-release": "^24.2.3"
   },
   "peerDependencies": {
-    "eslint": "^8.37.0",
-    "prettier": "^2.8.7"
-  },
-  "engines": {
-    "node": ">=18"
+    "eslint": "^9",
+    "prettier": "^3"
   }
 }

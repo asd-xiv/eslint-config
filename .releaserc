@@ -1,24 +1,11 @@
 {
-  "branches": [
-    {
-      "name": "master"
-    }
-  ],
+  "$schema": "https://json.schemastore.org/semantic-release.json",
+  "branches": ["main"],
   "plugins": [
-    [
-      "@semantic-release/commit-analyzer",
-      {
-        "preset": "conventionalcommits"
-      }
-    ],
+    "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/npm",
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["package.json", "package-lock.json"]
-      }
-    ],
-    "@semantic-release/github"
+    "@semantic-release/github",
+    "@semantic-release/git"
   ]
 }

@@ -1,40 +1,21 @@
-module.exports = {
-  plugins: ["unicorn"],
+import unicornPlugin from "eslint-plugin-unicorn"
 
-  extends: "plugin:unicorn/recommended",
-
-  /*
-   * Disabled by prettier
-   * https://github.com/prettier/eslint-config-prettier/blob/master/unicorn.js
-   *
-   * "unicorn/number-literal-case": "off"
-   */
+/** @satisfies {import('eslint').Linter.Config} */
+export default /** @type {const} */ ({
+  ...unicornPlugin.configs["flat/recommended"],
   rules: {
-    // Disable until node 16 is lts
-    "unicorn/prefer-node-protocol": "off",
+    /*
+     * Disabled by prettier
+     * https://github.com/prettier/eslint-config-prettier/blob/master/unicorn.js
+     *
+     * "unicorn/number-literal-case": "off"
+     */
 
-    "unicorn/prevent-abbreviations": [
-      "error",
-      {
-        replacements: {
-          i: false,
-          params: false,
-          lib: false,
-          args: {
-            params: true,
-          },
-          props: false,
-          opts: {
-            props: true,
-          },
-          source: {
-            input: true,
-          },
-          fn: false,
-          acc: false,
-        },
-      },
-    ],
+    // Use "node:" protocol when importing Node.js builtin modules
+    "unicorn/prefer-node-protocol": "error",
+
+    // We like functional programming
+    "unicorn/no-array-for-each": "off",
 
     // Move function definitions to the highest possible scope.
     // Too noisy when curring functions
@@ -137,19 +118,16 @@ module.exports = {
     // Enforce throwing TypeError in type checking conditions
     "unicorn/prefer-type-error": "error",
 
+    // Cannot satisfy "consistent-return" with this rule enabled
+    "unicorn/no-useless-undefined": "off",
+
     /*
      * Enforce the use of new for all builtins, except String, Number and
      * Boolean
      */
     "unicorn/new-for-builtins": "error",
 
-    /*
-     * Disallow unsafe regular expressions. Uses safe-regex to disallow
-     * potentially catastrophic exponential-time regular expressions.
-     */
-    "unicorn/no-unsafe-regex": "error",
-
     // Enforce passing a message value when throwing a built-in error
     "unicorn/error-message": "error",
   },
-}
+})
