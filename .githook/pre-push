@@ -2,8 +2,6 @@
 
 # Dont run when in CI environment.
 # For ex. when pushing changelogs via "semantic-release".
-if [ -n "$CI" ]; then
-  exit 0
-fi
+[ -n "$CI" ] && exit 0
 
-npx --no-install lint-staged
+npm run lint && npm run typecheck
