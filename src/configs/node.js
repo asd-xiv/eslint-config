@@ -1,3 +1,4 @@
+import jestPlugin from "eslint-plugin-jest"
 import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
@@ -30,7 +31,7 @@ const nodeSpecificRules = {
 }
 
 /** @satisfies {import("eslint").Linter.Config} */
-export const nodeConfig = /** @type {const} */ ({
+const nodeConfig = /** @type {const} */ ({
   name: "ASD14 config for Node.js source files",
   ignores: ["node_modules", "dist", "coverage", "build"],
   languageOptions: {
@@ -63,3 +64,33 @@ export const nodeConfig = /** @type {const} */ ({
     ...importConfig.settings,
   },
 })
+
+const jestConfig = jestPlugin.configs["flat/recommended"]
+
+/** @satisfies {import("eslint").Linter.Config} */
+const nodeJestConfig = /** @type {const} */ ({
+  name: "ASD14's config for Node.js test files",
+  languageOptions: jestConfig.languageOptions,
+  plugins: jestConfig.plugins,
+  rules: {
+    ...jestConfig.rules,
+    "jest/require-top-level-describe": "error",
+    "jest/consistent-test-it": [
+      "error",
+      {
+        fn: "test",
+        withinDescribe: "test",
+      },
+    ],
+    "jest/valid-title": [
+      "error",
+      {
+        mustMatch: {
+          test: "^given \\[.*\\] should \\[.*\\]$",
+        },
+      },
+    ],
+  },
+})
+
+export { nodeConfig, nodeJestConfig }

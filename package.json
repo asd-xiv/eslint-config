@@ -17,9 +17,21 @@
   ],
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "types": "./dist/types/src/index.d.ts"
+    "./node": {
+      "import": "./src/configs/node.js",
+      "types": "./dist/types/src/configs/node.d.ts"
+    },
+    "./react": {
+      "import": "./src/configs/react.js",
+      "types": "./dist/types/src/configs/react.d.ts"
+    },
+    "./typescript": {
+      "import": "./src/configs/typescript.js",
+      "types": "./dist/types/src/configs/typescript.d.ts"
+    },
+    "./nx": {
+      "import": "./src/configs/nx.js",
+      "types": "./dist/types/src/configs/nx.d.ts"
     },
     "./package.json": "./package.json"
   },
@@ -53,7 +65,7 @@
     "eslint-plugin-testing-library": "^7.1.1",
     "eslint-plugin-unicorn": "^59.0.1",
     "globals": "^16.1.0",
-    "typescript-eslint": "^8.32.0"
+    "typescript-eslint": "^8.32.1"
   },
   "devDependencies": {
     "@asd14/prettier-config": "^1.0.2",

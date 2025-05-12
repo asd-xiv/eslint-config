@@ -1,10 +1,12 @@
 import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
+import { nodeJestConfig } from "./node-jest.js"
 import baseConfig from "../rules/base.js"
 import importConfig from "../rules/import.js"
 import jsdocConfig from "../rules/jsdoc.js"
 import reactHooksConfig from "../rules/react.js"
+import rtlConfig from "../rules/rtl.js"
 import tsConfig from "../rules/typescript.js"
 import unicornConfig from "../rules/unicorn.js"
 
@@ -36,7 +38,7 @@ const reactSpecificRules = {
 }
 
 /** @satisfies {import("eslint").Linter.Config} */
-export const reactConfig = /** @type {const} */ ({
+const reactConfig = /** @type {const} */ ({
   name: "ASD14 config for React source files",
   ignores: ["node_modules", "dist", "coverage", "build"],
   languageOptions: {
@@ -84,3 +86,19 @@ export const reactConfig = /** @type {const} */ ({
     "import/ignore": [".(sass|scss|less|css)$"],
   },
 })
+
+/** @satisfies {import("eslint").Linter.Config} */
+const reactJestConfig = /** @type {const} */ ({
+  ...nodeJestConfig,
+  name: "ASD14 config for React test files",
+  plugins: {
+    ...nodeJestConfig.plugins,
+    ...rtlConfig.plugins,
+  },
+  rules: {
+    ...nodeJestConfig.rules,
+    ...rtlConfig.rules,
+  },
+})
+
+export { reactConfig, reactJestConfig }
