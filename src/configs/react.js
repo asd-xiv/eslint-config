@@ -1,7 +1,7 @@
 import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
-import { nodeJestConfig } from "./node-jest.js"
+import { nodeJestConfig } from "./node.js"
 import baseConfig from "../rules/base.js"
 import importConfig from "../rules/import.js"
 import jsdocConfig from "../rules/jsdoc.js"
