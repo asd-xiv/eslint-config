@@ -2,12 +2,11 @@ import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
 import baseConfig from "../rules/base.js"
-import jsdocConfig from "../rules/jsdoc.js"
-import unicornConfig from "../rules/unicorn.js"
 import importConfig from "../rules/import.js"
-import tsConfig from "../rules/typescript.js"
-import nxConfig from "../rules/nx.js"
+import jsdocConfig from "../rules/jsdoc.js"
 import reactHooksConfig from "../rules/react.js"
+import tsConfig from "../rules/typescript.js"
+import unicornConfig from "../rules/unicorn.js"
 
 /** @type {import("eslint").Linter.RulesRecord} */
 const reactSpecificRules = {
@@ -59,7 +58,6 @@ export const reactConfig = /** @type {const} */ ({
   plugins: {
     ...importConfig.plugins,
     ...jsdocConfig.plugins,
-    ...nxConfig.plugins,
     ...reactHooksConfig.plugins,
     ...tsConfig.plugins,
     ...unicornConfig.plugins,
@@ -69,7 +67,6 @@ export const reactConfig = /** @type {const} */ ({
     ...baseConfig.rules,
     ...importConfig.rules,
     ...jsdocConfig.rules,
-    ...nxConfig.rules,
     ...reactHooksConfig.rules,
     ...reactSpecificRules,
     ...tsConfig.rules,

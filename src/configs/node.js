@@ -2,10 +2,9 @@ import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
 import baseConfig from "../rules/base.js"
+import importConfig from "../rules/import.js"
 import jsdocConfig from "../rules/jsdoc.js"
 import unicornConfig from "../rules/unicorn.js"
-import importConfig from "../rules/import.js"
-import nxConfig from "../rules/nx.js"
 
 /** @type {import("eslint").Linter.RulesRecord} */
 const nodeSpecificRules = {
@@ -48,7 +47,6 @@ export const nodeConfig = /** @type {const} */ ({
   plugins: {
     ...importConfig.plugins,
     ...jsdocConfig.plugins,
-    ...nxConfig.plugins,
     ...unicornConfig.plugins,
     ...prettierConfig.plugins,
   },
@@ -56,7 +54,6 @@ export const nodeConfig = /** @type {const} */ ({
     ...baseConfig.rules,
     ...importConfig.rules,
     ...jsdocConfig.rules,
-    ...nxConfig.rules,
     ...unicornConfig.rules,
     ...nodeSpecificRules,
     ...prettierConfig.rules,
