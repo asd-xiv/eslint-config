@@ -2,7 +2,7 @@ import unicornPlugin from "eslint-plugin-unicorn"
 
 /** @satisfies {import('eslint').Linter.Config} */
 export default /** @type {const} */ ({
-  ...unicornPlugin.configs["flat/recommended"],
+  ...unicornPlugin.configs.recommended,
   rules: {
     /*
      * Disabled by prettier

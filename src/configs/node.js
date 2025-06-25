@@ -15,6 +15,7 @@ const nodeSpecificRules = {
     {
       replacements: {
         i: false,
+        utils: false,
         params: false,
         lib: false,
         args: {
