@@ -11,6 +11,17 @@ export default /** @type {const} */ ({
      * "unicorn/number-literal-case": "off"
      */
 
+    // Never miss a digit again 1000000000 -> 1_000_000_000
+    "unicorn/numeric-separators-style": [
+      "error",
+      {
+        number: {
+          minimumDigits: 5,
+          groupLength: 3,
+        },
+      },
+    ],
+
     // Use "node:" protocol when importing Node.js builtin modules
     "unicorn/prefer-node-protocol": "error",
 
