@@ -101,4 +101,5 @@ const reactJestConfig = /** @type {const} */ ({
   },
 })
 
+export { commonIgnores } from "../rules/ignores.js"
 export { reactConfig, reactJestConfig }

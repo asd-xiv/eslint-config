@@ -94,4 +94,5 @@ const nodeJestConfig = /** @type {const} */ ({
   },
 })
 
+export { commonIgnores } from "../rules/ignores.js"
 export { nodeConfig, nodeJestConfig }
