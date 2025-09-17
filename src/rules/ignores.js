@@ -2,7 +2,7 @@
  * Common ignore patterns for ESLint flat configs
  * These are build outputs and dependencies that should never be linted
  */
-export const commonIgnores = [
+export const commonIgnores = /** @type {const} */ ([
   "node_modules/**",
   "dist/**",
   "coverage/**",
@@ -12,4 +12,4 @@ export const commonIgnores = [
   "out/**",
   "tmp/**",
   "temp/**",
-]
+])
