@@ -54,7 +54,17 @@ export default /** @type {const} */ ({
         selector: "variable",
         types: ["boolean"],
         format: ["camelCase", "PascalCase"],
-        prefix: ["is", "has", "can", "does", "should", "will", "did", "was"],
+        prefix: [
+          "is",
+          "has",
+          "can",
+          "does",
+          "should",
+          "will",
+          "did",
+          "was",
+          "are",
+        ],
       },
       {
         selector: "variable",
