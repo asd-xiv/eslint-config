@@ -3,14 +3,14 @@
 
 # @asd14/eslint-config
 
-> ASD14's reusable ESLint configurations.
+> Reusable ESLint configurations.
 
 <!-- vim-markdown-toc GFM -->
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Peer dependencies](#peer-dependencies)
-* [License](#license)
+- [Installation](#installation)
+  - [Peer dependencies](#peer-dependencies)
+- [Usage](#usage)
+- [License](#license)
 
 <!-- vim-markdown-toc -->
 
@@ -20,17 +20,7 @@
 npm install --save-dev @asd14/ts-config eslint@^9 prettier@^3
 ```
 
-## Usage
-
-In your `eslint.config.js`, extend the desired configuration:
-
-```json
-{
-  "extends": "@asd14/ts-config/targets/react.json"
-}
-```
-
-## Peer dependencies
+### Peer dependencies
 
 This package requires and assumes you already installed:
 
@@ -39,6 +29,29 @@ This package requires and assumes you already installed:
     "eslint": "^9",
     "prettier": "^3"
   },
+```
+
+## Usage
+
+In your `eslint.config.js`, extend the desired configuration:
+
+```js
+import { tsNodeConfig, commonIgnores } from "@asd14/eslint-config/typescript"
+
+const SRC_FILES = ["src/**/*.ts"]
+const TEST_FILES = ["src/**/*.test.ts"]
+const DEV_FILES = ["eslint.config.js"]
+
+/** @type {import("eslint").Linter.Config[]} */
+export default [
+  {
+    ignores: commonIgnores
+  },
+  {
+    ...tsNodeConfig,
+    files: [...SRC_FILES, ...DEV_FILES, ...TEST_FILES]
+  }
+]
 ```
 
 ## License
