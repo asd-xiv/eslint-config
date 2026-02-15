@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.nvmrc.outputs.node_version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Cache node_modules
         id: cache-node-modules
@@ -66,7 +66,7 @@ jobs:
         run: npm run lint
 
   typecheck:
-    name: Type Check
+    name: Typecheck
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -120,7 +120,4 @@ jobs:
         run: npm run build
 
       - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ASD14_NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
