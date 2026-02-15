@@ -68,8 +68,8 @@
     "typescript-eslint": "^8.55.0"
   },
   "devDependencies": {
-    "@asd14/prettier-config": "^1.1.0",
-    "@asd14/ts-config": "^1.1.0",
+    "@asd14/prettier-config": "^1.2.0",
+    "@asd14/ts-config": "^1.2.0",
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
     "@semantic-release/git": "^10.0.1",
