@@ -1,6 +1,6 @@
 import reactPlugin from "eslint-plugin-react"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
-import reactRefresh from "eslint-plugin-react-refresh"
+import { reactRefresh } from "eslint-plugin-react-refresh"
 
 const reactRecommendedConfig = /** @type {import("eslint").Linter.Config} */ (
   reactPlugin.configs.flat?.["recommended"]
@@ -11,7 +11,7 @@ export default /** @type {const} */ ({
   plugins: {
     ...reactRecommendedConfig.plugins,
     "react-hooks": reactHooksPlugin,
-    "react-refresh": reactRefresh,
+    "react-refresh": reactRefresh.plugin,
   },
   rules: {
     ...reactRecommendedConfig.rules,
