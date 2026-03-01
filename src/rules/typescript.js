@@ -12,6 +12,10 @@ export default /** @type {const} */ ({
   rules: {
     ...tsPlugin.configs["strict-type-checked"]?.rules,
 
+    // Temporary: disable due to bug in ESLint 9.39.0
+    // https://github.com/eslint/eslint/issues/20272
+    "@typescript-eslint/unified-signatures": "off",
+
     "@typescript-eslint/no-unused-vars": [
       "error",
       {

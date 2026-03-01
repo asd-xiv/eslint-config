@@ -10,30 +10,23 @@ export default /** @type {const} */ ({
       "error",
       {
         reportIntraTagGroupSpacing: false,
-        reportTagGroupSpacing: false,
+        reportTagGroupSpacing: true,
+        tagSequence: [
+          { tags: ["typedef", "callback"] },
+          { tags: ["param", "arg", "argument", "property", "prop"] },
+          { tags: ["returns", "return"] },
+          { tags: ["throws", "exception"] },
+          { tags: ["example"] },
+        ],
       },
     ],
     "jsdoc/tag-lines": [
       "error",
-      "always",
+      "any",
       {
         startLines: 1,
         endLines: 0,
         applyToEndTag: false,
-        tags: {
-          returns: {
-            lines: "always",
-          },
-          property: {
-            lines: "any",
-          },
-          param: {
-            lines: "any",
-          },
-          example: {
-            lines: "always",
-          },
-        },
       },
     ],
     "jsdoc/check-indentation": "error",

@@ -2,17 +2,18 @@ import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
 import baseConfig from "./src/rules/base.js"
+import commonIgnores from "./src/rules/ignores.js"
 import importConfig from "./src/rules/import.js"
 import jsdocConfig from "./src/rules/jsdoc.js"
-import tsConfig from "./src/rules/typescript.js"
+import typescriptConfig from "./src/rules/typescript.js"
 import unicornConfig from "./src/rules/unicorn.js"
 
 /** @satisfies {import("eslint").Linter.Config} */
 export default /** @type {const} */ ({
   files: ["src/**/*.js", "types/*.d.ts", "eslint.config.js"],
-  ignores: ["node_modules", "dist", "coverage"],
+  ignores: commonIgnores,
   languageOptions: {
-    ...tsConfig.languageOptions,
+    ...typescriptConfig.languageOptions,
     ecmaVersion: "latest",
     sourceType: "module",
     parserOptions: {

@@ -1,19 +1,21 @@
 import { nodeConfig } from "./node.js"
-import tsConfig from "../rules/typescript.js"
+import devConfig from "../rules/dev.js"
+import commonIgnores from "../rules/ignores.js"
+import typescriptConfig from "../rules/typescript.js"
 
 /** @satisfies {import("eslint").Linter.Config} */
-const tsNodeConfig = /** @type {const} */ ({
+const tsConfig = /** @type {const} */ ({
   name: "ASD14 config for Typescript + Node.js source files",
   languageOptions: {
     ...nodeConfig.languageOptions,
-    ...tsConfig.languageOptions,
+    ...typescriptConfig.languageOptions,
   },
   plugins: {
-    ...tsConfig.plugins,
+    ...typescriptConfig.plugins,
     ...nodeConfig.plugins,
   },
   rules: {
-    ...tsConfig.rules,
+    ...typescriptConfig.rules,
     ...nodeConfig.rules,
   },
   settings: {
@@ -21,5 +23,4 @@ const tsNodeConfig = /** @type {const} */ ({
   },
 })
 
-export { commonIgnores } from "../rules/ignores.js"
-export { tsNodeConfig }
+export { commonIgnores, devConfig, tsConfig }

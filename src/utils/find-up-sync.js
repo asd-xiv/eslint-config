@@ -12,22 +12,21 @@ import path from "node:path"
  *
  * @param {string} fileName - The name of the file to find.
  * @param {FindUpSyncOptions} [options] - Options for the function.
+ *
  * @returns {string} The absolute path to the file.
  */
 
 /**
  * Find a file up the directory tree synchronously.
  *
- * @type {FindUpSyncFn}
- *
  * @throws {Error} If the starting folder does not exist.
- *
  * @throws {Error} If the file does not exist up the tree.
  *
  * @example
  *  const filePath = findUpSync("lerna.json");
  *  //=> "/Users/johndoe/Projects/WootWoot/lerna.json"
  *
+ * @type {FindUpSyncFn}
  */
 const findUpSync = (fileName, options = {}) => {
   let { cwd } = options

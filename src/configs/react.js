@@ -1,12 +1,12 @@
 import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
-import { nodeJestConfig } from "./node.js"
 import baseConfig from "../rules/base.js"
+import devConfig from "../rules/dev.js"
+import commonIgnores from "../rules/ignores.js"
 import importConfig from "../rules/import.js"
 import jsdocConfig from "../rules/jsdoc.js"
 import reactHooksConfig from "../rules/react.js"
-import rtlConfig from "../rules/rtl.js"
 import tsConfig from "../rules/typescript.js"
 import unicornConfig from "../rules/unicorn.js"
 
@@ -16,8 +16,10 @@ const reactSpecificRules = {
   "unicorn/prevent-abbreviations": [
     "error",
     {
+      ignore: ["utils", "props"],
       replacements: {
         i: false,
+        ref: false,
         params: false,
         lib: false,
         args: {
@@ -39,8 +41,7 @@ const reactSpecificRules = {
 
 /** @satisfies {import("eslint").Linter.Config} */
 const reactConfig = /** @type {const} */ ({
-  name: "ASD14 config for React source files",
-  ignores: ["node_modules", "dist", "coverage", "build"],
+  name: "ASD14 config for Typescript + React source files",
   languageOptions: {
     ...tsConfig.languageOptions,
     ecmaVersion: "latest",
@@ -69,9 +70,9 @@ const reactConfig = /** @type {const} */ ({
     ...baseConfig.rules,
     ...importConfig.rules,
     ...jsdocConfig.rules,
+    ...tsConfig.rules,
     ...reactHooksConfig.rules,
     ...reactSpecificRules,
-    ...tsConfig.rules,
     ...unicornConfig.rules,
     ...prettierConfig.rules,
   },
@@ -87,19 +88,4 @@ const reactConfig = /** @type {const} */ ({
   },
 })
 
-/** @satisfies {import("eslint").Linter.Config} */
-const reactJestConfig = /** @type {const} */ ({
-  ...nodeJestConfig,
-  name: "ASD14 config for React test files",
-  plugins: {
-    ...nodeJestConfig.plugins,
-    ...rtlConfig.plugins,
-  },
-  rules: {
-    ...nodeJestConfig.rules,
-    ...rtlConfig.rules,
-  },
-})
-
-export { commonIgnores } from "../rules/ignores.js"
-export { reactConfig, reactJestConfig }
+export { commonIgnores, devConfig, reactConfig }

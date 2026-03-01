@@ -1,7 +1,4 @@
-import path from "node:path"
 import nxPlugin from "@nx/eslint-plugin"
-
-import { findUpSync } from "../utils/find-up-sync.js"
 
 const RULES = {
   // Visibility and publishing rules
@@ -15,33 +12,33 @@ const RULES = {
   },
   // Package type rules
   libsCanOnlyImportLibs: {
-    sourceTag: "type:lib",
-    onlyDependOnLibsWithTags: ["type:lib"],
+    sourceTag: "type:library",
+    onlyDependOnLibsWithTags: ["type:library"],
   },
   hooksCanOnlyImportLibsAndHooks: {
     sourceTag: "type:hook",
-    onlyDependOnLibsWithTags: ["type:lib", "type:hook"],
+    onlyDependOnLibsWithTags: ["type:library", "type:hook"],
   },
   uiCanImportAny: {
     sourceTag: "type:ui",
-    onlyDependOnLibsWithTags: ["type:ui", "type:lib", "type:hook"],
+    onlyDependOnLibsWithTags: ["type:ui", "type:library", "type:hook"],
   },
   appsCanImportAny: {
     sourceTag: "type:app",
-    onlyDependOnLibsWithTags: ["type:ui", "type:lib", "type:hook"],
+    onlyDependOnLibsWithTags: ["type:ui", "type:library", "type:hook"],
   },
-  // Runtime rules
-  apiCanOnlyImportApiOrNode: {
-    sourceTag: "runtime:api",
-    onlyDependOnLibsWithTags: ["runtime:api", "runtime:node"],
+  // Runtime/Target rules
+  apiCanOnlyImportApiOrNodeOrAny: {
+    sourceTag: "target:api",
+    onlyDependOnLibsWithTags: ["target:api", "target:node", "target:any"],
   },
-  reactCanOnlyImportReactOrNode: {
-    sourceTag: "runtime:react",
-    onlyDependOnLibsWithTags: ["runtime:react", "runtime:node"],
+  reactCanOnlyImportReactOrAny: {
+    sourceTag: "target:react",
+    onlyDependOnLibsWithTags: ["target:react", "target:any"],
   },
-  nodeCanImportNode: {
-    sourceTag: "runtime:node",
-    onlyDependOnLibsWithTags: ["runtime:node"],
+  nodeCanImportNodeOrAny: {
+    sourceTag: "target:node",
+    onlyDependOnLibsWithTags: ["target:node", "target:any"],
   },
   // Domain rules
   domainCanOnlyImportSelf: {
@@ -55,9 +52,12 @@ const RULES = {
   },
 }
 
-/** @satisfies {import("eslint").Linter.Config} */
+/**
+ * Strict NX module boundary rules for source files.
+ *
+ * @satisfies {import("eslint").Linter.Config}
+ */
 const nxConfig = /** @type {const} */ ({
-  name: "ASD14 config for source files inside an NX monorepo",
   plugins: {
     "@nx": nxPlugin,
   },
@@ -65,7 +65,10 @@ const nxConfig = /** @type {const} */ ({
     "@nx/enforce-module-boundaries": [
       "error",
       {
-        allow: [],
+        allow: [
+          "^.*/types$", // Allow importing types across boundaries (compile-time only)
+          "^.*/const$", // Allow importing constants across boundaries (pure data)
+        ],
         depConstraints: [
           RULES.publicCanOnlyImportPublic,
           RULES.privateCanImportAny,
@@ -73,9 +76,9 @@ const nxConfig = /** @type {const} */ ({
           RULES.hooksCanOnlyImportLibsAndHooks,
           RULES.uiCanImportAny,
           RULES.appsCanImportAny,
-          RULES.apiCanOnlyImportApiOrNode,
-          RULES.reactCanOnlyImportReactOrNode,
-          RULES.nodeCanImportNode,
+          RULES.apiCanOnlyImportApiOrNodeOrAny,
+          RULES.reactCanOnlyImportReactOrAny,
+          RULES.nodeCanImportNodeOrAny,
           RULES.domainCanOnlyImportSelf,
           RULES.noTestImportsInProd,
         ],
@@ -84,25 +87,18 @@ const nxConfig = /** @type {const} */ ({
   },
 })
 
-const MONOREPO_ROOT = path.dirname(findUpSync("nx.json"))
-
-/** @satisfies {import("eslint").Linter.Config} */
+/**
+ * Relaxed NX module boundary rules for dev files (tests, configs, stories).
+ * Dev files dont need strict visibility/runtime/domain enforcement since
+ * they are not emited in the final bundle.
+ *
+ * @satisfies {import("eslint").Linter.Config}
+ */
 const nxDevConfig = /** @type {const} */ ({
-  name: "ASD14 config for dev files inside an NX monorepo",
   plugins: {
     "@nx": nxPlugin,
   },
   rules: {
-    /*
-     * Point to the monorepo root folder since ~all~ most devDependencies
-     * used in test, story and config files reside in the root package.json.
-     */
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        packageDir: ["./", MONOREPO_ROOT],
-      },
-    ],
     "@nx/enforce-module-boundaries": [
       "error",
       {
@@ -110,7 +106,7 @@ const nxDevConfig = /** @type {const} */ ({
         depConstraints: [
           {
             sourceTag: "*",
-            onlyDependOnLibsWithTags: ["type:lib"],
+            onlyDependOnLibsWithTags: ["type:library"],
           },
         ],
       },

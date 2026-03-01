@@ -1,8 +1,9 @@
-import jestPlugin from "eslint-plugin-jest"
 import prettierConfig from "eslint-plugin-prettier/recommended"
 import globals from "globals"
 
 import baseConfig from "../rules/base.js"
+import devConfig from "../rules/dev.js"
+import commonIgnores from "../rules/ignores.js"
 import importConfig from "../rules/import.js"
 import jsdocConfig from "../rules/jsdoc.js"
 import unicornConfig from "../rules/unicorn.js"
@@ -13,17 +14,15 @@ const nodeSpecificRules = {
   "unicorn/prevent-abbreviations": [
     "error",
     {
+      ignore: ["utils", "db", "props"],
       replacements: {
         i: false,
-        utils: false,
         params: false,
         lib: false,
         args: {
           params: true,
         },
-        props: {
-          options: true,
-        },
+        props: false,
         fn: false,
         acc: false,
       },
@@ -34,7 +33,6 @@ const nodeSpecificRules = {
 /** @satisfies {import("eslint").Linter.Config} */
 const nodeConfig = /** @type {const} */ ({
   name: "ASD14 config for Node.js source files",
-  ignores: ["node_modules", "dist", "coverage", "build"],
   languageOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
@@ -66,33 +64,4 @@ const nodeConfig = /** @type {const} */ ({
   },
 })
 
-const jestConfig = jestPlugin.configs["flat/recommended"]
-
-/** @satisfies {import("eslint").Linter.Config} */
-const nodeJestConfig = /** @type {const} */ ({
-  name: "ASD14's config for Node.js test files",
-  languageOptions: jestConfig.languageOptions,
-  plugins: jestConfig.plugins,
-  rules: {
-    ...jestConfig.rules,
-    "jest/require-top-level-describe": "error",
-    "jest/consistent-test-it": [
-      "error",
-      {
-        fn: "test",
-        withinDescribe: "test",
-      },
-    ],
-    "jest/valid-title": [
-      "error",
-      {
-        mustMatch: {
-          test: "^given \\[.*\\] should \\[.*\\]$",
-        },
-      },
-    ],
-  },
-})
-
-export { commonIgnores } from "../rules/ignores.js"
-export { nodeConfig, nodeJestConfig }
+export { commonIgnores, devConfig, nodeConfig }
