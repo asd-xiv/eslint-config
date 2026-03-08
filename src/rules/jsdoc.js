@@ -29,7 +29,7 @@ export default /** @type {const} */ ({
         applyToEndTag: false,
       },
     ],
-    "jsdoc/check-indentation": "error",
+    "jsdoc/check-indentation": ["error", { allowIndentedSections: true }],
     "jsdoc/check-alignment": "error",
     "jsdoc/no-bad-blocks": "error",
     "jsdoc/require-asterisk-prefix": ["error", "always"],
