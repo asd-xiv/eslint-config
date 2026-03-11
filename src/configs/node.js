@@ -17,6 +17,7 @@ const nodeSpecificRules = {
       ignore: ["utils", "db", "props"],
       replacements: {
         i: false,
+        j: false,
         params: false,
         lib: false,
         args: {
