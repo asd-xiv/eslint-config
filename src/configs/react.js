@@ -16,24 +16,32 @@ const reactSpecificRules = {
   "unicorn/prevent-abbreviations": [
     "error",
     {
+      // ignore identifiers and filenames (basename only)
       ignore: ["utils", "props"],
       replacements: {
+        // allow
+        acc: false,
+        dir: false,
+        fn: false,
         i: false,
-        ref: false,
-        params: false,
         lib: false,
+        params: false,
+        props: false,
+        ref: false,
+
+        // rewrite
         args: {
           params: true,
         },
-        props: false,
+        folder: {
+          dir: true,
+        },
         opts: {
           props: true,
         },
         options: {
           props: true,
         },
-        fn: false,
-        acc: false,
       },
     },
   ],

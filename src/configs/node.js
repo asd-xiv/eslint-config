@@ -14,18 +14,28 @@ const nodeSpecificRules = {
   "unicorn/prevent-abbreviations": [
     "error",
     {
-      ignore: ["utils", "db", "props"],
+      // ignore identifiers and filenames (basename only)
+      ignore: ["utils", "db"],
       replacements: {
+        // allow
+        acc: false,
+        dir: false,
+        fn: false,
         i: false,
         j: false,
-        params: false,
         lib: false,
+        params: false,
+
+        // rewrite
         args: {
           params: true,
         },
-        props: false,
-        fn: false,
-        acc: false,
+        folder: {
+          dir: true,
+        },
+        props: {
+          params: true,
+        },
       },
     },
   ],
