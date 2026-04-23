@@ -10,9 +10,11 @@ export default /** @type {const} */ ({
       "error",
       {
         reportIntraTagGroupSpacing: false,
-        reportTagGroupSpacing: true,
+        reportTagGroupSpacing: false,
         tagSequence: [
+          { tags: ["template"] },
           { tags: ["typedef", "callback"] },
+          { tags: ["extends"] },
           { tags: ["param", "arg", "argument", "property", "prop"] },
           { tags: ["returns", "return"] },
           { tags: ["throws", "exception"] },
