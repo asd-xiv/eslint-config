@@ -18,10 +18,11 @@
 ## Installation
 
 ```sh
-npm install --save-dev @asd14/eslint-config eslint@^9 prettier@^3 typescript@^5
+npm install --save-dev @asd14/eslint-config eslint@^9 prettier@^3 typescript@^6
 ```
 
-> NOTE: `eslint`, `prettier` and `typescript` are peerDependencies
+> [!NOTE]  
+> `eslint`, `prettier` and `typescript` are peerDependencies
 
 ## Exports
 
