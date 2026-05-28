@@ -92,9 +92,6 @@ jobs:
     needs: [setup, lint, typecheck]
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      issues: write
-      pull-requests: write
       id-token: write
     steps:
       - name: Checkout
