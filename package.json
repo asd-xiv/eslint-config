@@ -3,6 +3,7 @@
   "name": "@asd14/eslint-config",
   "version": "15.4.0",
   "description": "ASD14's reusable ESLint configurations",
+  "license": "MIT",
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
@@ -86,9 +87,6 @@
   "peerDependencies": {
     "eslint": "^9",
     "prettier": "^3",
-    "typescript": "^6 || ^7"
-  },
-  "engines": {
-    "node": ">=24"
+    "typescript": "^6"
   }
 }
