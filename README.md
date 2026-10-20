@@ -3,7 +3,13 @@
 
 # @asd14/eslint-config
 
-> ASD14's reusable ESLint configurations.
+> ASD14's reusable ESLint configurations.  
+> [`"semi": [ "error", "never" ]`](http://eslint.org/docs/rules/semi) :godmode:
+> ...
+> [the horror](http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding)
+> :goberserk:
+
+## Table of contents
 
 <!-- vim-markdown-toc GFM -->
 
