@@ -10,6 +10,7 @@
 - [Installation](#installation)
 - [Exports](#exports)
 - [Usage](#usage)
+  - [Ignore what git ignores](#ignore-what-git-ignores)
   - [With NX](#with-nx)
 - [License](#license)
 
@@ -33,8 +34,8 @@ npm install --save-dev @asd14/eslint-config eslint@^9 prettier@^3 typescript@^6
 | `@asd14/eslint-config/ts`    | TypeScript + Node.js source files combo config        |
 | `@asd14/eslint-config/nx`    | NX module boundary configs (strict + relaxed for dev) |
 
-All environment configs re-export `commonIgnores` array and `devConfig` for
-convenience.
+The `node`, `react` and `ts` entrypoints also export `commonIgnores`,
+`getIgnorePatterns` and `devConfig`.
 
 ## Usage
 
@@ -59,6 +60,31 @@ export default [
     rules: { ...tsConfig.rules, ...devConfig.rules }
   }
 ]
+```
+
+### Ignore what git ignores
+
+`getIgnorePatterns(file)` reads a gitignore-style file at an absolute path and
+returns its patterns as ESLint globs.
+
+```diff
++import path from "node:path"
+-import { tsConfig, commonIgnores, devConfig } from "@asd14/eslint-config/ts"
++import { tsConfig, getIgnorePatterns, devConfig } from "@asd14/eslint-config/ts"
+
++const GIT_IGNORE_PATTERNS = getIgnorePatterns(
++  path.join(import.meta.dirname, ".gitignore")
++)
+ const SRC_FILES = ["src/**/*.ts"]
+ const TEST_FILES = ["src/**/*.test.ts"]
+ const DEV_FILES = ["eslint.config.js"]
+
+ /** @type {import("eslint").Linter.Config[]} */
+ export default [
+-  { ignores: [...commonIgnores] },
++  { ignores: [...GIT_IGNORE_PATTERNS, "template/"] },
+   {
+     ...tsConfig,
 ```
 
 ### With NX

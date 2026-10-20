@@ -9,6 +9,7 @@ import jsdocConfig from "../rules/jsdoc.js"
 import reactHooksConfig from "../rules/react.js"
 import tsConfig from "../rules/typescript.js"
 import unicornConfig from "../rules/unicorn.js"
+import { getIgnorePatterns } from "../utils/get-ignore-patterns.js"
 
 /** @type {import("eslint").Linter.RulesRecord} */
 const reactSpecificRules = {
@@ -96,4 +97,4 @@ const reactConfig = /** @type {const} */ ({
   },
 })
 
-export { commonIgnores, devConfig, reactConfig }
+export { commonIgnores, devConfig, getIgnorePatterns, reactConfig }

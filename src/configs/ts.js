@@ -2,6 +2,7 @@ import { nodeConfig } from "./node.js"
 import devConfig from "../rules/dev.js"
 import commonIgnores from "../rules/ignores.js"
 import typescriptConfig from "../rules/typescript.js"
+import { getIgnorePatterns } from "../utils/get-ignore-patterns.js"
 
 /** @satisfies {import("eslint").Linter.Config} */
 const tsConfig = /** @type {const} */ ({
@@ -23,4 +24,4 @@ const tsConfig = /** @type {const} */ ({
   },
 })
 
-export { commonIgnores, devConfig, tsConfig }
+export { commonIgnores, devConfig, getIgnorePatterns, tsConfig }

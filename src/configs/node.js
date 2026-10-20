@@ -7,6 +7,7 @@ import commonIgnores from "../rules/ignores.js"
 import importConfig from "../rules/import.js"
 import jsdocConfig from "../rules/jsdoc.js"
 import unicornConfig from "../rules/unicorn.js"
+import { getIgnorePatterns } from "../utils/get-ignore-patterns.js"
 
 /** @type {import("eslint").Linter.RulesRecord} */
 const nodeSpecificRules = {
@@ -75,4 +76,4 @@ const nodeConfig = /** @type {const} */ ({
   },
 })
 
-export { commonIgnores, devConfig, nodeConfig }
+export { commonIgnores, devConfig, getIgnorePatterns, nodeConfig }
