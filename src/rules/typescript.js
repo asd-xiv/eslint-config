@@ -57,6 +57,7 @@ export default /** @type {const} */ ({
       {
         selector: "variable",
         types: ["boolean"],
+        leadingUnderscore: "allow",
         format: ["camelCase", "PascalCase", "UPPER_CASE"],
         prefix: [
           "is",
@@ -83,6 +84,7 @@ export default /** @type {const} */ ({
         selector: "variable",
         types: ["boolean", "number", "string", "array"],
         modifiers: ["const", "global"],
+        leadingUnderscore: "allow",
         format: ["UPPER_CASE"],
       },
       {

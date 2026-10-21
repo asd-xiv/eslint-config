@@ -12,13 +12,7 @@ export default /** @type {const} */ ({
         },
       },
     ],
-    "no-underscore-dangle": [
-      "error",
-      {
-        allow: ["_dirname", "_testResult"],
-        allowInArrayDestructuring: true,
-        allowInObjectDestructuring: true,
-      },
-    ],
+    // A leading `_` marks a private name, see DECISIONS#1
+    "no-underscore-dangle": "off",
   },
 })
