@@ -1,21 +1,15 @@
 # `@asd14/eslint-config` package decisions
 
-Rules for using this file:
-
-1. Decisions are sorted chronologically, newest at the top
-2. Each decision should contain the following:
-   - `Title` + `Description`
-   - Labeled fields: `Date`, `Problem`, `Solution`
-   - Optional: `References`, `Note`
-3. Reverting or changing a decision should be documented as a new decision
+This file holds the decisions whose "why" the code and the other docs do not
+show. It is not a todo list, release notes or a session log.
 
 <!-- vim-markdown-toc GFM -->
 
-- [1. Allow a leading `_` on private names](#1-allow-a-leading-_-on-private-names)
+- [1. Allow a leading `_` on private names, two lint rules rejected them](#1-allow-a-leading-_-on-private-names-two-lint-rules-rejected-them)
 
 <!-- vim-markdown-toc -->
 
-## 1. Allow a leading `_` on private names
+## 1. Allow a leading `_` on private names, two lint rules rejected them
 
 **Date**: 21st of October, 2026
 
