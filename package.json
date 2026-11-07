@@ -59,11 +59,11 @@
   },
   "dependencies": {
     "@nx/eslint-plugin": "^23.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.72.0",
-    "@typescript-eslint/parser": "^8.72.0",
+    "@typescript-eslint/eslint-plugin": "^8.72.1",
+    "@typescript-eslint/parser": "^8.72.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsdoc": "^65.4.0",
+    "eslint-plugin-jsdoc": "^65.4.5",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-no-inferred-method-name": "^2.0.0",
     "eslint-plugin-prettier": "^5.5.7",
@@ -73,16 +73,16 @@
     "eslint-plugin-react-refresh": "^0.5.7",
     "eslint-plugin-testing-library": "^7.16.2",
     "eslint-plugin-unicorn": "^65.0.0",
-    "globals": "^17.13.0",
-    "typescript-eslint": "^8.72.0"
+    "globals": "^17.14.0",
+    "typescript-eslint": "^8.72.1"
   },
   "devDependencies": {
     "@asd14/prettier-config": "^1.5.0",
-    "@asd14/semantic-release-config": "^1.0.1",
+    "@asd14/semantic-release-config": "^1.1.0",
     "@asd14/ts-config": "^1.6.0",
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "semantic-release": "^25.0.9"
   },
   "peerDependencies": {
