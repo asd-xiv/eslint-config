@@ -1,3 +1,4 @@
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import reactPlugin from "eslint-plugin-react"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
 import { reactRefresh } from "eslint-plugin-react-refresh"
@@ -6,15 +7,21 @@ const reactRecommendedConfig = /** @type {import("eslint").Linter.Config} */ (
   reactPlugin.configs.flat?.["recommended"]
 )
 
+const jsxA11yRecommendedConfig = /** @type {import("eslint").Linter.Config} */ (
+  jsxA11yPlugin.flatConfigs.recommended
+)
+
 /** @satisfies {import("eslint").Linter.Config} */
 export default /** @type {const} */ ({
   plugins: {
     ...reactRecommendedConfig.plugins,
+    ...jsxA11yRecommendedConfig.plugins,
     "react-hooks": reactHooksPlugin,
     "react-refresh": reactRefresh.plugin,
   },
   rules: {
     ...reactRecommendedConfig.rules,
+    ...jsxA11yRecommendedConfig.rules,
 
     // Validate that your components can safely be updated with Fast Refresh.
     "react-refresh/only-export-components": "error",
@@ -50,7 +57,23 @@ export default /** @type {const} */ ({
     "react/no-will-update-set-state": "error",
 
     // Forbid certain props on DOM Nodes
-    "react/forbid-dom-props": ["error", { forbid: ["id"] }],
+    "react/forbid-dom-props": ["error", { forbid: ["id", "style"] }],
+
+    // Forbid certain props on components
+    "react/forbid-component-props": ["error", { forbid: ["style"] }],
+
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: [
+          {
+            name: "react",
+            importNames: ["forwardRef"],
+            message: "Read `ref` from the props, as React 19 passes it",
+          },
+        ],
+      },
+    ],
 
     "react/forbid-prop-types": [
       "error",
