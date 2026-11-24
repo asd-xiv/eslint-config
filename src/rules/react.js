@@ -189,8 +189,9 @@ export default /** @type {const} */ ({
     "react/boolean-prop-naming": [
       "error",
       {
-        rule: "^(is|has|can|should).+",
-        message: "({{ propName }}) must start with (is|has|can|should)",
+        rule: "^((is|has|can|does|should|will|did|was|are|show)|default(Is|Has|Can|Does|Should|Will|Did|Was|Are|Show))[A-Z]([A-Za-z0-9]?)+",
+        message:
+          "({{ propName }}) must start with (is|has|can|does|should|will|did|was|are|show), after an optional (default)",
       },
     ],
 
